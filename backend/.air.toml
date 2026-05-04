@@ -1,0 +1,19 @@
+[build]
+  cmd            = "go build -o ./tmp/server ./cmd/server"
+  bin            = "./tmp/server"
+  include_ext    = ["go"]
+  exclude_dir    = ["tmp", "vendor", "migrations"]
+  delay          = 1000
+  kill_delay     = "500ms"
+  rerun          = false
+  rerun_delay    = 500
+
+[log]
+  time      = true
+  main_only = false
+
+[color]
+  main    = "magenta"
+  watcher = "cyan"
+  build   = "yellow"
+  runner  = "green"

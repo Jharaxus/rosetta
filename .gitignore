@@ -1,0 +1,27 @@
+# Secrets — never commit
+.env
+.env.local
+*.env.local
+nginx/certs/
+
+# Go
+backend/tmp/
+backend/vendor/
+backend/server
+
+# Node
+frontend/node_modules/
+frontend/dist/
+frontend/tsconfig.*.tsbuildinfo
+
+# Claude Code
+.claude/settings.local.json
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.idea/
+.vscode/
+*.swp

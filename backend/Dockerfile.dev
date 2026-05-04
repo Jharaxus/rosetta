@@ -1,0 +1,16 @@
+FROM golang:1.25-alpine
+
+RUN apk add --no-cache git
+
+# Install Air for hot reload
+RUN go install github.com/air-verse/air@latest
+
+WORKDIR /app
+
+# Pre-download modules to cache layer — only re-runs when go.mod/go.sum change
+COPY go.mod go.sum ./
+RUN go mod download
+
+EXPOSE 8090
+
+CMD ["air", "-c", ".air.toml"]

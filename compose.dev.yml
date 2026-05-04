@@ -1,0 +1,138 @@
+services:
+
+  # ── Application database ──────────────────────────────────────────────────────
+  app-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB:       ${POSTGRES_DB}
+      POSTGRES_USER:     ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "5432:5432"
+    volumes:
+      - app_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ── Keycloak database (kept separate from app DB to mirror production) ─────────
+  kc-db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB:       ${KC_POSTGRES_DB}
+      POSTGRES_USER:     ${KC_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${KC_POSTGRES_PASSWORD}
+    ports:
+      - "5433:5432"
+    volumes:
+      - kc_db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${KC_POSTGRES_USER} -d ${KC_POSTGRES_DB}"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ── Keycloak identity provider ─────────────────────────────────────────────────
+  keycloak:
+    image: quay.io/keycloak/keycloak:24.0
+    command: start-dev --import-realm
+    environment:
+      KEYCLOAK_ADMIN:          ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      KC_DB:                   postgres
+      KC_DB_URL:               jdbc:postgresql://kc-db:5432/${KC_POSTGRES_DB}
+      KC_DB_USERNAME:          ${KC_POSTGRES_USER}
+      KC_DB_PASSWORD:          ${KC_POSTGRES_PASSWORD}
+      # Makes Keycloak advertise localhost:8080 as its issuer so both the browser
+      # and the backend (via InsecureIssuerURLContext) agree on the issuer claim.
+      KC_HOSTNAME_URL:         http://localhost:8080
+      KC_HOSTNAME_ADMIN_URL:   http://localhost:8080
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json:ro
+    depends_on:
+      kc-db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "exec 3<>/dev/tcp/localhost/8080 && printf 'GET /realms/rosetta/.well-known/openid-configuration HTTP/1.0\\r\\nHost: localhost\\r\\nConnection: close\\r\\n\\r\\n' >&3 && head -1 <&3 | grep -q '200'"]
+      interval: 15s
+      timeout: 10s
+      retries: 12
+      start_period: 60s
+
+  # ── Database migrations (runs once, then exits) ───────────────────────────────
+  migrate:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    command: ["go", "run", "./cmd/migrate"]
+    environment:
+      DATABASE_URL:   postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@app-db:5432/${POSTGRES_DB}?sslmode=disable
+      # Required by config.Load() — supply minimal values
+      OIDC_ISSUER:          placeholder
+      OIDC_ISSUER_INTERNAL: placeholder
+      OIDC_CLIENT_ID:       placeholder
+      OIDC_CLIENT_SECRET:   placeholder
+      OIDC_REDIRECT_URL:    placeholder
+      FRONTEND_URL:         placeholder
+      SESSION_SECRET:       ${SESSION_SECRET}
+      COOKIE_HASH_KEY:      ${COOKIE_HASH_KEY}
+      COOKIE_ENCRYPT_KEY:   ${COOKIE_ENCRYPT_KEY}
+    volumes:
+      - ./backend:/app
+      - go_module_cache:/root/go/pkg/mod
+    depends_on:
+      app-db:
+        condition: service_healthy
+
+  # ── Go backend (Air hot-reload) ───────────────────────────────────────────────
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.dev
+    environment:
+      DATABASE_URL:         postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@app-db:5432/${POSTGRES_DB}?sslmode=disable
+      OIDC_ISSUER:          http://localhost:8080/realms/rosetta
+      OIDC_ISSUER_INTERNAL: http://keycloak:8080/realms/rosetta
+      OIDC_CLIENT_ID:       ${OIDC_CLIENT_ID}
+      OIDC_CLIENT_SECRET:   ${OIDC_CLIENT_SECRET}
+      OIDC_REDIRECT_URL:    http://localhost:8090/api/auth/callback
+      FRONTEND_URL:         http://localhost:5173
+      SESSION_SECRET:       ${SESSION_SECRET}
+      COOKIE_HASH_KEY:      ${COOKIE_HASH_KEY}
+      COOKIE_ENCRYPT_KEY:   ${COOKIE_ENCRYPT_KEY}
+      BACKEND_PORT:         "8090"
+      APP_ENV:              development
+    ports:
+      - "8090:8090"
+    volumes:
+      - ./backend:/app
+      - go_module_cache:/root/go/pkg/mod
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      keycloak:
+        condition: service_healthy
+
+  # ── React frontend (Vite dev server) ─────────────────────────────────────────
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    environment:
+      VITE_BACKEND_URL: http://backend:8090
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules   # Prevent host node_modules from overriding container's
+    depends_on:
+      - backend
+
+volumes:
+  app_db_data:
+  kc_db_data:
+  go_module_cache:
