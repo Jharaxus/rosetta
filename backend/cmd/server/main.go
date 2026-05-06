@@ -46,7 +46,7 @@ func main() {
 	r.Use(slogMiddleware())
 	r.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{cfg.FrontendURL},
-		AllowMethods:     []string{"GET", "POST", "OPTIONS"},
+		AllowMethods:     []string{"GET", "POST", "PATCH", "OPTIONS"},
 		AllowHeaders:     []string{"Content-Type"},
 		AllowCredentials: true,
 		MaxAge:           12 * time.Hour,
@@ -72,6 +72,12 @@ func main() {
 		authGroup.POST("/logout", h.Logout)
 		authGroup.GET("/me", auth.RequireAuth(sessionMgr), h.Me)
 		authGroup.POST("/register", h.Register)
+	}
+
+	userGroup := r.Group("/api/user")
+	userGroup.Use(auth.RequireAuth(sessionMgr))
+	{
+		userGroup.PATCH("/profile", h.UpdateProfile)
 	}
 
 	srv := &http.Server{

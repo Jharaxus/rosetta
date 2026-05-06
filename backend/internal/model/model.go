@@ -7,12 +7,13 @@ import (
 )
 
 type User struct {
-	ID          uuid.UUID `db:"id"`
-	Subject     string    `db:"subject"`
-	Email       string    `db:"email"`
-	DisplayName string    `db:"display_name"`
-	CreatedAt   time.Time `db:"created_at"`
-	UpdatedAt   time.Time `db:"updated_at"`
+	ID            uuid.UUID `db:"id"`
+	Subject       string    `db:"subject"`
+	Email         string    `db:"email"`
+	DisplayName   string    `db:"display_name"`
+	AssimilNumber int       `db:"assimil_number"`
+	CreatedAt     time.Time `db:"created_at"`
+	UpdatedAt     time.Time `db:"updated_at"`
 }
 
 type LoginRecord struct {

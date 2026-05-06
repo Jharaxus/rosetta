@@ -182,14 +182,61 @@ func (h *Handler) Logout(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"redirect": endSessionURL})
 }
 
-// Me returns the authenticated user's profile (set by RequireAuth middleware).
+// Me returns the authenticated user's profile, always fetched fresh from the DB.
 func (h *Handler) Me(c *gin.Context) {
-	user, ok := c.Get(contextKeyUser)
+	sessionUser, ok := c.Get(contextKeyUser)
 	if !ok {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "context_missing_user"})
 		return
 	}
-	c.JSON(http.StatusOK, user)
+	su := sessionUser.(*model.SessionUser)
+	user, err := h.queries.GetUserByID(c.Request.Context(), su.ID)
+	if err != nil {
+		slog.Error("get user by id", "id", su.ID, "err", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"id":             user.ID,
+		"sub":            user.Subject,
+		"email":          user.Email,
+		"display_name":   user.DisplayName,
+		"assimil_number": user.AssimilNumber,
+	})
+}
+
+type updateProfileRequest struct {
+	AssimilNumber int `json:"assimil_number" binding:"required,min=1,max=100"`
+}
+
+// UpdateProfile updates the authenticated user's profile fields.
+func (h *Handler) UpdateProfile(c *gin.Context) {
+	sessionUser, ok := c.Get(contextKeyUser)
+	if !ok {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "context_missing_user"})
+		return
+	}
+	su := sessionUser.(*model.SessionUser)
+
+	var req updateProfileRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "validation_error", "detail": err.Error()})
+		return
+	}
+
+	user, err := h.queries.UpdateAssimilNumber(c.Request.Context(), su.ID, req.AssimilNumber)
+	if err != nil {
+		slog.Error("update assimil number", "id", su.ID, "err", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
+		return
+	}
+	c.JSON(http.StatusOK, gin.H{
+		"id":             user.ID,
+		"sub":            user.Subject,
+		"email":          user.Email,
+		"display_name":   user.DisplayName,
+		"assimil_number": user.AssimilNumber,
+	})
 }
 
 // HealthCheck responds 200 for liveness probes.

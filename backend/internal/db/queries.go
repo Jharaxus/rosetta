@@ -26,11 +26,37 @@ func (q *Queries) UpsertUser(ctx context.Context, subject, email, displayName st
 			SET email        = EXCLUDED.email,
 			    display_name = EXCLUDED.display_name,
 			    updated_at   = now()
-		RETURNING id, subject, email, display_name, created_at, updated_at
+		RETURNING id, subject, email, display_name, assimil_number, created_at, updated_at
 	`
 	var u model.User
 	row := q.pool.QueryRow(ctx, query, subject, email, displayName)
-	err := row.Scan(&u.ID, &u.Subject, &u.Email, &u.DisplayName, &u.CreatedAt, &u.UpdatedAt)
+	err := row.Scan(&u.ID, &u.Subject, &u.Email, &u.DisplayName, &u.AssimilNumber, &u.CreatedAt, &u.UpdatedAt)
+	return u, err
+}
+
+func (q *Queries) GetUserByID(ctx context.Context, id uuid.UUID) (model.User, error) {
+	const query = `
+		SELECT id, subject, email, display_name, assimil_number, created_at, updated_at
+		FROM users
+		WHERE id = $1
+	`
+	var u model.User
+	row := q.pool.QueryRow(ctx, query, id)
+	err := row.Scan(&u.ID, &u.Subject, &u.Email, &u.DisplayName, &u.AssimilNumber, &u.CreatedAt, &u.UpdatedAt)
+	return u, err
+}
+
+func (q *Queries) UpdateAssimilNumber(ctx context.Context, id uuid.UUID, assimilNumber int) (model.User, error) {
+	const query = `
+		UPDATE users
+		SET assimil_number = $2,
+		    updated_at     = now()
+		WHERE id = $1
+		RETURNING id, subject, email, display_name, assimil_number, created_at, updated_at
+	`
+	var u model.User
+	row := q.pool.QueryRow(ctx, query, id, assimilNumber)
+	err := row.Scan(&u.ID, &u.Subject, &u.Email, &u.DisplayName, &u.AssimilNumber, &u.CreatedAt, &u.UpdatedAt)
 	return u, err
 }
 

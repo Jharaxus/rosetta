@@ -3,4 +3,5 @@ export interface User {
   sub: string
   email: string
   display_name: string
+  assimil_number: number
 }
