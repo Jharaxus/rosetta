@@ -71,6 +71,7 @@ func main() {
 		authGroup.GET("/callback", h.Callback)
 		authGroup.POST("/logout", h.Logout)
 		authGroup.GET("/me", auth.RequireAuth(sessionMgr), h.Me)
+		authGroup.POST("/register", h.Register)
 	}
 
 	srv := &http.Server{

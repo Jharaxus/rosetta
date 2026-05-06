@@ -6,31 +6,35 @@ import (
 )
 
 type Config struct {
-	DatabaseURL         string
-	OIDCIssuer          string
-	OIDCIssuerInternal  string
-	OIDCClientID        string
-	OIDCClientSecret    string
-	OIDCRedirectURL     string
-	SessionSecret       []byte
-	CookieHashKey       []byte
-	CookieEncryptKey    []byte
-	FrontendURL         string
-	Port                string
-	AppEnv              string
-	IsProduction        bool
+	DatabaseURL          string
+	OIDCIssuer           string
+	OIDCIssuerInternal   string
+	OIDCClientID         string
+	OIDCClientSecret     string
+	OIDCRedirectURL      string
+	KeycloakAdminUser    string
+	KeycloakAdminPassword string
+	SessionSecret        []byte
+	CookieHashKey        []byte
+	CookieEncryptKey     []byte
+	FrontendURL          string
+	Port                 string
+	AppEnv               string
+	IsProduction         bool
 }
 
 func Load() *Config {
 	cfg := &Config{
-		DatabaseURL:        requireEnv("DATABASE_URL"),
-		OIDCIssuer:         requireEnv("OIDC_ISSUER"),
-		OIDCClientID:       requireEnv("OIDC_CLIENT_ID"),
-		OIDCClientSecret:   requireEnv("OIDC_CLIENT_SECRET"),
-		OIDCRedirectURL:    requireEnv("OIDC_REDIRECT_URL"),
-		FrontendURL:        requireEnv("FRONTEND_URL"),
-		Port:               envOr("BACKEND_PORT", "8090"),
-		AppEnv:             envOr("APP_ENV", "development"),
+		DatabaseURL:           requireEnv("DATABASE_URL"),
+		OIDCIssuer:            requireEnv("OIDC_ISSUER"),
+		OIDCClientID:          requireEnv("OIDC_CLIENT_ID"),
+		OIDCClientSecret:      requireEnv("OIDC_CLIENT_SECRET"),
+		OIDCRedirectURL:       requireEnv("OIDC_REDIRECT_URL"),
+		KeycloakAdminUser:     requireEnv("KEYCLOAK_ADMIN"),
+		KeycloakAdminPassword: requireEnv("KEYCLOAK_ADMIN_PASSWORD"),
+		FrontendURL:           requireEnv("FRONTEND_URL"),
+		Port:                  envOr("BACKEND_PORT", "8090"),
+		AppEnv:                envOr("APP_ENV", "development"),
 	}
 
 	cfg.OIDCIssuerInternal = envOr("OIDC_ISSUER_INTERNAL", cfg.OIDCIssuer)

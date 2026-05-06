@@ -72,12 +72,14 @@ services:
     environment:
       DATABASE_URL:   postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@app-db:5432/${POSTGRES_DB}?sslmode=disable
       # Required by config.Load() — supply minimal values
-      OIDC_ISSUER:          placeholder
-      OIDC_ISSUER_INTERNAL: placeholder
-      OIDC_CLIENT_ID:       placeholder
-      OIDC_CLIENT_SECRET:   placeholder
-      OIDC_REDIRECT_URL:    placeholder
-      FRONTEND_URL:         placeholder
+      OIDC_ISSUER:             placeholder
+      OIDC_ISSUER_INTERNAL:    placeholder
+      OIDC_CLIENT_ID:          placeholder
+      OIDC_CLIENT_SECRET:      placeholder
+      OIDC_REDIRECT_URL:       placeholder
+      FRONTEND_URL:            placeholder
+      KEYCLOAK_ADMIN:          placeholder
+      KEYCLOAK_ADMIN_PASSWORD: placeholder
       SESSION_SECRET:       ${SESSION_SECRET}
       COOKIE_HASH_KEY:      ${COOKIE_HASH_KEY}
       COOKIE_ENCRYPT_KEY:   ${COOKIE_ENCRYPT_KEY}
@@ -104,8 +106,10 @@ services:
       SESSION_SECRET:       ${SESSION_SECRET}
       COOKIE_HASH_KEY:      ${COOKIE_HASH_KEY}
       COOKIE_ENCRYPT_KEY:   ${COOKIE_ENCRYPT_KEY}
-      BACKEND_PORT:         "8090"
-      APP_ENV:              development
+      KEYCLOAK_ADMIN:          ${KEYCLOAK_ADMIN}
+      KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
+      BACKEND_PORT:            "8090"
+      APP_ENV:                 development
     ports:
       - "8090:8090"
     volumes:

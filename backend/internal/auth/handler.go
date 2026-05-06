@@ -3,6 +3,7 @@ package auth
 import (
 	"crypto/subtle"
 	"encoding/json"
+	"errors"
 	"log/slog"
 	"net"
 	"net/http"
@@ -194,6 +195,60 @@ func (h *Handler) Me(c *gin.Context) {
 // HealthCheck responds 200 for liveness probes.
 func (h *Handler) HealthCheck(c *gin.Context) {
 	c.JSON(http.StatusOK, gin.H{"status": "ok"})
+}
+
+type registerRequest struct {
+	Email       string `json:"email"        binding:"required,email,max=254"`
+	DisplayName string `json:"display_name" binding:"required,min=2,max=100"`
+	Password    string `json:"password"     binding:"required,min=8"`
+}
+
+// Register creates a new user in Keycloak and upserts them into PostgreSQL.
+func (h *Handler) Register(c *gin.Context) {
+	var req registerRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "validation_error", "detail": err.Error()})
+		return
+	}
+
+	admin, err := newKeycloakAdmin(h.cfg)
+	if err != nil {
+		slog.Error("build keycloak admin client", "err", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
+		return
+	}
+
+	token, err := admin.getAdminToken(c.Request.Context())
+	if err != nil {
+		slog.Error("get keycloak admin token", "err", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
+		return
+	}
+
+	sub, err := admin.createUser(c.Request.Context(), token, req.Email, req.DisplayName, req.Password)
+	if errors.Is(err, ErrEmailConflict) {
+		c.JSON(http.StatusConflict, gin.H{"error": "email_taken"})
+		return
+	}
+	if err != nil {
+		slog.Error("create keycloak user", "email", req.Email, "err", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
+		return
+	}
+
+	user, err := h.queries.UpsertUser(c.Request.Context(), sub, req.Email, req.DisplayName)
+	if err != nil {
+		slog.Error("upsert user after keycloak create", "sub", sub, "err", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
+		return
+	}
+
+	c.JSON(http.StatusCreated, gin.H{
+		"id":           user.ID,
+		"sub":          user.Subject,
+		"email":        user.Email,
+		"display_name": user.DisplayName,
+	})
 }
 
 func realIP(r *http.Request) string {

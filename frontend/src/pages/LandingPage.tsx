@@ -1,4 +1,4 @@
-import { Navigate } from 'react-router-dom'
+import { Navigate, Link } from 'react-router-dom'
 import { useAuth } from '../hooks/useAuth'
 
 export function LandingPage() {
@@ -15,6 +15,9 @@ export function LandingPage() {
       <a href="/api/auth/login">
         <button type="button">Sign in with SSO</button>
       </a>
+      <p>
+        No account? <Link to="/register">Create one</Link>
+      </p>
     </main>
   )
 }

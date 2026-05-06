@@ -10,3 +10,30 @@ export async function getMe(): Promise<User> {
   }
   return res.json() as Promise<User>
 }
+
+export class ApiError extends Error {
+  constructor(
+    public readonly status: number,
+    public readonly code: string,
+  ) {
+    super(code)
+  }
+}
+
+export async function register(payload: {
+  email: string
+  display_name: string
+  password: string
+}): Promise<User> {
+  const res = await fetch('/api/auth/register', {
+    method: 'POST',
+    credentials: 'include',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  })
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({ error: 'unknown_error' }))
+    throw new ApiError(res.status, (body as { error?: string }).error ?? 'unknown_error')
+  }
+  return res.json() as Promise<User>
+}
