@@ -3,6 +3,7 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"log/slog"
 	"os"
@@ -11,6 +12,7 @@ import (
 
 	"github.com/jharaxus/rosetta/internal/config"
 	"github.com/jharaxus/rosetta/internal/db"
+	"github.com/jharaxus/rosetta/internal/seed"
 	"github.com/jharaxus/rosetta/migrations"
 )
 
@@ -52,8 +54,14 @@ func main() {
 			slog.Error("goose status", "err", err)
 			os.Exit(1)
 		}
+	case "seed":
+		slog.Info("seeding initial vocabulary data")
+		if err := seed.Seed(context.Background(), pool); err != nil {
+			slog.Error("seed", "err", err)
+			os.Exit(1)
+		}
 	default:
-		fmt.Fprintf(os.Stderr, "unknown command %q — use: up | down | status\n", command)
+		fmt.Fprintf(os.Stderr, "unknown command %q — use: up | down | status | seed\n", command)
 		os.Exit(1)
 	}
 

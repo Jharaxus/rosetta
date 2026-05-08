@@ -1,0 +1,186 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 28px 40px;
+  max-width: 560px;
+  margin: 0 auto;
+  gap: 36px;
+}
+
+/* ── Top bar ── */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.backLink {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-dim);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.backLink:hover {
+  color: var(--color-ink2);
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  animation: fadeUp 0.7s ease-out both;
+}
+
+.pageLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  color: var(--color-gold);
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: 42px;
+  font-weight: 400;
+  letter-spacing: -1.2px;
+  line-height: 1.0;
+  margin: 0;
+  color: var(--color-ink);
+}
+
+.pageTitle em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+.pageSubtitle {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-dim);
+  margin: 0;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--color-paper);
+  border-radius: var(--radius-card);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  animation: fadeUp 0.9s ease-out both;
+  animation-delay: 0.08s;
+}
+
+.cardLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.4px;
+  color: var(--color-gold);
+}
+
+/* ── Form ── */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-ink2);
+}
+
+.input {
+  height: 44px;
+  border-radius: var(--radius-input);
+  border: 1px solid var(--color-rule-hi);
+  background: var(--color-bg);
+  padding: 0 14px;
+  font-size: 14px;
+  color: var(--color-ink);
+  outline: none;
+  width: 100px;
+  transition: border-color 0.15s ease;
+}
+
+.input:focus {
+  border-color: var(--color-gold);
+  background: var(--color-paper);
+}
+
+.input.inputError {
+  border-color: #c0442a;
+}
+
+.fieldError {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: #c0442a;
+  margin: 0;
+}
+
+.serverError {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: #c0442a;
+  padding: 12px 14px;
+  border-radius: var(--radius-tag);
+  background: rgba(192, 68, 42, 0.06);
+  border: 1px solid rgba(192, 68, 42, 0.15);
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.btnGold {
+  height: 48px;
+  padding: 0 28px;
+  border-radius: var(--radius-pill);
+  background: var(--color-gold);
+  border: none;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: opacity 0.15s ease;
+}
+
+.btnGold:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.btnGold:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.savedBadge {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--color-gold);
+  animation: fadeUp 0.4s ease-out both;
+}

@@ -53,6 +53,7 @@ services:
       - "8080:8080"
     volumes:
       - ./keycloak/realm-export.json:/opt/keycloak/data/import/realm-export.json:ro
+      - ./keycloak/themes/rosetta:/opt/keycloak/themes/rosetta:ro
     depends_on:
       kc-db:
         condition: service_healthy
@@ -63,12 +64,12 @@ services:
       retries: 12
       start_period: 60s
 
-  # ── Database migrations (runs once, then exits) ───────────────────────────────
+  # ── Database migrations + initial seed (runs once, then exits) ───────────────
   migrate:
     build:
       context: ./backend
       dockerfile: Dockerfile.dev
-    command: ["go", "run", "./cmd/migrate"]
+    command: ["sh", "-c", "go run ./cmd/migrate up && go run ./cmd/migrate seed"]
     environment:
       DATABASE_URL:   postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@app-db:5432/${POSTGRES_DB}?sslmode=disable
       # Required by config.Load() — supply minimal values
@@ -83,8 +84,13 @@ services:
       SESSION_SECRET:       ${SESSION_SECRET}
       COOKIE_HASH_KEY:      ${COOKIE_HASH_KEY}
       COOKIE_ENCRYPT_KEY:   ${COOKIE_ENCRYPT_KEY}
+      # Path to the vocabulary CSV inside the container (see resources/ mount below).
+      # Set FORCE_RESEED=true to truncate and reload even when the table is populated.
+      SEED_FILE:    /app/resources/Lexique Allemand - export.csv
+      FORCE_RESEED: "false"
     volumes:
       - ./backend:/app
+      - ./resources:/app/resources:ro
       - go_module_cache:/root/go/pkg/mod
     depends_on:
       app-db:

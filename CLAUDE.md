@@ -87,14 +87,63 @@ React 18 + Vite 5 + TypeScript + React Router v6 + TanStack Query v5.
 
 ```
 src/
-  main.tsx          QueryClientProvider + RouterProvider setup
-  router.tsx        Route definitions — / (LandingPage), /dashboard (ProtectedRoute)
-  api/auth.ts       fetch wrappers for /api/auth/* endpoints
-  hooks/useAuth.ts  useQuery over /api/auth/me; staleTime 5 min, no retry on 401
-  components/       ProtectedRoute — redirects to login if unauthenticated
-  pages/            LandingPage, DashboardPage
-  types/            TypeScript types (User, etc.)
+  main.tsx              QueryClientProvider + RouterProvider setup; imports global.css
+  router.tsx            Routes: / · /register · /dashboard (protected) · /profile (protected)
+  api/auth.ts           fetch wrappers for /api/auth/* and /api/user/* endpoints
+  hooks/useAuth.ts      useQuery over /api/auth/me; staleTime 5 min, no retry on 401
+  components/           ProtectedRoute, LogoutButton
+  pages/                LandingPage, RegisterPage, DashboardPage, ProfilePage, NotFoundPage
+  types/                User (id, sub, email, display_name, assimil_number)
+  styles/
+    tokens.css          All CSS custom properties (colors, fonts, radii, shadows, keyframes)
+    global.css          Box-sizing reset + base html/body styles; imports tokens.css
 ```
+
+#### Design System — Direction D · Atelier
+
+All frontend UI follows the **Atelier** design language. Full reference: `/design-system` slash command (`.claude/commands/design-system.md`).
+
+**Styling approach:** CSS Modules (`.module.css` co-located with each page). No Tailwind, no CSS-in-JS.
+
+**Key tokens** (defined in `src/styles/tokens.css`):
+
+| Token | Value | Role |
+|-------|-------|------|
+| `--color-bg` | `#fbf6ec` | Ivory page background |
+| `--color-paper` | `#ffffff` | Card / input surfaces |
+| `--color-ink` | `#1a2238` | Primary text + primary button bg |
+| `--color-gold` | `#b88a3a` | Accent, active states, CTAs |
+| `--color-gold-soft` | `#e8d4a4` | Tinted surfaces, hover |
+| `--color-dim` | `#7a7466` | Muted / caption text |
+| `--font-display` | Fraunces, serif | Headings, italic name accents |
+| `--font-sans` | Manrope, sans-serif | Body, buttons, labels |
+| `--font-mono` | JetBrains Mono | ALL-CAPS section labels |
+
+**Rules:**
+- All copy is in **French**.
+- User names always render as italic gold Fraunces: `<em>Élise</em>`.
+- Directional arrow is `→` inside an italic `<span>` using `var(--font-display)`.
+- Buttons: pill shape (`border-radius: var(--radius-pill)`), height 48–52 px.
+  - Primary = navy bg / ivory text · Gold = `--color-gold` bg / ink text · Ghost = transparent + 1 px border.
+- Cards: white paper on ivory, `var(--shadow-card)`, `var(--radius-card)`.
+- Section labels: `var(--font-mono)`, 9–11 px, ALL CAPS, `letter-spacing: 1.4px`, `color: var(--color-gold)`.
+- Entrance animations: `animation: fadeUp 0.7s ease-out both` (stagger secondaries +0.1 s).
+
+**Google Fonts** loaded in `frontend/index.html`: Fraunces (ital, opsz, wght 400/500/600), Manrope (wght 400–700), JetBrains Mono (wght 400/500).
+
+### Keycloak Theme (`keycloak/themes/rosetta/`)
+
+Custom login theme matching the Atelier design. Structure:
+
+```
+keycloak/themes/rosetta/
+  login/
+    theme.properties        parent=base, imports common/keycloak, loads css/login.css
+    login.ftl               Standalone FreeMarker login template (no layout macro)
+    resources/css/login.css Atelier CSS — same tokens as the React app, Google Fonts inlined
+```
+
+The theme is mounted into the container via `compose.dev.yml` and activated by `"loginTheme": "rosetta"` in `keycloak/realm-export.json`. After changing either, run `make dev-clean && make dev-build` to reimport the realm on a fresh DB.
 
 ## Authentication Flow (BFF Pattern)
 

@@ -25,6 +25,16 @@ type LoginRecord struct {
 	SessionID  string    `db:"session_id"`
 }
 
+type Word struct {
+	ID            uuid.UUID `db:"id"`
+	French        string    `db:"french"`
+	German        string    `db:"german"`
+	AssimilNumber int       `db:"assimil_number"`
+	Category      string    `db:"category"`
+	IsRegular     *bool     `db:"is_regular"` // nil for non-verbs
+	CreatedAt     time.Time `db:"created_at"`
+}
+
 // SessionUser is stored in the SCS session. No tokens — only identity claims.
 type SessionUser struct {
 	ID          uuid.UUID `json:"id"`

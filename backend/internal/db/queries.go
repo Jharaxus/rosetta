@@ -60,6 +60,12 @@ func (q *Queries) UpdateAssimilNumber(ctx context.Context, id uuid.UUID, assimil
 	return u, err
 }
 
+func (q *Queries) CountWords(ctx context.Context) (int64, error) {
+	var n int64
+	err := q.pool.QueryRow(ctx, `SELECT COUNT(*) FROM words`).Scan(&n)
+	return n, err
+}
+
 func (q *Queries) InsertLoginRecord(ctx context.Context, userID uuid.UUID, ip, userAgent, sessionID string) error {
 	const query = `
 		INSERT INTO login_records (user_id, ip_address, user_agent, session_id)

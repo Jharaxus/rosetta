@@ -2,29 +2,30 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useMutation } from '@tanstack/react-query'
 import { register, ApiError } from '../api/auth'
+import styles from './RegisterPage.module.css'
 
 function validateDisplayName(v: string): string | null {
-  if (!v) return 'Display name is required'
-  if (v.length < 2) return 'Must be at least 2 characters'
-  if (v.length > 100) return 'Must be 100 characters or fewer'
+  if (!v) return 'Nom requis'
+  if (v.length < 2) return 'Au moins 2 caractères'
+  if (v.length > 100) return '100 caractères maximum'
   return null
 }
 
 function validateEmail(v: string): string | null {
-  if (!v) return 'Email is required'
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return 'Must be a valid email address'
+  if (!v) return 'Email requis'
+  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) return 'Adresse email invalide'
   return null
 }
 
 function validatePassword(v: string): string | null {
-  if (!v) return 'Password is required'
-  if (v.length < 8) return 'Must be at least 8 characters'
+  if (!v) return 'Mot de passe requis'
+  if (v.length < 8) return 'Au moins 8 caractères'
   return null
 }
 
 function validateConfirm(password: string, confirm: string): string | null {
-  if (!confirm) return 'Please confirm your password'
-  if (confirm !== password) return 'Passwords do not match'
+  if (!confirm) return 'Confirmez votre mot de passe'
+  if (confirm !== password) return 'Les mots de passe ne correspondent pas'
   return null
 }
 
@@ -55,9 +56,9 @@ export function RegisterPage() {
     },
     onError: (err: unknown) => {
       if (err instanceof ApiError && err.status === 409) {
-        setServerError('That email address is already registered.')
+        setServerError('Cette adresse email est déjà utilisée.')
       } else {
-        setServerError('Something went wrong. Please try again.')
+        setServerError('Une erreur est survenue. Veuillez réessayer.')
       }
     },
   })
@@ -72,88 +73,122 @@ export function RegisterPage() {
 
   if (success) {
     return (
-      <main>
-        <h1>Account created!</h1>
-        <p>Your account is ready. Sign in to continue.</p>
-        <a href="/api/auth/login">Sign in</a>
+      <main className={styles.page}>
+        <div className={styles.successCard}>
+          <div className={styles.successMark}>✓</div>
+          <h1 className={styles.successTitle}>
+            Compte créé,<br /><em>{displayName}</em>.
+          </h1>
+          <p className={styles.successSubtitle}>
+            Votre compte est prêt. Connectez-vous pour commencer.
+          </p>
+          <a href="/api/auth/login">
+            <button type="button" className={styles.btnPrimary}>
+              Se connecter
+              <span className={styles.btnArrow}>→</span>
+            </button>
+          </a>
+        </div>
       </main>
     )
   }
 
   return (
-    <main>
-      <h1>Create an account</h1>
-      <form onSubmit={handleSubmit} noValidate>
-        <div>
-          <label htmlFor="displayName">Display name</label>
-          <input
-            id="displayName"
-            type="text"
-            value={displayName}
-            onChange={(e) => setDisplayName(e.target.value)}
-            onBlur={() => touch('displayName')}
-            autoComplete="name"
-          />
-          {touched.displayName && errors.displayName && (
-            <span role="alert">{errors.displayName}</span>
-          )}
+    <main className={styles.page}>
+      <div className={styles.card}>
+        <div className={styles.header}>
+          <div className={styles.stepLabel}>NOUVEAU COMPTE</div>
+          <h1 className={styles.title}>Créer un compte</h1>
         </div>
 
-        <div>
-          <label htmlFor="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            onBlur={() => touch('email')}
-            autoComplete="email"
-          />
-          {touched.email && errors.email && (
-            <span role="alert">{errors.email}</span>
+        <form onSubmit={handleSubmit} noValidate className={styles.form}>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="displayName">Prénom ou surnom</label>
+            <input
+              id="displayName"
+              type="text"
+              className={`${styles.input}${touched.displayName && errors.displayName ? ` ${styles.inputError}` : ''}`}
+              value={displayName}
+              onChange={(e) => setDisplayName(e.target.value)}
+              onBlur={() => touch('displayName')}
+              autoComplete="name"
+              placeholder="Élise"
+            />
+            {touched.displayName && errors.displayName && (
+              <span className={styles.fieldError} role="alert">{errors.displayName}</span>
+            )}
+          </div>
+
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="email">Email</label>
+            <input
+              id="email"
+              type="email"
+              className={`${styles.input}${touched.email && errors.email ? ` ${styles.inputError}` : ''}`}
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              onBlur={() => touch('email')}
+              autoComplete="email"
+              placeholder="elise@exemple.fr"
+            />
+            {touched.email && errors.email && (
+              <span className={styles.fieldError} role="alert">{errors.email}</span>
+            )}
+          </div>
+
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="password">Mot de passe</label>
+            <input
+              id="password"
+              type="password"
+              className={`${styles.input}${touched.password && errors.password ? ` ${styles.inputError}` : ''}`}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onBlur={() => touch('password')}
+              autoComplete="new-password"
+              placeholder="8 caractères minimum"
+            />
+            {touched.password && errors.password && (
+              <span className={styles.fieldError} role="alert">{errors.password}</span>
+            )}
+          </div>
+
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="confirm">Confirmer le mot de passe</label>
+            <input
+              id="confirm"
+              type="password"
+              className={`${styles.input}${touched.confirm && errors.confirm ? ` ${styles.inputError}` : ''}`}
+              value={confirm}
+              onChange={(e) => setConfirm(e.target.value)}
+              onBlur={() => touch('confirm')}
+              autoComplete="new-password"
+              placeholder="Répétez votre mot de passe"
+            />
+            {touched.confirm && errors.confirm && (
+              <span className={styles.fieldError} role="alert">{errors.confirm}</span>
+            )}
+          </div>
+
+          {serverError && (
+            <p className={styles.serverError} role="alert">{serverError}</p>
           )}
-        </div>
 
-        <div>
-          <label htmlFor="password">Password</label>
-          <input
-            id="password"
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            onBlur={() => touch('password')}
-            autoComplete="new-password"
-          />
-          {touched.password && errors.password && (
-            <span role="alert">{errors.password}</span>
-          )}
-        </div>
+          <div className={styles.actions}>
+            <Link to="/">
+              <button type="button" className={styles.btnGhost}>retour</button>
+            </Link>
+            <button type="submit" className={styles.btnGold} disabled={mutation.isPending}>
+              {mutation.isPending ? 'Création…' : 'Créer mon compte'}
+              {!mutation.isPending && <span className={styles.btnArrow}>→</span>}
+            </button>
+          </div>
+        </form>
 
-        <div>
-          <label htmlFor="confirm">Confirm password</label>
-          <input
-            id="confirm"
-            type="password"
-            value={confirm}
-            onChange={(e) => setConfirm(e.target.value)}
-            onBlur={() => touch('confirm')}
-            autoComplete="new-password"
-          />
-          {touched.confirm && errors.confirm && (
-            <span role="alert">{errors.confirm}</span>
-          )}
-        </div>
-
-        {serverError && <p role="alert">{serverError}</p>}
-
-        <button type="submit" disabled={mutation.isPending}>
-          {mutation.isPending ? 'Creating account…' : 'Create account'}
-        </button>
-      </form>
-
-      <p>
-        Already have an account? <Link to="/">Sign in</Link>
-      </p>
+        <p className={styles.signInLink}>
+          Déjà inscrit ? <Link to="/">Se connecter →</Link>
+        </p>
+      </div>
     </main>
   )
 }

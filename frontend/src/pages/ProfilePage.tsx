@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useAuth } from '../hooks/useAuth'
 import { updateAssimilNumber } from '../api/auth'
+import styles from './ProfilePage.module.css'
 
 export function ProfilePage() {
   const { user } = useAuth()
@@ -21,7 +22,7 @@ export function ProfilePage() {
     onSuccess: (updated) => {
       queryClient.setQueryData(['auth', 'me'], updated)
       setSaved(true)
-      setTimeout(() => setSaved(false), 2000)
+      setTimeout(() => setSaved(false), 2500)
     },
   })
 
@@ -30,37 +31,62 @@ export function ProfilePage() {
     mutation.mutate(value)
   }
 
-  const inputError = value < 1 || value > 100 ? 'Must be between 1 and 100' : null
+  const inputError = value < 1 || value > 100 ? 'Entre 1 et 100' : null
+  const name = user?.display_name ?? user?.email ?? ''
 
   return (
-    <main>
-      <h1>Profile</h1>
-      <p>{user?.display_name} — {user?.email}</p>
+    <main className={styles.page}>
+      <div className={styles.topBar}>
+        <Link to="/dashboard" className={styles.backLink}>← retour</Link>
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="assimil">Assimil lesson reached</label>
-        <input
-          id="assimil"
-          type="number"
-          min={1}
-          max={100}
-          value={value}
-          onChange={(e) => {
-            setSaved(false)
-            setValue(Number(e.target.value))
-          }}
-        />
-        {inputError && <span role="alert">{inputError}</span>}
+      <div className={styles.header}>
+        <div className={styles.pageLabel}>MON PROFIL</div>
+        <h1 className={styles.pageTitle}>
+          <em>{name}</em>
+        </h1>
+        <p className={styles.pageSubtitle}>{user?.email}</p>
+      </div>
 
-        {mutation.isError && <p role="alert">Something went wrong. Please try again.</p>}
-        {saved && <p>Saved!</p>}
+      <div className={styles.card}>
+        <div className={styles.cardLabel}>ASSIMIL · LEÇON ATTEINTE</div>
 
-        <button type="submit" disabled={!!inputError || mutation.isPending}>
-          {mutation.isPending ? 'Saving…' : 'Save'}
-        </button>
-      </form>
+        <form onSubmit={handleSubmit} className={styles.form}>
+          <div className={styles.field}>
+            <label className={styles.label} htmlFor="assimil">Leçon en cours</label>
+            <input
+              id="assimil"
+              type="number"
+              min={1}
+              max={100}
+              className={`${styles.input}${inputError ? ` ${styles.inputError}` : ''}`}
+              value={value}
+              onChange={(e) => {
+                setSaved(false)
+                setValue(Number(e.target.value))
+              }}
+            />
+            {inputError && <span className={styles.fieldError} role="alert">{inputError}</span>}
+          </div>
 
-      <Link to="/dashboard">Back to dashboard</Link>
+          {mutation.isError && (
+            <p className={styles.serverError} role="alert">
+              Une erreur est survenue. Veuillez réessayer.
+            </p>
+          )}
+
+          <div className={styles.actions}>
+            <button
+              type="submit"
+              className={styles.btnGold}
+              disabled={!!inputError || mutation.isPending}
+            >
+              {mutation.isPending ? 'Enregistrement…' : 'Enregistrer'}
+            </button>
+            {saved && <span className={styles.savedBadge}>Sauvegardé ✓</span>}
+          </div>
+        </form>
+      </div>
     </main>
   )
 }

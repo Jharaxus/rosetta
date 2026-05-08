@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Tokens ── */
+:root {
+  --color-bg:        #fbf6ec;
+  --color-paper:     #ffffff;
+  --color-ink:       #1a2238;
+  --color-ink2:      #3a4258;
+  --color-dim:       #7a7466;
+  --color-dim2:      #b0a896;
+  --color-gold:      #b88a3a;
+  --color-gold-soft: #e8d4a4;
+  --color-rule:      rgba(26,34,56,0.08);
+  --color-rule-hi:   rgba(26,34,56,0.18);
+  --color-error:     #c0442a;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-sans:    "Manrope", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", monospace;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--color-bg);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* ── Layout — override Keycloak base ── */
+#kc-content,
+.login-pf-page,
+#kc-container,
+body {
+  background: var(--color-bg) !important;
+}
+
+/* Keycloak base uses a card wrapper — restyle it */
+#kc-content-wrapper {
+  padding: 0 !important;
+}
+
+.card-pf,
+#kc-form-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* Main centering wrapper */
+#kc-container-wrapper,
+#kc-header,
+.login-pf-header,
+.login-pf-brand {
+  display: none !important;
+}
+
+/* ── Our page layout ── */
+.kc-login-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+}
+
+.kc-inner {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  animation: fadeUp 0.7s ease-out both;
+}
+
+/* ── Logo ── */
+.kc-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+}
+
+.kc-logo-dot {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  flex-shrink: 0;
+}
+
+.kc-logo-text {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.5px;
+  color: var(--color-ink);
+}
+
+/* ── Card ── */
+.kc-card {
+  background: var(--color-paper);
+  border-radius: 20px;
+  padding: 36px 32px;
+  box-shadow: 0 1px 2px rgba(26,34,56,0.04), 0 12px 32px rgba(26,34,56,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Alert ── */
+.kc-alert {
+  padding: 12px 14px;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.kc-alert-error {
+  color: var(--color-error);
+  background: rgba(192,68,42,0.06);
+  border: 1px solid rgba(192,68,42,0.15);
+}
+
+.kc-alert-info {
+  color: var(--color-ink2);
+  background: var(--color-gold-soft);
+  border: 1px solid rgba(184,138,58,0.2);
+}
+
+.kc-alert-warning {
+  color: #7a5a1a;
+  background: rgba(184,138,58,0.08);
+  border: 1px solid rgba(184,138,58,0.2);
+}
+
+/* ── Form ── */
+.kc-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.kc-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.kc-label {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-ink2);
+  letter-spacing: 0.1px;
+}
+
+.kc-input {
+  height: 44px;
+  border-radius: 12px;
+  border: 1px solid var(--color-rule-hi);
+  background: var(--color-bg);
+  padding: 0 14px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-ink);
+  outline: none;
+  width: 100%;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.kc-input::placeholder {
+  color: var(--color-dim2);
+}
+
+.kc-input:focus {
+  border-color: var(--color-gold);
+  background: var(--color-paper);
+}
+
+.kc-input-error {
+  border-color: var(--color-error);
+}
+
+.kc-field-error {
+  font-family: var(--font-sans);
+  font-size: 11px;
+  color: var(--color-error);
+}
+
+/* ── Submit button ── */
+.kc-btn-primary {
+  width: 100%;
+  height: 52px;
+  border-radius: 24px;
+  background: var(--color-ink);
+  color: var(--color-bg);
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: opacity 0.15s ease;
+  margin-top: 4px;
+}
+
+.kc-btn-primary:hover {
+  opacity: 0.88;
+}
+
+.kc-btn-arrow {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+/* ── Footer links ── */
+.kc-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.kc-link {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-dim);
+  text-decoration: none;
+  text-align: center;
+}
+
+.kc-link-accent {
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+.kc-link-accent:hover {
+  opacity: 0.8;
+}
+
+/* ── Remember me ── */
+.kc-remember {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.kc-remember input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: var(--color-gold);
+  cursor: pointer;
+}
+
+.kc-remember label {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-dim);
+  cursor: pointer;
+}

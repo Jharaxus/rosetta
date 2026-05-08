@@ -1,0 +1,45 @@
+:root {
+  /* Surfaces */
+  --color-bg:        #fbf6ec;
+  --color-paper:     #ffffff;
+
+  /* Text */
+  --color-ink:       #1a2238;
+  --color-ink2:      #3a4258;
+  --color-dim:       #7a7466;
+  --color-dim2:      #b0a896;
+
+  /* Accent */
+  --color-gold:      #b88a3a;
+  --color-gold-soft: #e8d4a4;
+
+  /* Rules */
+  --color-rule:      rgba(26, 34, 56, 0.08);
+  --color-rule-hi:   rgba(26, 34, 56, 0.18);
+
+  /* Typography */
+  --font-display: "Fraunces", "Source Serif 4", Georgia, serif;
+  --font-sans:    "Manrope", "Inter Tight", system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", monospace;
+
+  /* Shadows */
+  --shadow-card: 0 1px 2px rgba(26, 34, 56, 0.04), 0 12px 32px rgba(26, 34, 56, 0.06);
+  --shadow-card-lg: 0 1px 3px rgba(26, 34, 56, 0.04), 0 24px 48px rgba(26, 34, 56, 0.06);
+
+  /* Radius */
+  --radius-pill:   24px;
+  --radius-card:   20px;
+  --radius-card-sm: 16px;
+  --radius-input:  12px;
+  --radius-tag:    8px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes breathe {
+  0%, 100% { box-shadow: 0 0 0 0 currentColor; opacity: 0.9; }
+  50%       { box-shadow: 0 0 0 6px transparent; opacity: 1; }
+}

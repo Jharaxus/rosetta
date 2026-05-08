@@ -2,6 +2,7 @@
   "id": "rosetta",
   "realm": "rosetta",
   "displayName": "Rosetta",
+  "loginTheme": "rosetta",
   "enabled": true,
   "sslRequired": "external",
   "registrationAllowed": false,
