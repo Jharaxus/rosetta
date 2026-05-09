@@ -24,6 +24,7 @@ export async function register(payload: {
   email: string
   display_name: string
   password: string
+  cap_token: string
 }): Promise<User> {
   const res = await fetch('/api/auth/register', {
     method: 'POST',

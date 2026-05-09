@@ -1,6 +1,8 @@
 package auth
 
 import (
+	"bytes"
+	"context"
 	"crypto/subtle"
 	"encoding/json"
 	"errors"
@@ -8,6 +10,7 @@ import (
 	"net"
 	"net/http"
 	"strings"
+	"time"
 
 	"github.com/alexedwards/scs/v2"
 	"github.com/gin-gonic/gin"
@@ -136,6 +139,7 @@ func (h *Handler) Callback(c *gin.Context) {
 		Subject:     user.Subject,
 		Email:       user.Email,
 		DisplayName: user.DisplayName,
+		IDToken:     rawIDToken,
 	}
 	userJSON, err := json.Marshal(sessionUser)
 	if err != nil {
@@ -165,8 +169,17 @@ func (h *Handler) Callback(c *gin.Context) {
 
 // Logout destroys the session and returns the Keycloak end-session URL for the
 // client to navigate to. Uses POST so SameSite=Lax blocks cross-site logout CSRF.
+// RequireAuth must run before this handler so the session user is in context.
 func (h *Handler) Logout(c *gin.Context) {
-	idTokenHint := readIDHintCookie(c.Request)
+	// Read id_token from the session (stored at login; encrypted server-side).
+	// Fall back to the id_hint cookie for sessions created before this change.
+	var idTokenHint string
+	if su, ok := c.Get(contextKeyUser); ok {
+		idTokenHint = su.(*model.SessionUser).IDToken
+	}
+	if idTokenHint == "" {
+		idTokenHint = readIDHintCookie(c.Request)
+	}
 	deleteIDHintCookie(c.Writer, h.cfg.IsProduction)
 
 	if err := h.sessions.Destroy(c.Request.Context()); err != nil {
@@ -248,6 +261,36 @@ type registerRequest struct {
 	Email       string `json:"email"        binding:"required,email,max=254"`
 	DisplayName string `json:"display_name" binding:"required,min=2,max=100"`
 	Password    string `json:"password"     binding:"required,min=8"`
+	CapToken    string `json:"cap_token"    binding:"required"`
+}
+
+var capHTTPClient = &http.Client{Timeout: 5 * time.Second}
+
+func verifyCap(ctx context.Context, apiURL, secretKey, token string) error {
+	body, err := json.Marshal(map[string]string{"secret": secretKey, "response": token})
+	if err != nil {
+		return err
+	}
+	req, err := http.NewRequestWithContext(ctx, http.MethodPost, apiURL+"/siteverify", bytes.NewReader(body))
+	if err != nil {
+		return err
+	}
+	req.Header.Set("Content-Type", "application/json")
+	resp, err := capHTTPClient.Do(req)
+	if err != nil {
+		return err
+	}
+	defer resp.Body.Close()
+	var result struct {
+		Success bool `json:"success"`
+	}
+	if err := json.NewDecoder(resp.Body).Decode(&result); err != nil {
+		return err
+	}
+	if !result.Success {
+		return errors.New("captcha verification failed")
+	}
+	return nil
 }
 
 // Register creates a new user in Keycloak and upserts them into PostgreSQL.
@@ -255,6 +298,16 @@ func (h *Handler) Register(c *gin.Context) {
 	var req registerRequest
 	if err := c.ShouldBindJSON(&req); err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{"error": "validation_error", "detail": err.Error()})
+		return
+	}
+
+	if h.cfg.CapSecretKey == "" {
+		c.JSON(http.StatusServiceUnavailable, gin.H{"error": "captcha_not_configured"})
+		return
+	}
+	if err := verifyCap(c.Request.Context(), h.cfg.CapAPIURL, h.cfg.CapSecretKey, req.CapToken); err != nil {
+		slog.Warn("captcha verification failed", "err", err)
+		c.JSON(http.StatusUnprocessableEntity, gin.H{"error": "captcha_failed"})
 		return
 	}
 

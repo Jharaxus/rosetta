@@ -35,10 +35,12 @@ type Word struct {
 	CreatedAt     time.Time `db:"created_at"`
 }
 
-// SessionUser is stored in the SCS session. No tokens — only identity claims.
+// SessionUser is stored in the SCS session. No tokens — only identity claims,
+// plus the raw id_token needed for Keycloak end-session (front-channel logout).
 type SessionUser struct {
 	ID          uuid.UUID `json:"id"`
 	Subject     string    `json:"sub"`
 	Email       string    `json:"email"`
 	DisplayName string    `json:"display_name"`
+	IDToken     string    `json:"id_token,omitempty"`
 }

@@ -17,6 +17,7 @@ import (
 	"github.com/jharaxus/rosetta/internal/config"
 	"github.com/jharaxus/rosetta/internal/db"
 	"github.com/jharaxus/rosetta/internal/session"
+	"github.com/jharaxus/rosetta/internal/words"
 )
 
 func main() {
@@ -40,6 +41,7 @@ func main() {
 	}
 
 	h := auth.NewHandler(queries, oidcProvider, sessionMgr, cfg)
+	wh := words.NewHandler(queries)
 
 	r := gin.New()
 	r.Use(gin.Recovery())
@@ -69,7 +71,7 @@ func main() {
 	{
 		authGroup.GET("/login", h.Login)
 		authGroup.GET("/callback", h.Callback)
-		authGroup.POST("/logout", h.Logout)
+		authGroup.POST("/logout", auth.RequireAuth(sessionMgr), h.Logout)
 		authGroup.GET("/me", auth.RequireAuth(sessionMgr), h.Me)
 		authGroup.POST("/register", h.Register)
 	}
@@ -78,6 +80,12 @@ func main() {
 	userGroup.Use(auth.RequireAuth(sessionMgr))
 	{
 		userGroup.PATCH("/profile", h.UpdateProfile)
+	}
+
+	wordsGroup := r.Group("/api/words")
+	wordsGroup.Use(auth.RequireAuth(sessionMgr))
+	{
+		wordsGroup.GET("/flashcard", wh.GetFlashCard)
 	}
 
 	srv := &http.Server{

@@ -108,6 +108,33 @@
   margin: 0;
 }
 
+/* ── Cap widget ── */
+.capBypass {
+  height: 44px;
+  border-radius: var(--radius-input);
+  border: 1px dashed var(--color-rule-hi);
+  display: flex;
+  align-items: center;
+  padding: 0 14px;
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  color: var(--color-dim2);
+  text-transform: uppercase;
+}
+
+.capWidget {
+  --cap-primary-color: var(--color-gold);
+  --cap-success-color: var(--color-gold);
+  --cap-error-color: #c0442a;
+  --cap-text-color: var(--color-ink);
+  --cap-background-color: var(--color-paper);
+  --cap-border-radius: var(--radius-input);
+  --cap-font-size: 13px;
+  display: block;
+  width: 100%;
+}
+
 /* ── Actions ── */
 .actions {
   display: flex;

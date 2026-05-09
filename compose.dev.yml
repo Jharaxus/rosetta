@@ -116,6 +116,8 @@ services:
       KEYCLOAK_ADMIN_PASSWORD: ${KEYCLOAK_ADMIN_PASSWORD}
       BACKEND_PORT:            "8090"
       APP_ENV:                 development
+      CAP_API_URL:             http://cap-mock:3000
+      CAP_SECRET_KEY:          ${CAP_SECRET_KEY}
     ports:
       - "8090:8090"
     volumes:
@@ -126,6 +128,53 @@ services:
         condition: service_completed_successfully
       keycloak:
         condition: service_healthy
+      cap-mock:
+        condition: service_healthy
+
+  # ── Valkey (Redis-compatible) — state store for Cap ──────────────────────────
+  valkey:
+    image: valkey/valkey:9-alpine
+    volumes:
+      - valkey_data:/data
+    command: valkey-server --save 60 1
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+
+  # ── Cap self-hosted CAPTCHA server ────────────────────────────────────────────
+  cap:
+    image: tiago2/cap:latest
+    environment:
+      ADMIN_KEY: ${CAP_ADMIN_KEY}
+      REDIS_URL: redis://valkey:6379
+    ports:
+      - "3001:3000"
+    depends_on:
+      valkey:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "bun --eval \"fetch('http://localhost:3000/').then(()=>process.exit(0)).catch(()=>process.exit(1))\""]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  # ── Cap mock — returns {success:true} for any /siteverify call (dev only) ─────
+  cap-mock:
+    image: node:22-alpine
+    command: >-
+      node -e "
+      require('http').createServer((req,res)=>{
+        res.writeHead(200,{'Content-Type':'application/json'});
+        res.end('{\"success\":true}');
+      }).listen(3000,()=>console.log('cap-mock: ready'));
+      "
+    healthcheck:
+      test: ["CMD-SHELL", "wget -qO- http://localhost:3000/ > /dev/null"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
 
   # ── React frontend (Vite dev server) ─────────────────────────────────────────
   frontend:
@@ -133,16 +182,22 @@ services:
       context: ./frontend
       dockerfile: Dockerfile.dev
     environment:
-      VITE_BACKEND_URL: http://backend:8090
+      VITE_BACKEND_URL:      http://backend:8090
+      VITE_CAP_SERVER_URL:   http://cap:3000
+      VITE_CAP_SITE_KEY:     ${VITE_CAP_SITE_KEY}
     ports:
       - "5173:5173"
     volumes:
       - ./frontend:/app
       - /app/node_modules   # Prevent host node_modules from overriding container's
     depends_on:
-      - backend
+      backend:
+        condition: service_started
+      cap:
+        condition: service_healthy
 
 volumes:
   app_db_data:
   kc_db_data:
   go_module_cache:
+  valkey_data:

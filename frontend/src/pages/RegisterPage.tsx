@@ -1,8 +1,15 @@
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useMutation } from '@tanstack/react-query'
 import { register, ApiError } from '../api/auth'
 import styles from './RegisterPage.module.css'
+import 'cap-widget'
+
+// When VITE_CAP_SITE_KEY="dev-bypass" the widget is hidden and a placeholder is shown.
+// Backend verification still runs — it hits the cap-mock service in compose.dev.yml,
+// which always returns {success:true}. No bypass logic exists in the Go binary.
+const CAP_DEV_BYPASS = import.meta.env.VITE_CAP_SITE_KEY === 'not-used-in-dev'
+const CAP_ENDPOINT = `/cap-api/${import.meta.env.VITE_CAP_SITE_KEY}/`
 
 function validateDisplayName(v: string): string | null {
   if (!v) return 'Nom requis'
@@ -37,6 +44,22 @@ export function RegisterPage() {
   const [touched, setTouched] = useState<Record<string, boolean>>({})
   const [serverError, setServerError] = useState<string | null>(null)
   const [success, setSuccess] = useState(false)
+  const [capToken, setCapToken] = useState<string | null>(CAP_DEV_BYPASS ? 'dev-bypass' : null)
+  const [capError, setCapError] = useState<string | null>(null)
+  const [capKey, setCapKey] = useState(0)
+  const capRef = useRef<HTMLElement>(null)
+
+  useEffect(() => {
+    if (CAP_DEV_BYPASS) return
+    const el = capRef.current
+    if (!el) return
+    const handler = (e: Event) => {
+      setCapToken((e as CustomEvent<{ token: string }>).detail.token)
+      setCapError(null)
+    }
+    el.addEventListener('solve', handler)
+    return () => el.removeEventListener('solve', handler)
+  }, [])
 
   const errors = {
     displayName: validateDisplayName(displayName),
@@ -49,12 +72,16 @@ export function RegisterPage() {
   const touch = (field: string) => setTouched((t) => ({ ...t, [field]: true }))
 
   const mutation = useMutation({
-    mutationFn: () => register({ email, display_name: displayName, password }),
+    mutationFn: () => register({ email, display_name: displayName, password, cap_token: capToken ?? '' }),
     onSuccess: () => {
       setSuccess(true)
       setServerError(null)
     },
     onError: (err: unknown) => {
+      // The cap token was consumed by the backend even when registration fails.
+      // Force the user to solve the CAPTCHA again before retrying.
+      setCapToken(null)
+      setCapKey((k) => k + 1)
       if (err instanceof ApiError && err.status === 409) {
         setServerError('Cette adresse email est déjà utilisée.')
       } else {
@@ -67,6 +94,10 @@ export function RegisterPage() {
     e.preventDefault()
     setTouched({ displayName: true, email: true, password: true, confirm: true })
     if (!isFormValid) return
+    if (!capToken) {
+      setCapError('Veuillez compléter la vérification.')
+      return
+    }
     setServerError(null)
     mutation.mutate()
   }
@@ -167,6 +198,27 @@ export function RegisterPage() {
             />
             {touched.confirm && errors.confirm && (
               <span className={styles.fieldError} role="alert">{errors.confirm}</span>
+            )}
+          </div>
+
+          <div className={styles.field}>
+            <label className={styles.label}>Vérification</label>
+            {CAP_DEV_BYPASS ? (
+              <div className={styles.capBypass}>
+                Captcha désactivé — mode développement
+              </div>
+            ) : (
+              <>
+                <cap-widget
+                  key={capKey}
+                  ref={capRef}
+                  className={styles.capWidget}
+                  data-cap-api-endpoint={CAP_ENDPOINT}
+                />
+                {capError && (
+                  <span className={styles.fieldError} role="alert">{capError}</span>
+                )}
+              </>
             )}
           </div>
 

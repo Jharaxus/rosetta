@@ -92,6 +92,10 @@ export function DashboardPage() {
         </div>
       </div>
 
+      <Link to="/flashcards" className={styles.flashCardsBtn}>
+        Cartes mémoire <span className={styles.arrow}>→</span>
+      </Link>
+
       <Link to="/profile" className={styles.profileLink}>
         Mon profil →
       </Link>

@@ -6,6 +6,7 @@ export default defineConfig(({ mode }) => {
   // In Docker dev: VITE_BACKEND_URL=http://backend:8090
   // Local dev (no Docker): defaults to localhost
   const backendTarget = env.VITE_BACKEND_URL ?? 'http://localhost:8090'
+  const capTarget = env.VITE_CAP_SERVER_URL ?? 'http://localhost:3001'
 
   return {
     plugins: [react()],
@@ -16,6 +17,11 @@ export default defineConfig(({ mode }) => {
         '/api': {
           target: backendTarget,
           changeOrigin: true,
+        },
+        '/cap-api': {
+          target: capTarget,
+          changeOrigin: true,
+          rewrite: (path) => path.replace(/^\/cap-api/, ''),
         },
       },
     },

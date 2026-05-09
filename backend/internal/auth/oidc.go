@@ -114,6 +114,7 @@ func (p *OIDCProvider) EndSessionURL(idTokenHint, postLogoutRedirectURI string) 
 	}
 
 	q := u.Query()
+	q.Set("client_id", p.cfg.OIDCClientID)
 	if idTokenHint != "" {
 		q.Set("id_token_hint", idTokenHint)
 	}

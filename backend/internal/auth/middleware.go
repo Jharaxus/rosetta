@@ -28,3 +28,13 @@ func RequireAuth(sessions *scs.SessionManager) gin.HandlerFunc {
 		c.Next()
 	}
 }
+
+// GetSessionUser retrieves the authenticated user placed in the Gin context by RequireAuth.
+func GetSessionUser(c *gin.Context) (*model.SessionUser, bool) {
+	v, ok := c.Get(contextKeyUser)
+	if !ok {
+		return nil, false
+	}
+	u, ok := v.(*model.SessionUser)
+	return u, ok
+}

@@ -66,6 +66,20 @@ func (q *Queries) CountWords(ctx context.Context) (int64, error) {
 	return n, err
 }
 
+func (q *Queries) GetRandomWordForUser(ctx context.Context, assimilNumber int) (model.Word, error) {
+	const query = `
+		SELECT id, french, german, assimil_number, category, is_regular, created_at
+		FROM words
+		WHERE assimil_number <= $1
+		ORDER BY random()
+		LIMIT 1
+	`
+	var w model.Word
+	row := q.pool.QueryRow(ctx, query, assimilNumber)
+	err := row.Scan(&w.ID, &w.French, &w.German, &w.AssimilNumber, &w.Category, &w.IsRegular, &w.CreatedAt)
+	return w, err
+}
+
 func (q *Queries) InsertLoginRecord(ctx context.Context, userID uuid.UUID, ip, userAgent, sessionID string) error {
 	const query = `
 		INSERT INTO login_records (user_id, ip_address, user_agent, session_id)

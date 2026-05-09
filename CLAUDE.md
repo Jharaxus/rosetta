@@ -43,6 +43,15 @@ npm run dev    # Vite dev server
 npm run build  # tsc + vite build
 ```
 
+## Development guidelines
+
+### `backend/fsrs` — TDD required
+
+The `fsrs` package is developed strictly with Test-Driven Development:
+- Write or update tests **before** touching implementation code.
+- Run the full test suite after every change: `cd backend && go test ./fsrs/... -v`
+- **No modification to `fsrs/` is valid unless all tests pass.** Never adjust expected test values to fit a broken implementation — fix the math instead.
+
 ## Architecture
 
 ```

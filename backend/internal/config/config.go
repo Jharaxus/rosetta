@@ -21,6 +21,8 @@ type Config struct {
 	Port                 string
 	AppEnv               string
 	IsProduction         bool
+	CapAPIURL            string
+	CapSecretKey         string
 }
 
 func Load() *Config {
@@ -39,6 +41,8 @@ func Load() *Config {
 
 	cfg.OIDCIssuerInternal = envOr("OIDC_ISSUER_INTERNAL", cfg.OIDCIssuer)
 	cfg.IsProduction = cfg.AppEnv == "production"
+	cfg.CapAPIURL    = envOr("CAP_API_URL", "")
+	cfg.CapSecretKey = envOr("CAP_SECRET_KEY", "")
 
 	sessionSecret := []byte(requireEnv("SESSION_SECRET"))
 	if len(sessionSecret) < 32 {

@@ -189,6 +189,37 @@
   cursor: not-allowed;
 }
 
+/* ── Flash cards button ── */
+.flashCardsBtn {
+  height: 52px;
+  padding: 0 32px;
+  border-radius: var(--radius-pill);
+  background: var(--color-gold);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  animation: fadeUp 1.1s ease-out both;
+  animation-delay: 0.2s;
+}
+
+.flashCardsBtn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.arrow {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
 /* ── Profile link ── */
 .profileLink {
   font-family: var(--font-display);

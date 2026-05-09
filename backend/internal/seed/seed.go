@@ -90,6 +90,13 @@ func parseCSV(path string) ([]row, error) {
 		return nil, fmt.Errorf("read header: %w", err)
 	}
 
+	type dedupeKey struct {
+		french        string
+		german        string
+		assimilNumber int
+	}
+	seen := make(map[dedupeKey]struct{})
+
 	var rows []row
 	for {
 		rec, err := r.Read()
@@ -105,6 +112,17 @@ func parseCSV(path string) ([]row, error) {
 			return nil, fmt.Errorf("parse assimil_number %q: %w", rec[2], err)
 		}
 
+		key := dedupeKey{
+			french:        strings.TrimSpace(rec[0]),
+			german:        strings.TrimSpace(rec[1]),
+			assimilNumber: assimil,
+		}
+		if _, dup := seen[key]; dup {
+			slog.Warn("seed: skipping duplicate CSV row", "french", key.french, "german", key.german, "lesson", key.assimilNumber)
+			continue
+		}
+		seen[key] = struct{}{}
+
 		var isRegular *bool
 		if reg := strings.TrimSpace(rec[4]); reg != "" {
 			b := reg == "regular"
@@ -112,8 +130,8 @@ func parseCSV(path string) ([]row, error) {
 		}
 
 		rows = append(rows, row{
-			french:        strings.TrimSpace(rec[0]),
-			german:        strings.TrimSpace(rec[1]),
+			french:        key.french,
+			german:        key.german,
 			assimilNumber: assimil,
 			category:      strings.TrimSpace(rec[3]),
 			isRegular:     isRegular,
