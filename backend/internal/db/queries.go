@@ -71,11 +71,20 @@ func (q *Queries) UpdateAssimilNumberTx(ctx context.Context, id uuid.UUID, assim
 	if err := insertMissingCards(ctx, tx, id, assimilNumber); err != nil {
 		return model.User{}, err
 	}
+	if err := insertMissingWritingCards(ctx, tx, id, assimilNumber); err != nil {
+		return model.User{}, err
+	}
 
 	// Equalize all unseen cards so new and old-but-unreviewed cards form one
 	// random pool rather than always appearing in lesson order.
 	if _, err := tx.Exec(ctx,
 		`UPDATE cards SET due = now() WHERE user_id = $1 AND reps = 0`,
+		id,
+	); err != nil {
+		return model.User{}, err
+	}
+	if _, err := tx.Exec(ctx,
+		`UPDATE writing_cards SET due = now() WHERE user_id = $1 AND reps = 0`,
 		id,
 	); err != nil {
 		return model.User{}, err
@@ -95,6 +104,22 @@ func insertMissingCards(ctx context.Context, tx pgx.Tx, userID uuid.UUID, assimi
 		  AND NOT EXISTS (
 		      SELECT 1 FROM cards c
 		      WHERE c.user_id = $1 AND c.word_id = w.id
+		  )
+		ON CONFLICT (user_id, word_id) DO NOTHING
+	`, userID, assimilNumber)
+	return err
+}
+
+// insertMissingWritingCards inserts writing_cards rows for words newly unlocked by assimilNumber.
+func insertMissingWritingCards(ctx context.Context, tx pgx.Tx, userID uuid.UUID, assimilNumber int) error {
+	_, err := tx.Exec(ctx, `
+		INSERT INTO writing_cards (user_id, word_id, due)
+		SELECT $1, w.id, now()
+		FROM words w
+		WHERE w.assimil_number <= $2
+		  AND NOT EXISTS (
+		      SELECT 1 FROM writing_cards wc
+		      WHERE wc.user_id = $1 AND wc.word_id = w.id
 		  )
 		ON CONFLICT (user_id, word_id) DO NOTHING
 	`, userID, assimilNumber)
@@ -179,6 +204,75 @@ func (q *Queries) UpdateCard(ctx context.Context, card model.Card) error {
 // DeleteUserCards removes all card rows for the given user, resetting their SRS progress.
 func (q *Queries) DeleteUserCards(ctx context.Context, userID uuid.UUID) error {
 	_, err := q.pool.Exec(ctx, `DELETE FROM cards WHERE user_id = $1`, userID)
+	return err
+}
+
+// GetNextDueWritingCard returns the oldest due writing card for the user joined with its word.
+// Returns pgx.ErrNoRows when no writing card has due <= now().
+func (q *Queries) GetNextDueWritingCard(ctx context.Context, userID uuid.UUID) (model.CardWithWord, error) {
+	const query = `
+		SELECT
+			wc.user_id, wc.word_id,
+			wc.stability, wc.difficulty, wc.state, wc.step,
+			wc.due, wc.last_review, wc.reps, wc.lapses,
+			w.french, w.german, w.assimil_number, w.category, w.is_regular
+		FROM writing_cards wc
+		JOIN words w ON w.id = wc.word_id
+		WHERE wc.user_id = $1
+		  AND wc.due <= now()
+		ORDER BY wc.due ASC, random()
+		LIMIT 1
+	`
+	var cw model.CardWithWord
+	row := q.pool.QueryRow(ctx, query, userID)
+	err := row.Scan(
+		&cw.Card.UserID, &cw.Card.WordID,
+		&cw.Card.Stability, &cw.Card.Difficulty, &cw.Card.State, &cw.Card.Step,
+		&cw.Card.Due, &cw.Card.LastReview, &cw.Card.Reps, &cw.Card.Lapses,
+		&cw.French, &cw.German, &cw.AssimilNumber, &cw.Category, &cw.IsRegular,
+	)
+	return cw, err
+}
+
+// GetWritingCard returns the FSRS state for a single (user, word) writing card.
+// Returns pgx.ErrNoRows when the writing card does not exist.
+func (q *Queries) GetWritingCard(ctx context.Context, userID, wordID uuid.UUID) (model.Card, error) {
+	const query = `
+		SELECT user_id, word_id,
+		       stability, difficulty, state, step,
+		       due, last_review, reps, lapses
+		FROM writing_cards
+		WHERE user_id = $1 AND word_id = $2
+	`
+	var c model.Card
+	row := q.pool.QueryRow(ctx, query, userID, wordID)
+	err := row.Scan(
+		&c.UserID, &c.WordID,
+		&c.Stability, &c.Difficulty, &c.State, &c.Step,
+		&c.Due, &c.LastReview, &c.Reps, &c.Lapses,
+	)
+	return c, err
+}
+
+// UpdateWritingCard persists the FSRS state for a (user, word) writing card after a review.
+func (q *Queries) UpdateWritingCard(ctx context.Context, card model.Card) error {
+	const query = `
+		UPDATE writing_cards
+		SET stability   = $3,
+		    difficulty  = $4,
+		    state       = $5,
+		    step        = $6,
+		    due         = $7,
+		    last_review = $8,
+		    reps        = $9,
+		    lapses      = $10
+		WHERE user_id = $1 AND word_id = $2
+	`
+	_, err := q.pool.Exec(ctx, query,
+		card.UserID, card.WordID,
+		card.Stability, card.Difficulty, card.State, card.Step,
+		card.Due, card.LastReview, card.Reps, card.Lapses,
+	)
 	return err
 }
 

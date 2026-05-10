@@ -4,6 +4,7 @@ import { DashboardPage } from './pages/DashboardPage'
 import { RegisterPage } from './pages/RegisterPage'
 import { ProfilePage } from './pages/ProfilePage'
 import { FlashCardPage } from './pages/FlashCardPage'
+import { WritingFlashCardPage } from './pages/WritingFlashCardPage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { ProtectedRoute } from './components/ProtectedRoute'
 
@@ -37,6 +38,14 @@ export const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <FlashCardPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/writing-flashcards',
+    element: (
+      <ProtectedRoute>
+        <WritingFlashCardPage />
       </ProtectedRoute>
     ),
   },

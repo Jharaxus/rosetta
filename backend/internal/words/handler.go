@@ -102,6 +102,77 @@ func (h *Handler) PostReview(c *gin.Context) {
 	c.Status(http.StatusNoContent)
 }
 
+// GetWritingFlashCard returns the oldest due writing card for the authenticated user.
+func (h *Handler) GetWritingFlashCard(c *gin.Context) {
+	su, ok := auth.GetSessionUser(c)
+	if !ok {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "context_missing_user"})
+		return
+	}
+
+	cw, err := h.queries.GetNextDueWritingCard(c.Request.Context(), su.ID)
+	if errors.Is(err, pgx.ErrNoRows) {
+		c.JSON(http.StatusNotFound, gin.H{"error": "no_cards_due"})
+		return
+	}
+	if err != nil {
+		slog.Error("get next due writing card", "user_id", su.ID, "err", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
+		return
+	}
+
+	c.JSON(http.StatusOK, gin.H{
+		"id":             cw.Card.WordID,
+		"french":         cw.French,
+		"german":         cw.German,
+		"assimil_number": cw.AssimilNumber,
+		"category":       cw.Category,
+		"is_regular":     cw.IsRegular,
+	})
+}
+
+// PostWritingReview applies a frontend-computed rating to the writing card and reschedules it via FSRS.
+func (h *Handler) PostWritingReview(c *gin.Context) {
+	su, ok := auth.GetSessionUser(c)
+	if !ok {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "context_missing_user"})
+		return
+	}
+
+	wordID, err := uuid.Parse(c.Param("word_id"))
+	if err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "invalid_word_id"})
+		return
+	}
+
+	var req reviewRequest
+	if err := c.ShouldBindJSON(&req); err != nil {
+		c.JSON(http.StatusBadRequest, gin.H{"error": "validation_error", "detail": err.Error()})
+		return
+	}
+
+	card, err := h.queries.GetWritingCard(c.Request.Context(), su.ID, wordID)
+	if errors.Is(err, pgx.ErrNoRows) {
+		c.JSON(http.StatusNotFound, gin.H{"error": "card_not_found"})
+		return
+	}
+	if err != nil {
+		slog.Error("get writing card for review", "user_id", su.ID, "word_id", wordID, "err", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
+		return
+	}
+
+	updated := scheduler.ReviewCard(cardToFSRS(card), fsrs.Rating(req.Rating), time.Now().UTC())
+
+	if err := h.queries.UpdateWritingCard(c.Request.Context(), fsrsCardToModel(updated, su.ID, wordID)); err != nil {
+		slog.Error("update writing card after review", "user_id", su.ID, "word_id", wordID, "err", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
+		return
+	}
+
+	c.Status(http.StatusNoContent)
+}
+
 func cardToFSRS(c model.Card) fsrs.Card {
 	lastReview := time.Time{}
 	if c.LastReview != nil {

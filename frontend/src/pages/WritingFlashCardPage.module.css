@@ -1,0 +1,367 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 28px 40px;
+  max-width: 560px;
+  margin: 0 auto;
+  gap: 36px;
+}
+
+/* ── Top bar ── */
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoDot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-gold);
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  color: var(--color-ink);
+}
+
+.backLink {
+  height: 36px;
+  padding: 0 18px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-rule-hi);
+  color: var(--color-dim);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 13px;
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.backLink:hover {
+  border-color: var(--color-rule-hi);
+  color: var(--color-ink2);
+}
+
+/* ── Header ── */
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  animation: fadeUp 0.7s ease-out both;
+}
+
+.headerLabel {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  color: var(--color-gold);
+}
+
+.headerTitle {
+  font-family: var(--font-display);
+  font-size: 48px;
+  line-height: 1.0;
+  letter-spacing: -1.5px;
+  font-weight: 400;
+  margin: 0;
+  color: var(--color-ink);
+}
+
+.headerTitle em {
+  font-style: italic;
+  color: var(--color-gold);
+}
+
+/* ── Flip card ── */
+.cardScene {
+  perspective: 1200px;
+  height: 300px;
+  animation: fadeUp 0.9s ease-out both;
+  animation-delay: 0.1s;
+}
+
+.cardInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cardInner.flipped {
+  transform: rotateY(180deg);
+}
+
+.cardInner.noTransition {
+  transition: none;
+}
+
+.cardFace {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: var(--color-paper);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 28px 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.cardBack {
+  transform: rotateY(180deg);
+}
+
+/* ── Card content ── */
+.cardLabel {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.4px;
+  color: var(--color-gold);
+}
+
+.wordBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.french {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-weight: 400;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.german {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  color: var(--color-gold);
+  margin: 0;
+}
+
+.frenchSm {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  color: var(--color-dim);
+  margin: 0;
+}
+
+/* ── Tags ── */
+.tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-family: var(--font-mono);
+  font-size: 9px;
+  letter-spacing: 1.2px;
+  color: var(--color-dim);
+  background: var(--color-gold-soft);
+  border-radius: var(--radius-tag);
+  padding: 4px 10px;
+  text-transform: uppercase;
+}
+
+/* ── Input row ── */
+.inputRow {
+  display: flex;
+  gap: 10px;
+  align-items: stretch;
+}
+
+.answerInput {
+  flex: 1;
+  height: 44px;
+  padding: 0 16px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--color-rule-hi);
+  background: var(--color-bg);
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-ink);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.answerInput::placeholder {
+  color: var(--color-dim2);
+  font-style: italic;
+}
+
+.answerInput:focus {
+  border-color: var(--color-gold);
+}
+
+.validateBtn {
+  height: 44px;
+  padding: 0 20px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.validateBtn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.validateBtnActive {
+  background: var(--color-gold);
+  color: var(--color-ink);
+}
+
+/* ── Accuracy badge on back face ── */
+.accuracyBadge {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.1px;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  align-self: flex-start;
+  font-weight: 500;
+}
+
+/* Rating colours — match existing rating button palette */
+.accuracyBadge[data-rating='1'] { background: #a0442a1a; color: #a0442a; }
+.accuracyBadge[data-rating='2'] { background: #c078301a; color: #c07830; }
+.accuracyBadge[data-rating='3'] { background: #3a7a521a; color: #3a7a52; }
+.accuracyBadge[data-rating='4'] { background: #2a5a781a; color: #2a5a78; }
+
+/* ── Static card (loading / empty / error) ── */
+.staticCard {
+  background: var(--color-paper);
+  border-radius: var(--radius-card);
+  padding: 32px;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 300px;
+  justify-content: center;
+  animation: fadeUp 0.9s ease-out both;
+  animation-delay: 0.1s;
+}
+
+/* ── Skeleton loading ── */
+.skeleton {
+  height: 44px;
+  border-radius: var(--radius-tag);
+  background: var(--color-gold-soft);
+  animation: pulse 1.4s ease-in-out infinite;
+  width: 60%;
+}
+
+.skeletonSm {
+  height: 28px;
+  border-radius: var(--radius-tag);
+  background: var(--color-gold-soft);
+  animation: pulse 1.4s ease-in-out 0.2s infinite;
+  width: 40%;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1; }
+}
+
+/* ── Empty / error states ── */
+.emptyText {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--color-ink);
+  margin: 0;
+  line-height: 1.4;
+}
+
+.emptyHint {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-style: italic;
+  color: var(--color-dim);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* ── Next card button ── */
+.nextBtn {
+  height: 52px;
+  padding: 0 32px;
+  border-radius: var(--radius-pill);
+  border: none;
+  background: var(--color-gold);
+  color: var(--color-ink);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-style: italic;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+  animation: fadeUp 0.4s ease-out both;
+}
+
+.nextBtn:hover {
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.arrow {
+  font-family: var(--font-display);
+  font-style: italic;
+}
+
+/* ── Input hint ── */
+.hint {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--color-dim);
+  margin: 0;
+  text-align: center;
+  animation: fadeUp 0.9s ease-out both;
+  animation-delay: 0.2s;
+}

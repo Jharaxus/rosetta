@@ -96,6 +96,10 @@ export function DashboardPage() {
         Cartes mémoire <span className={styles.arrow}>→</span>
       </Link>
 
+      <Link to="/writing-flashcards" className={styles.writingCardsBtn}>
+        Écriture <span className={styles.arrow}>→</span>
+      </Link>
+
       <Link to="/profile" className={styles.profileLink}>
         Mon profil →
       </Link>

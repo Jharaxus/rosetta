@@ -88,6 +88,8 @@ func main() {
 	{
 		wordsGroup.GET("/flashcard", wh.GetFlashCard)
 		wordsGroup.POST("/:word_id/review", wh.PostReview)
+		wordsGroup.GET("/writing-flashcard", wh.GetWritingFlashCard)
+		wordsGroup.POST("/:word_id/writing-review", wh.PostWritingReview)
 	}
 
 	srv := &http.Server{
