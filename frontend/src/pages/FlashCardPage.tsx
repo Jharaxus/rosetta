@@ -1,26 +1,42 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useQuery } from '@tanstack/react-query'
-import { fetchFlashCard } from '../api/words'
+import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
+import { fetchFlashCard, submitReview } from '../api/words'
 import { ApiError } from '../api/auth'
+import { RATING_LABELS } from '../types/words'
+import type { Rating } from '../types/words'
 import styles from './FlashCardPage.module.css'
 
+const RATINGS: Rating[] = [1, 2, 3, 4]
+
 export function FlashCardPage() {
-  const [seed, setSeed] = useState(0)
   const [flipped, setFlipped] = useState(false)
+  const [skipTransition, setSkipTransition] = useState(false)
+  const queryClient = useQueryClient()
 
   const { data: card, isLoading, error } = useQuery({
-    queryKey: ['flashcard', seed],
+    queryKey: ['flashcard'],
     queryFn: fetchFlashCard,
     staleTime: 0,
     retry: false,
   })
 
-  const noCards = error instanceof ApiError && error.code === 'no_cards_available'
+  const reviewMutation = useMutation({
+    mutationFn: ({ wordId, rating }: { wordId: string; rating: Rating }) =>
+      submitReview(wordId, rating),
+    onSuccess: () => {
+      setSkipTransition(true)
+      setFlipped(false)
+      queryClient.invalidateQueries({ queryKey: ['flashcard'] })
+    },
+  })
 
-  function handleNext() {
-    setFlipped(false)
-    setSeed((s) => s + 1)
+  const noCardsDue = error instanceof ApiError && error.code === 'no_cards_due'
+  const noCardsAvailable = error instanceof ApiError && error.code === 'no_cards_available'
+
+  function handleRate(rating: Rating) {
+    if (!card || reviewMutation.isPending) return
+    reviewMutation.mutate({ wordId: card.id, rating })
   }
 
   return (
@@ -50,18 +66,18 @@ export function FlashCardPage() {
         </div>
       )}
 
-      {noCards && (
+      {(noCardsDue || noCardsAvailable) && (
         <div className={styles.staticCard}>
-          <p className={styles.emptyText}>
-            Aucune carte disponible pour votre niveau actuel.
-          </p>
+          <p className={styles.emptyText}>Tout est à jour.</p>
           <p className={styles.emptyHint}>
-            Avancez dans vos leçons Assimil pour débloquer des mots.
+            {noCardsAvailable
+              ? 'Avancez dans vos leçons Assimil pour débloquer des mots.'
+              : 'Revenez plus tard pour la prochaine révision.'}
           </p>
         </div>
       )}
 
-      {!isLoading && !noCards && error && (
+      {!isLoading && !noCardsDue && !noCardsAvailable && error && (
         <div className={styles.staticCard}>
           <p className={styles.emptyText}>Une erreur est survenue.</p>
         </div>
@@ -70,18 +86,19 @@ export function FlashCardPage() {
       {card && (
         <div
           className={styles.cardScene}
-          onClick={() => setFlipped((f) => !f)}
+          onClick={() => { if (!flipped) { setSkipTransition(false); setFlipped(true) } }}
           role="button"
-          aria-label={flipped ? 'Masquer la traduction' : 'Révéler la traduction'}
+          aria-label={flipped ? undefined : 'Révéler la traduction'}
+          style={{ cursor: flipped ? 'default' : 'pointer' }}
         >
-          <div className={`${styles.cardInner} ${flipped ? styles.flipped : ''}`}>
-            {/* Front: German */}
+          <div className={`${styles.cardInner} ${flipped ? styles.flipped : ''} ${skipTransition ? styles.noTransition : ''}`}>
+            {/* Front: French */}
             <div className={`${styles.cardFace} ${styles.cardFront}`}>
               <div className={styles.cardLabel}>
                 CARTE MÉMOIRE · LEÇON {card.assimil_number}
               </div>
               <div className={styles.wordBlock}>
-                <p className={styles.german}>{card.german}</p>
+                <p className={styles.french}>{card.french}</p>
               </div>
               <div className={styles.tags}>
                 <span className={styles.tag}>{card.category}</span>
@@ -94,14 +111,14 @@ export function FlashCardPage() {
               <p className={styles.flipHint}>cliquez pour révéler</p>
             </div>
 
-            {/* Back: French + full details */}
+            {/* Back: German + French small */}
             <div className={`${styles.cardFace} ${styles.cardBack}`}>
               <div className={styles.cardLabel}>
                 TRADUCTION · LEÇON {card.assimil_number}
               </div>
               <div className={styles.wordBlock}>
-                <p className={styles.french}>{card.french}</p>
-                <p className={styles.germanSm}>{card.german}</p>
+                <p className={styles.german}>{card.german}</p>
+                <p className={styles.frenchSm}>{card.french}</p>
               </div>
               <div className={styles.tags}>
                 <span className={styles.tag}>{card.category}</span>
@@ -116,14 +133,27 @@ export function FlashCardPage() {
         </div>
       )}
 
-      <button
-        type="button"
-        className={styles.nextBtn}
-        onClick={handleNext}
-        disabled={isLoading || noCards}
-      >
-        Suivant <span className={styles.arrow}>→</span>
-      </button>
+      {card && flipped && (
+        <div className={styles.ratingRow} role="group" aria-label="Évaluer votre souvenir">
+          {RATINGS.map((r) => (
+            <button
+              key={r}
+              type="button"
+              className={`${styles.ratingBtn} ${styles[`rating${r}`]}`}
+              onClick={() => handleRate(r)}
+              disabled={reviewMutation.isPending}
+            >
+              {RATING_LABELS[r]}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {card && !flipped && (
+        <p className={styles.ratingHint}>
+          Retournez la carte, puis évaluez votre souvenir.
+        </p>
+      )}
     </main>
   )
 }

@@ -6,3 +6,12 @@ export interface Word {
   category: string
   is_regular: boolean | null
 }
+
+export type Rating = 1 | 2 | 3 | 4
+
+export const RATING_LABELS: Record<Rating, string> = {
+  1: 'Encore',
+  2: 'Difficile',
+  3: 'Bien',
+  4: 'Facile',
+}

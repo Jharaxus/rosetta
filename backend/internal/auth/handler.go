@@ -237,7 +237,7 @@ func (h *Handler) UpdateProfile(c *gin.Context) {
 		return
 	}
 
-	user, err := h.queries.UpdateAssimilNumber(c.Request.Context(), su.ID, req.AssimilNumber)
+	user, err := h.queries.UpdateAssimilNumberTx(c.Request.Context(), su.ID, req.AssimilNumber)
 	if err != nil {
 		slog.Error("update assimil number", "id", su.ID, "err", err)
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
@@ -250,6 +250,23 @@ func (h *Handler) UpdateProfile(c *gin.Context) {
 		"display_name":   user.DisplayName,
 		"assimil_number": user.AssimilNumber,
 	})
+}
+
+// DeleteCards removes all SRS card rows for the authenticated user.
+func (h *Handler) DeleteCards(c *gin.Context) {
+	sessionUser, ok := c.Get(contextKeyUser)
+	if !ok {
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "context_missing_user"})
+		return
+	}
+	su := sessionUser.(*model.SessionUser)
+
+	if err := h.queries.DeleteUserCards(c.Request.Context(), su.ID); err != nil {
+		slog.Error("delete user cards", "id", su.ID, "err", err)
+		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
+		return
+	}
+	c.Status(http.StatusNoContent)
 }
 
 // HealthCheck responds 200 for liveness probes.

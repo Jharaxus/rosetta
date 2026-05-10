@@ -1,6 +1,7 @@
 package fsrs_test
 
 import (
+	"fmt"
 	"math"
 	"testing"
 	"time"
@@ -323,6 +324,54 @@ func TestMaximumInterval(t *testing.T) {
 		ivl := int(card.Due.Sub(card.LastReview).Hours() / 24)
 		if ivl > s.MaxInterval {
 			t.Errorf("review %d: interval %d > MaxInterval %d", i, ivl, s.MaxInterval)
+		}
+	}
+}
+
+func TestFuzzedIntervalBounds(t *testing.T) {
+	s := fsrs.NewScheduler() // EnableFuzzing = true
+	for _, ivl := range []int{1, 3, 7, 14, 30, 90, 365} {
+		t.Run(fmt.Sprintf("ivl=%d", ivl), func(t *testing.T) {
+			f := float64(ivl)
+			var maxDelta int
+			switch {
+			case f < 2.5:
+				maxDelta = 1
+			case f < 7:
+				maxDelta = int(math.Ceil(f * 0.15))
+			case f < 20:
+				maxDelta = int(math.Ceil(f * 0.10))
+			default:
+				maxDelta = int(math.Ceil(f * 0.05))
+			}
+			lo := max(1, ivl-maxDelta)
+			hi := min(s.MaxInterval, ivl+maxDelta)
+			for i := 0; i < 1000; i++ {
+				got := s.FuzzedInterval(ivl)
+				if got < lo || got > hi {
+					t.Fatalf("FuzzedInterval(%d) = %d, outside [%d, %d]", ivl, got, lo, hi)
+				}
+			}
+		})
+	}
+}
+
+func TestFuzzedIntervalVariation(t *testing.T) {
+	s := fsrs.NewScheduler()
+	seen := map[int]bool{}
+	for i := 0; i < 500; i++ {
+		seen[s.FuzzedInterval(30)] = true
+	}
+	if len(seen) < 2 {
+		t.Errorf("expected variation for ivl=30, got only %v", seen)
+	}
+}
+
+func TestFuzzedIntervalDisabled(t *testing.T) {
+	s := newNoFuzz()
+	for i := 0; i < 100; i++ {
+		if got := s.FuzzedInterval(30); got != 30 {
+			t.Fatalf("FuzzedInterval(30) = %d with fuzzing disabled, want 30", got)
 		}
 	}
 }

@@ -35,6 +35,29 @@ type Word struct {
 	CreatedAt     time.Time `db:"created_at"`
 }
 
+type Card struct {
+	UserID     uuid.UUID
+	WordID     uuid.UUID
+	Stability  float64
+	Difficulty float64
+	State      int        // 1=Learning 2=Review 3=Relearning
+	Step       int
+	Due        time.Time
+	LastReview *time.Time // nil = never reviewed
+	Reps       int
+	Lapses     int
+}
+
+// CardWithWord is the joined result returned by GetNextDueCard.
+type CardWithWord struct {
+	Card
+	French        string
+	German        string
+	AssimilNumber int
+	Category      string
+	IsRegular     *bool
+}
+
 // SessionUser is stored in the SCS session. No tokens — only identity claims,
 // plus the raw id_token needed for Keycloak end-session (front-channel logout).
 type SessionUser struct {

@@ -108,6 +108,10 @@
   transform: rotateY(180deg);
 }
 
+.cardInner.noTransition {
+  transition: none;
+}
+
 .cardFace {
   position: absolute;
   inset: 0;
@@ -159,6 +163,16 @@
   letter-spacing: -1px;
   line-height: 1.1;
   color: var(--color-ink);
+  margin: 0;
+}
+
+.frenchSm {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  color: var(--color-dim);
   margin: 0;
 }
 
@@ -256,38 +270,56 @@
   line-height: 1.5;
 }
 
-/* ── Next button ── */
-.nextBtn {
-  height: 52px;
-  padding: 0 32px;
-  border-radius: var(--radius-pill);
-  background: var(--color-gold);
-  color: var(--color-ink);
-  border: none;
-  font-family: var(--font-display);
-  font-size: 17px;
-  font-style: italic;
-  font-weight: 400;
-  display: inline-flex;
-  align-items: center;
+/* ── Rating buttons ── */
+.ratingRow {
+  display: flex;
   gap: 10px;
-  align-self: flex-start;
-  transition: opacity 0.15s ease, transform 0.15s ease;
-  animation: fadeUp 1.1s ease-out both;
-  animation-delay: 0.2s;
+  flex-wrap: wrap;
+  animation: fadeUp 0.4s ease-out both;
 }
 
-.nextBtn:hover:not(:disabled) {
-  opacity: 0.85;
+.ratingBtn {
+  flex: 1;
+  min-width: 72px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  border: none;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  color: var(--color-paper);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.ratingBtn:hover:not(:disabled) {
+  opacity: 0.88;
   transform: translateY(-1px);
 }
 
-.nextBtn:disabled {
-  opacity: 0.35;
+.ratingBtn:disabled {
+  opacity: 0.4;
   cursor: not-allowed;
 }
 
-.arrow {
+/* Encore — terracotta, warm red in the ivory/gold family */
+.rating1 { background: #a0442a; }
+/* Difficile — deep amber, analogous to gold but distinct */
+.rating2 { background: #c07830; }
+/* Bien — muted sage green */
+.rating3 { background: #3a7a52; }
+/* Facile — deep teal, adjacent to navy */
+.rating4 { background: #2a5a78; }
+
+/* ── Rating hint (shown before flip) ── */
+.ratingHint {
   font-family: var(--font-display);
+  font-size: 13px;
   font-style: italic;
+  color: var(--color-dim);
+  margin: 0;
+  text-align: center;
+  animation: fadeUp 0.9s ease-out both;
+  animation-delay: 0.2s;
 }

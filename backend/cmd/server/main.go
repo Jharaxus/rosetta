@@ -80,12 +80,14 @@ func main() {
 	userGroup.Use(auth.RequireAuth(sessionMgr))
 	{
 		userGroup.PATCH("/profile", h.UpdateProfile)
+		userGroup.DELETE("/cards", h.DeleteCards)
 	}
 
 	wordsGroup := r.Group("/api/words")
 	wordsGroup.Use(auth.RequireAuth(sessionMgr))
 	{
 		wordsGroup.GET("/flashcard", wh.GetFlashCard)
+		wordsGroup.POST("/:word_id/review", wh.PostReview)
 	}
 
 	srv := &http.Server{

@@ -4,6 +4,7 @@ package fsrs
 
 import (
 	"math"
+	"math/rand"
 	"time"
 )
 
@@ -124,7 +125,7 @@ func NewScheduler() *Scheduler {
 		MaxInterval:      36500,
 		LearningSteps:    []time.Duration{1 * time.Minute, 10 * time.Minute},
 		RearningSteps:    []time.Duration{10 * time.Minute},
-		EnableFuzzing:    false,
+		EnableFuzzing:    true,
 	}
 	s.updateDerivedConstants()
 	return s
@@ -316,10 +317,37 @@ func (s *Scheduler) initialDifficulty(rating Rating) float64 {
 	return clampDifficulty(d)
 }
 
-// nextInterval returns the number of days until the next review.
+// nextInterval returns the number of days until the next review, with optional fuzzing.
 func (s *Scheduler) nextInterval(stability float64) int {
 	ivl := math.Round((stability / s.factor) * (math.Pow(s.DesiredRetention, 1.0/s.decay) - 1))
-	return int(math.Max(1, math.Min(float64(s.MaxInterval), ivl)))
+	clamped := int(math.Max(1, math.Min(float64(s.MaxInterval), ivl)))
+	return s.FuzzedInterval(clamped)
+}
+
+// FuzzedInterval applies tapered random noise to a day-scale interval,
+// following the FSRS reference implementation and Anki's fuzz ranges.
+// Returns ivl unchanged when EnableFuzzing is false.
+func (s *Scheduler) FuzzedInterval(ivl int) int {
+	if !s.EnableFuzzing {
+		return ivl
+	}
+	f := float64(ivl)
+	var maxDelta int
+	switch {
+	case f < 2.5:
+		maxDelta = 1
+	case f < 7:
+		maxDelta = int(math.Ceil(f * 0.15))
+	case f < 20:
+		maxDelta = int(math.Ceil(f * 0.10))
+	default:
+		maxDelta = int(math.Ceil(f * 0.05))
+	}
+	if maxDelta == 0 {
+		return ivl
+	}
+	delta := rand.Intn(2*maxDelta+1) - maxDelta
+	return int(math.Max(1, math.Min(float64(s.MaxInterval), float64(ivl+delta))))
 }
 
 // shortTermStability applies same-day review adjustment (w[17..19]).

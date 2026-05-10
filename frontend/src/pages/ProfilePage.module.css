@@ -184,3 +184,61 @@
   color: var(--color-gold);
   animation: fadeUp 0.4s ease-out both;
 }
+
+/* ── Danger zone ── */
+.dangerDesc {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--color-dim);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.btnDanger {
+  height: 48px;
+  padding: 0 28px;
+  border-radius: var(--radius-pill);
+  background: transparent;
+  border: 1px solid #a0442a;
+  color: #a0442a;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: background 0.15s ease, color 0.15s ease, opacity 0.15s ease;
+}
+
+.btnDanger:hover:not(:disabled) {
+  background: rgba(160, 68, 42, 0.06);
+}
+
+.btnDanger:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btnDangerConfirm {
+  height: 48px;
+  padding: 0 28px;
+  border-radius: var(--radius-pill);
+  background: #a0442a;
+  border: 1px solid #a0442a;
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: opacity 0.15s ease;
+  animation: fadeUp 0.2s ease-out both;
+}
+
+.btnDangerConfirm:hover:not(:disabled) {
+  opacity: 0.88;
+}
+
+.btnDangerConfirm:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
