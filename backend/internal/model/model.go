@@ -58,6 +58,18 @@ type CardWithWord struct {
 	IsRegular     *bool
 }
 
+type UserSettings struct {
+	UserID          uuid.UUID `db:"user_id"`
+	NumberDigitSize int       `db:"number_digit_size"`
+	UpdatedAt       time.Time `db:"updated_at"`
+}
+
+type DigitStat struct {
+	UserID    uuid.UUID `db:"user_id"`
+	Digit     int       `db:"digit"`
+	Successes int       `db:"successes"`
+}
+
 // SessionUser is stored in the SCS session. No tokens — only identity claims,
 // plus the raw id_token needed for Keycloak end-session (front-channel logout).
 type SessionUser struct {

@@ -39,22 +39,6 @@ export function FlashCardPage() {
     reviewMutation.mutate({ wordId: card.id, rating })
   }
 
-  useEffect(() => {
-    function onKeyDown(e: KeyboardEvent) {
-      if (e.key !== ' ' && e.key !== 'ArrowRight') return
-      if (e.target instanceof HTMLButtonElement) return
-      e.preventDefault()
-      if (!card || reviewMutation.isPending) return
-      if (!flipped) {
-        setSkipTransition(false)
-        setFlipped(true)
-      } else {
-        reviewMutation.mutate({ wordId: card.id, rating: 3 })
-      }
-    }
-    window.addEventListener('keydown', onKeyDown)
-    return () => window.removeEventListener('keydown', onKeyDown)
-  }, [card, flipped, reviewMutation])
 
   return (
     <main className={styles.page}>

@@ -16,6 +16,7 @@ import (
 	"github.com/jharaxus/rosetta/internal/auth"
 	"github.com/jharaxus/rosetta/internal/config"
 	"github.com/jharaxus/rosetta/internal/db"
+	"github.com/jharaxus/rosetta/internal/numbers"
 	"github.com/jharaxus/rosetta/internal/session"
 	"github.com/jharaxus/rosetta/internal/words"
 )
@@ -42,13 +43,14 @@ func main() {
 
 	h := auth.NewHandler(queries, oidcProvider, sessionMgr, cfg)
 	wh := words.NewHandler(queries)
+	nh := numbers.NewHandler(queries)
 
 	r := gin.New()
 	r.Use(gin.Recovery())
 	r.Use(slogMiddleware())
 	r.Use(cors.New(cors.Config{
 		AllowOrigins:     []string{cfg.FrontendURL},
-		AllowMethods:     []string{"GET", "POST", "PATCH", "OPTIONS"},
+		AllowMethods:     []string{"GET", "POST", "PATCH", "DELETE", "OPTIONS"},
 		AllowHeaders:     []string{"Content-Type"},
 		AllowCredentials: true,
 		MaxAge:           12 * time.Hour,
@@ -90,6 +92,19 @@ func main() {
 		wordsGroup.POST("/:word_id/review", wh.PostReview)
 		wordsGroup.GET("/writing-flashcard", wh.GetWritingFlashCard)
 		wordsGroup.POST("/:word_id/writing-review", wh.PostWritingReview)
+	}
+
+	userGroup.GET("/settings", nh.GetSettings)
+	userGroup.PATCH("/settings", nh.UpdateSettings)
+
+	numbersGroup := r.Group("/api/numbers")
+	numbersGroup.Use(auth.RequireAuth(sessionMgr))
+	{
+		numbersGroup.GET("/practice", nh.GetPracticeNumber)
+		numbersGroup.POST("/digit-success", nh.PostDigitSuccess)
+		numbersGroup.GET("/failures/next", nh.GetNextFailure)
+		numbersGroup.POST("/failures", nh.PostFailure)
+		numbersGroup.DELETE("/failures/:number", nh.DeleteFailure)
 	}
 
 	srv := &http.Server{

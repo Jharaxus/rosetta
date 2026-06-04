@@ -5,6 +5,7 @@ import { RegisterPage } from './pages/RegisterPage'
 import { ProfilePage } from './pages/ProfilePage'
 import { FlashCardPage } from './pages/FlashCardPage'
 import { WritingFlashCardPage } from './pages/WritingFlashCardPage'
+import { NumberPracticePage } from './pages/NumberPracticePage'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { ProtectedRoute } from './components/ProtectedRoute'
 
@@ -46,6 +47,14 @@ export const router = createBrowserRouter([
     element: (
       <ProtectedRoute>
         <WritingFlashCardPage />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: '/numbers',
+    element: (
+      <ProtectedRoute>
+        <NumberPracticePage />
       </ProtectedRoute>
     ),
   },

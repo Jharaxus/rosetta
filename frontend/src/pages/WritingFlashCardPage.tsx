@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { fetchWritingFlashCard, submitWritingReview } from '../api/words'
@@ -52,11 +52,23 @@ export function WritingFlashCardPage() {
     setFlipped(true)
     setPhase('result')
     reviewMutation.mutate({ wordId: card.id, rating })
+    inputRef.current?.blur()
   }
 
   function handleKeyDown(e: React.KeyboardEvent<HTMLInputElement>) {
     if (e.key === 'Enter') handleValidate()
   }
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key !== 'Enter' || phase !== 'result') return
+      if (e.target instanceof HTMLInputElement) return
+      e.preventDefault()
+      handleNext()
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [phase])
 
   function handleNext() {
     setSkipTransition(true)

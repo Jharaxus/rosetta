@@ -320,3 +320,124 @@ func (q *Queries) InsertLoginRecord(ctx context.Context, userID uuid.UUID, ip, u
 	_, err = q.pool.Exec(ctx, query, userID, ipArg, userAgent, sessionID)
 	return err
 }
+
+// GetOrCreateUserSettings returns the settings row for the user, inserting defaults if absent.
+func (q *Queries) GetOrCreateUserSettings(ctx context.Context, userID uuid.UUID) (model.UserSettings, error) {
+	_, err := q.pool.Exec(ctx,
+		`INSERT INTO user_settings (user_id) VALUES ($1) ON CONFLICT (user_id) DO NOTHING`,
+		userID,
+	)
+	if err != nil {
+		return model.UserSettings{}, err
+	}
+	var s model.UserSettings
+	row := q.pool.QueryRow(ctx,
+		`SELECT user_id, number_digit_size, updated_at FROM user_settings WHERE user_id = $1`,
+		userID,
+	)
+	err = row.Scan(&s.UserID, &s.NumberDigitSize, &s.UpdatedAt)
+	return s, err
+}
+
+// UpdateNumberDigitSize saves the user's preferred digit count, upserting the settings row.
+func (q *Queries) UpdateNumberDigitSize(ctx context.Context, userID uuid.UUID, size int) error {
+	_, err := q.pool.Exec(ctx, `
+		INSERT INTO user_settings (user_id, number_digit_size, updated_at)
+		VALUES ($1, $2, now())
+		ON CONFLICT (user_id) DO UPDATE
+			SET number_digit_size = $2,
+			    updated_at        = now()
+	`, userID, size)
+	return err
+}
+
+// GetDigitStats ensures all 10 digit rows exist for the user and returns them ordered by digit.
+func (q *Queries) GetDigitStats(ctx context.Context, userID uuid.UUID) ([]model.DigitStat, error) {
+	_, err := q.pool.Exec(ctx, `
+		INSERT INTO user_digit_stats (user_id, digit)
+		SELECT $1, d FROM generate_series(0, 9) AS d
+		ON CONFLICT DO NOTHING
+	`, userID)
+	if err != nil {
+		return nil, err
+	}
+	rows, err := q.pool.Query(ctx,
+		`SELECT user_id, digit, successes FROM user_digit_stats WHERE user_id = $1 ORDER BY digit`,
+		userID,
+	)
+	if err != nil {
+		return nil, err
+	}
+	defer rows.Close()
+
+	stats := make([]model.DigitStat, 0, 10)
+	for rows.Next() {
+		var s model.DigitStat
+		if err := rows.Scan(&s.UserID, &s.Digit, &s.Successes); err != nil {
+			return nil, err
+		}
+		stats = append(stats, s)
+	}
+	return stats, rows.Err()
+}
+
+// IncrementDigitSuccesses increments the success counter for every digit that appears in number.
+// For example, 113 increments digit 1 by 2 and digit 3 by 1.
+func (q *Queries) IncrementDigitSuccesses(ctx context.Context, userID uuid.UUID, number int) error {
+	counts := make([]int, 10)
+	n := number
+	if n == 0 {
+		counts[0]++
+	}
+	for n > 0 {
+		counts[n%10]++
+		n /= 10
+	}
+
+	digits := make([]int16, 0, 10)
+	increments := make([]int32, 0, 10)
+	for d, c := range counts {
+		if c > 0 {
+			digits = append(digits, int16(d))
+			increments = append(increments, int32(c))
+		}
+	}
+
+	_, err := q.pool.Exec(ctx, `
+		INSERT INTO user_digit_stats (user_id, digit, successes)
+		SELECT $1, unnest($2::smallint[]), unnest($3::int[])
+		ON CONFLICT (user_id, digit)
+		DO UPDATE SET successes = user_digit_stats.successes + EXCLUDED.successes
+	`, userID, digits, increments)
+	return err
+}
+
+// AddNumberFailure records a number the user failed to spell correctly.
+// Duplicate entries are silently ignored.
+func (q *Queries) AddNumberFailure(ctx context.Context, userID uuid.UUID, number int) error {
+	_, err := q.pool.Exec(ctx,
+		`INSERT INTO number_failures (user_id, number) VALUES ($1, $2) ON CONFLICT DO NOTHING`,
+		userID, number,
+	)
+	return err
+}
+
+// RemoveNumberFailure removes a number from the user's failure list.
+func (q *Queries) RemoveNumberFailure(ctx context.Context, userID uuid.UUID, number int) error {
+	_, err := q.pool.Exec(ctx,
+		`DELETE FROM number_failures WHERE user_id = $1 AND number = $2`,
+		userID, number,
+	)
+	return err
+}
+
+// GetRandomNumberFailure returns a random number from the user's failure list.
+// Returns pgx.ErrNoRows when the list is empty.
+func (q *Queries) GetRandomNumberFailure(ctx context.Context, userID uuid.UUID) (int, error) {
+	var number int
+	err := q.pool.QueryRow(ctx,
+		`SELECT number FROM number_failures WHERE user_id = $1 ORDER BY random() LIMIT 1`,
+		userID,
+	).Scan(&number)
+	return number, err
+}

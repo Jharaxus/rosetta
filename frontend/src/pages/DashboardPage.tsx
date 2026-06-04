@@ -100,6 +100,10 @@ export function DashboardPage() {
         Écriture <span className={styles.arrow}>→</span>
       </Link>
 
+      <Link to="/numbers" className={styles.numbersBtn}>
+        Nombres <span className={styles.arrow}>→</span>
+      </Link>
+
       <Link to="/profile" className={styles.profileLink}>
         Mon profil →
       </Link>
