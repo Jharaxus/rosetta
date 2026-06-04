@@ -14,15 +14,16 @@ export async function fetchFlashCard(): Promise<Word> {
   return res.json() as Promise<Word>
 }
 
-export async function clearCards(): Promise<void> {
-  const res = await fetch('/api/user/cards', {
-    method: 'DELETE',
+export async function resetProgression(): Promise<{ assimil_number: number }> {
+  const res = await fetch('/api/user/reset-progression', {
+    method: 'POST',
     credentials: 'include',
   })
   if (!res.ok) {
     const body = await res.json().catch(() => ({ error: 'unknown_error' }))
     throw new ApiError(res.status, (body as { error?: string }).error ?? 'unknown_error')
   }
+  return res.json()
 }
 
 export async function submitReview(wordId: string, rating: Rating): Promise<void> {

@@ -80,7 +80,7 @@ func main() {
 	userGroup.Use(auth.RequireAuth(sessionMgr))
 	{
 		userGroup.PATCH("/profile", h.UpdateProfile)
-		userGroup.DELETE("/cards", h.DeleteCards)
+		userGroup.POST("/reset-progression", h.ResetProgression)
 	}
 
 	wordsGroup := r.Group("/api/words")

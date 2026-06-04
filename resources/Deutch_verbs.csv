@@ -1,0 +1,372 @@
+french;german;assimil_lesson;category;regularity
+apprendre;lernen;1;Verb;regular
+comprendre;verstehen;1;Verb;irregular
+connaître;kennen;1;Verb;irregular
+être;sein;2;Verb;irregular
+venir;kommen;2;Verb;regular
+dormir;schlafen;3;Verb;irregular
+travailler;arbeiten;3;Verb;regular
+coûter;kosten;4;Verb;regular
+appeler (s');heißen;5;Verb;regular
+dire;sagen;5;Verb;regular
+pouvoir (v.);können;5;Verb;irregular
+tutoyer;duzen;5;Verb;regular
+aller;gehen;6;Verb;irregular
+aller (en avion);fliegen;6;Verb;irregular
+aller (véhicule à roues);fahren;6;Verb;irregular
+conduire;fahren;6;Verb;irregular
+mettre à jour (données);updaten;6;Verb;regular
+partir;fahren / losfahren / weggehen;6;Verb;irregular
+rouler (conduire);fahren;6;Verb;irregular
+voler;fliegen;6;Verb;irregular
+voyager;reisen;8;Verb;regular
+arriver;kommen;9;Verb;regular
+avoir;haben;9;Verb;irregular
+avoir sur soi;dabeihaben;9;Verb;irregular
+faire;machen;9;Verb;regular
+entrer;hereinkommen;10;Verb;irregular
+habiter;wohnen;10;Verb;regular
+prendre;nehmen;10;Verb;irregular
+sortir;"hinaus/gehen ; aus/gehen";10;Verb;irregular
+sortir;hinausgehen / ausgehen;10;Verb;irregular
+commencer;anfangen;11;Verb;irregular
+rester;bleiben;11;Verb;irregular
+cuisiner;kochen;12;Verb;regular
+goût (avoir le ~);schmecken;12;Verb;regular
+goûter;probieren;12;Verb;regular
+manger;essen;12;Verb;irregular
+boire;trinken;13;Verb;regular
+lever (se ~);aufstehen;13;Verb;irregular
+oublier;vergessen;13;Verb;irregular
+voir;sehen;13;Verb;irregular
+apporter;bringen;15;Verb;irregular
+juste (être ~);stimmen;15;Verb;regular
+laisser;lassen;15;Verb;irregular
+ranger;auf/räumen;15;Verb;irregular
+trouver;finden;15;Verb;irregular
+vacarme (faire du);poltern;15;Verb;regular
+demander;fragen;16;Verb;regular
+devoir;müssen;16;Verb;irregular
+appeler (téléphoner);anrufen;17;Verb;irregular
+entendre;hören;17;Verb;regular
+être (numéro, adresse);lauten;17;Verb;regular
+parler;sprechen / reden;17;Verb;irregular
+téléphoner;anrufen;17;Verb;irregular
+vouloir;mögen / wollen;17;Verb;irregular
+donner;geben;18;Verb;irregular
+droit (avoir le ~);dürfen;18;Verb;irregular
+compter;zählen;19;Verb;regular
+essayer;versuchen;19;Verb;regular
+faire;tun;20;Verb;irregular
+inviter;einladen;20;Verb;irregular
+rencontrer;treffen;20;Verb;irregular
+attendre;warten;22;Verb;regular
+attendre qn;warten auf;22;Verb;regular
+besoin (avoir ~ de);brauchen;22;Verb;regular
+devoir;sollen;22;Verb;irregular
+passer prendre;abholen;22;Verb;irregular
+décharger;ausladen;23;Verb;irregular
+écrit (être);stehen;23;Verb;irregular
+fumer;rauchen;23;Verb;regular
+lire;lesen;23;Verb;irregular
+nager;schwimmen;23;Verb;irregular
+porter;tragen;23;Verb;irregular
+savoir (v.);"können ; wissen";23;Verb;irregular
+devenir;werden;24;Verb;irregular
+féliciter;gratulieren;24;Verb;regular
+venir avec qqn;mitkommen;24;Verb;irregular
+content (être ~);sich freuen;25;Verb;irregular
+payer;zahlen;25;Verb;regular
+réjouir (se ~);sich freuen;25;Verb;irregular
+tenir;halten;25;Verb;irregular
+aider;helfen;26;Verb;irregular
+rater (vol, train, film…);verpassen;26;Verb;regular
+penser à;denken an;27;Verb;irregular
+savourer;genießen;27;Verb;irregular
+chercher;suchen;29;Verb;regular
+grossir;zunehmen;29;Verb;irregular
+maigrir ; abnehmen ;29;Verb;irregular
+marier (se);heiraten;29;Verb;regular
+avoir l'air;aussehen;30;Verb;irregular
+employer;benutzen;31;Verb;regular
+regarder;schauen;31;Verb;regular
+vouvoyer;siezen;31;Verb;regular
+exagérer;übertreiben;32;Verb;regular
+acheter;kaufen;33;Verb;regular
+commencer;beginnen;33;Verb;irregular
+dépêcher (se ~);sich beeilen;33;Verb;irregular
+durer;dauern;33;Verb;regular
+bronzer;braun werden;34;Verb;irregular
+changer (travail, argent);wechseln;34;Verb;regular
+gagner;gewinnen;34;Verb;irregular
+réserver;"buchen ; reservieren";34;Verb;regular
+amoureux (tomber ~ de);sich verlieben in;37;Verb;irregular
+expliquer;erklären;37;Verb;regular
+recevoir;"bekommen ; erhalten";37;Verb;irregular
+discuter;streiten;38;Verb;irregular
+penser;meinen;38;Verb;regular
+plaire;"gefallen ; Spaß machen";38;Verb;irregular
+proposer;"bieten ; vor/schlagen";39;Verb;irregular
+revenir;"zurück/kommen ; wieder/kommen";39;Verb;irregular
+passer (temps);vergehen;40;Verb;irregular
+suivre;folgen;40;Verb;regular
+suivre;folgen;40;Verb;regular
+bon (être ~);schmecken;41;Verb;regular
+fermé (être);zuhaben;41;Verb;irregular
+livrer;liefern;41;Verb;regular
+mourir;sterben;41;Verb;irregular
+ouvert (être ~);aufhaben;41;Verb;irregular
+reconnaître;zu/geben;41;Verb;irregular
+accueillir;empfangen;43;Verb;irregular
+croire;glauben;43;Verb;regular
+embrasser;sich umarmen;43;Verb;irregular
+fêter;feiern;43;Verb;regular
+changer;sich ändern;44;Verb;irregular
+faire (pâtisserie);backen;44;Verb;irregular
+offrir;anbieten;44;Verb;irregular
+changer;sich verändern;45;Verb;irregular
+danser;tanzen;45;Verb;regular
+démissionner;kündigen;45;Verb;regular
+fonder;gründen;45;Verb;regular
+raconter;erzählen;45;Verb;regular
+chanter;singen;46;Verb;irregular
+dépendre de;ankommen auf;46;Verb;irregular
+tester;testen;46;Verb;regular
+continuer;weitergehen;47;Verb;irregular
+écouter;zuhören;47;Verb;irregular
+éteindre;ausmachen;47;Verb;irregular
+grandir;wachsen;48;Verb;irregular
+répondre;antworten;48;Verb;regular
+débloquer;spinnen;50;Verb;irregular
+énerver;nerven;50;Verb;regular
+enseigner;beibringen;50;Verb;irregular
+être (adresse, tel);lauten;50;Verb;regular
+intituler (s');lauten;50;Verb;regular
+jurer;fluchen / schwören;50;Verb;irregular
+peine (faire de la ~);leid/tun;50;Verb;irregular
+pester;fluchen;50;Verb;regular
+pleuvoir;regnen;50;Verb;regular
+souffler;pusten;50;Verb;regular
+souffler;pusten;50;Verb;regular
+interroger;befragen;51;Verb;regular
+prononcer;aus/sprechen;51;Verb;irregular
+trouver (se);sich befinden;51;Verb;irregular
+asseoir (s');sich setzen;52;Verb;irregular
+assis (être);sitzen;52;Verb;irregular
+être (droit/debout);stehen;52;Verb;irregular
+mettre (se ~) (droit/debout);sich stellen;52;Verb;irregular
+posé (être ~) (droit / debout);stehen;52;Verb;irregular
+trinquer;anstoßen;52;Verb;irregular
+accroché (être);hängen;53;Verb;irregular
+aimer;lieben;53;Verb;regular
+briller;scheinen;53;Verb;irregular
+paraître;scheinen;53;Verb;irregular
+sembler;scheinen;53;Verb;irregular
+attirer;anlocken;54;Verb;irregular
+commander;bestellen;54;Verb;regular
+finir;enden;54;Verb;regular
+allongé (être);liegen;55;Verb;irregular
+appartenir à;gehören;55;Verb;regular
+couché (être ~);liegen;55;Verb;irregular
+louer (donner en location);vermieten;55;Verb;regular
+louer (prendre en location);mieten;55;Verb;regular
+partie (faire ~ de);gehören zu;55;Verb;regular
+passer (vacances);verbringen;55;Verb;irregular
+posé (être ~) (à plat / à l'horizontale);liegen;55;Verb;irregular
+télécharger;herunterladen;55;Verb;irregular
+courir;laufen;57;Verb;irregular
+désirer;wünschen;57;Verb;regular
+emmener;ausführen;57;Verb;irregular
+servir;bedienen;57;Verb;regular
+souhaiter;wünschen;57;Verb;regular
+souhaiter;wünschen;57;Verb;regular
+vivre;leben;57;Verb;regular
+aimer;mögen;58;Verb;irregular
+espérer;hoffen;58;Verb;regular
+déborder;überkochen;59;Verb;irregular
+dépasser;überholen;59;Verb;regular
+doubler (véhicule);überholen;59;Verb;regular
+épeler;buchstabieren;59;Verb;regular
+étonner;überraschen;59;Verb;regular
+réfléchir;"überlegen ; nach/denken";59;Verb;irregular
+surprendre;überraschen;59;Verb;regular
+surprendre;überraschen;59;Verb;regular
+surprendre;überraschen;59;Verb;regular
+traduire;übersetzen;59;Verb;regular
+arrêter (s');anhalten;60;Verb;irregular
+demander (chemin, heure);fragen;60;Verb;regular
+marcher (vite);laufen;60;Verb;irregular
+perdre (se ~);sich verlaufen;60;Verb;irregular
+soigner;pflegen;60;Verb;regular
+tourner (à droite / gauche);rechts / links abbiegen;60;Verb;irregular
+tromper de chemin (se);sich verlaufen;60;Verb;irregular
+tromper de route (se);sich verfahren;60;Verb;irregular
+casser;knacken;61;Verb;regular
+connaître (faire connaissance);kennenlernen;61;Verb;irregular
+craquer;knacken;61;Verb;regular
+rappeler (se remémorer);sich an jn/etwas erinnern an;61;Verb;irregular
+souvenir (se ~);sich erinnern;61;Verb;irregular
+souvenir (se ~);sich erinnern;61;Verb;irregular
+aborder;ansprechen;62;Verb;irregular
+oser;sich trauen;62;Verb;irregular
+risquer;wagen;62;Verb;regular
+supporter;ertragen;64;Verb;irregular
+supporter;ertragen;64;Verb;irregular
+réfléchir à;nach/denken (über);65;Verb;irregular
+vivre (un événement);erleben;65;Verb;regular
+manifester (se ~);sich melden;66;Verb;irregular
+monter (augmenter);steigen;66;Verb;irregular
+motiver;motivieren;66;Verb;regular
+neiger;schneien;67;Verb;regular
+visiter;besichtigen / sich ansehen;67;Verb;irregular
+vouloir parler de;meinen;67;Verb;irregular
+chercher (aller ~);holen;68;Verb;regular
+énerver (s');sich aufregen;68;Verb;irregular
+énerver (s' contre);sich über jdn aufregen;68;Verb;irregular
+passer (se);passieren;68;Verb;regular
+contredire;widersprechen;69;Verb;irregular
+déranger;stören;69;Verb;regular
+essence;tanken;69;Verb;regular
+excuser;entschuldigen;69;Verb;regular
+préparer;vor/bereiten;69;Verb;irregular
+agir (s'~ de);sich handeln um;71;Verb;irregular
+écrire;schreiben;71;Verb;irregular
+garder (place/table);freihalten;71;Verb;irregular
+joindre;erreichen;71;Verb;regular
+allumer;anmachen / anschalten;72;Verb;irregular
+descendre (véhicule);aussteigen;72;Verb;irregular
+finir son assiette;aufessen;72;Verb;irregular
+finir son verre;austrinken;72;Verb;irregular
+grasse matinée;ausschlafen;72;Verb;irregular
+habiller (qqn);jdn anziehen;72;Verb;irregular
+habiller (s');sich anziehen;72;Verb;irregular
+ouvrir;aufmachen / öffnen;72;Verb;irregular
+raccrocher (téléphone);auf/legen;72;Verb;irregular
+rêver;träumen;72;Verb;regular
+sentir;"spüren ; riechen";72;Verb;irregular
+sortir (tirer);heraus/ziehen;72;Verb;irregular
+sortir (publier);heraus/geben;72;Verb;irregular
+sortir (tirer);herausziehen;72;Verb;irregular
+sortir (publier);herausgeben;72;Verb;irregular
+exprimer;ausdrücken;73;Verb;irregular
+formuler;formulieren;73;Verb;regular
+orthographier;rechtschreiben;73;Verb;irregular
+perdre;verlieren;73;Verb;irregular
+appuyer;drücken;74;Verb;regular
+calculer;berechnen;74;Verb;regular
+dépenser;ausgeben;74;Verb;irregular
+fonctionner;bedienen;74;Verb;regular
+obtenir;erhalten;74;Verb;irregular
+regarder (avec attention/intérêt);sich etw. an/sehen;74;Verb;irregular
+serrer;drücken;74;Verb;regular
+suffire;reichen;74;Verb;regular
+suffire;reichen;74;Verb;regular
+déménager;umziehen;75;Verb;irregular
+énerver;ärgern;76;Verb;regular
+impressionner;beeindrucken;76;Verb;regular
+jeter;schmeißen;76;Verb;irregular
+lancer;werfen;76;Verb;irregular
+marcher (bien/mal);gut/schlecht laufen;76;Verb;irregular
+passer (bien/mal se ~);gut/schlecht laufen;76;Verb;irregular
+construire;bauen;78;Verb;regular
+coucher (se ~);untergehen;78;Verb;irregular
+diviser;teilen;78;Verb;regular
+observer;beobachten;79;Verb;regular
+offrir (permettre);bieten;79;Verb;irregular
+commencer;starten;80;Verb;regular
+hésiter;zögern;80;Verb;regular
+retourner (se ~);sich um/drehen;80;Verb;irregular
+composer;komponieren;81;Verb;regular
+deviner;erraten;81;Verb;irregular
+gagner (argent);verdienen;81;Verb;regular
+profiter de;nutzen;81;Verb;regular
+chauffer;erhitzen;82;Verb;regular
+contrôler;überprüfen;82;Verb;regular
+disputer (se ~);streiten;82;Verb;irregular
+recommencer;wieder los/gehen;82;Verb;irregular
+réjouir (se ~ de qqch. à venir);sich freuen auf;82;Verb;irregular
+réjouir (se ~ de qqch. qui a eu lieu);sich freuen über;82;Verb;irregular
+soulever;heben;82;Verb;irregular
+soulever;heben;82;Verb;irregular
+accompagner;begleiten;83;Verb;regular
+entrer;reinkommen;83;Verb;irregular
+prendre (attraper);erwischen;83;Verb;regular
+sauver;retten;83;Verb;regular
+battre (au jeu);schlagen;85;Verb;irregular
+frapper;schlagen;85;Verb;irregular
+nuire;schaden;85;Verb;regular
+partir (pouvoir);loskommen;85;Verb;irregular
+manquer;fehlen;86;Verb;regular
+manquer (à qqn);jdn vermissen;86;Verb;regular
+passer (tendre);herüberreichen / überreichen;86;Verb;regular
+sentir (odeur);riechen;86;Verb;irregular
+atteindre;erreichen;87;Verb;regular
+attendre (s' à);rechnen mit;87;Verb;regular
+avoir lieu;stattfinden;87;Verb;irregular
+battre (se ~);kämpfen;87;Verb;regular
+battre (se ~ pour);kämpfen (für);87;Verb;regular
+clamer;rufen;87;Verb;irregular
+exiger;verlangen;87;Verb;regular
+fermer;schließen;87;Verb;irregular
+allécher;anlocken;88;Verb;irregular
+arriver à qqun;jdm vorkommen;88;Verb;irregular
+attraper;fangen;88;Verb;irregular
+écouter qch;hören;88;Verb;regular
+écouter qqun;auf jdn hören;88;Verb;regular
+pleurer;weinen;88;Verb;regular
+retenir qqch. (mémoire);sich etwas merken;88;Verb;irregular
+rire;lachen;88;Verb;regular
+saisir;schnappen;88;Verb;regular
+sourire;lächeln;88;Verb;regular
+sourire;lächeln;88;Verb;regular
+jouer;spielen;89;Verb;regular
+quitter;verlassen;89;Verb;irregular
+répéter;wiederholen;89;Verb;regular
+retrouver;wieder/finden;89;Verb;irregular
+revoir;wieder/sehen;89;Verb;irregular
+travers (aller de);schief gehen / schief laufen;89;Verb;irregular
+demi-tour (faire ~);umdrehen;90;Verb;irregular
+effet (faire ~);wirken;90;Verb;regular
+garantir;garantieren;90;Verb;regular
+renoncer à;verzichten auf;90;Verb;regular
+transformer (édifice);umbauen;90;Verb;irregular
+allumer (s');angehen;92;Verb;irregular
+éteindre (s');ausgehen;92;Verb;irregular
+laver;waschen;92;Verb;irregular
+laver (vaisselle);spülen;92;Verb;regular
+rafraîchir;kühlen;92;Verb;regular
+créer;erstellen;93;Verb;regular
+étonné (être);staunen;93;Verb;regular
+poser (de côté);weg/legen;93;Verb;irregular
+sonner;klingeln;93;Verb;regular
+sonner;klingeln;93;Verb;regular
+valoir;gelten;93;Verb;irregular
+visite (rendre);besuchen;93;Verb;regular
+arriver (événement);passieren;94;Verb;regular
+disputer (se ~ avec);sich mit jdm streiten;94;Verb;irregular
+échouer;durchfallen;94;Verb;irregular
+étudier;studieren;94;Verb;regular
+lire (en entier);durchlesen;94;Verb;irregular
+montrer;zeigen;94;Verb;regular
+refléter (se ~);sich wider/spiegeln;94;Verb;irregular
+tomber;fallen;94;Verb;irregular
+arrêter;aufhören;95;Verb;irregular
+lire (à haute voix);vorlesen;95;Verb;irregular
+placer;aufstellen;95;Verb;irregular
+compte (se mettre à son ~);sich selbständig machen;96;Verb;irregular
+dépendre de;abhängen von;96;Verb;irregular
+journée;sich den Tag frei nehmen;96;Verb;irregular
+licencier;kündigen;96;Verb;regular
+marcher (fonctionner);klappen;96;Verb;regular
+présenter;vor/stellen;97;Verb;irregular
+saluer (bienvenue);begrüßen;97;Verb;regular
+saluer (bonjour);grüßen;97;Verb;regular
+surfer;surfen;97;Verb;regular
+courses (faire les ~);einkaufen gehen;99;Verb;irregular
+inviter à boire;auf ein Bier / Kaffee einladen;99;Verb;irregular
+réussir;schaffen;99;Verb;irregular
+traduire (en…);auf übersetzen;99;Verb;irregular
+approfondir;vertiefen;100;Verb;regular
+penser (qqch. de qqch.);etw. von etw. halten;100;Verb;irregular
+réviser;wiederholen;100;Verb;regular
+travailler (continuer à);weiterarbeiten;100;Verb;irregular

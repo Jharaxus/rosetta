@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 import { useAuth } from '../hooks/useAuth'
 import { updateAssimilNumber } from '../api/auth'
-import { clearCards } from '../api/words'
+import { resetProgression } from '../api/words'
 import styles from './ProfilePage.module.css'
 
 export function ProfilePage() {
@@ -36,12 +36,14 @@ export function ProfilePage() {
     },
   })
 
-  const clearMutation = useMutation({
-    mutationFn: clearCards,
-    onSuccess: () => {
+  const resetMutation = useMutation({
+    mutationFn: resetProgression,
+    onSuccess: (updated) => {
       setConfirmClear(false)
       setCleared(true)
       setTimeout(() => setCleared(false), 2500)
+      queryClient.setQueryData(['auth', 'me'], updated)
+      setValue(updated.assimil_number)
       queryClient.invalidateQueries({ queryKey: ['flashcard'] })
     },
     onError: () => {
@@ -60,7 +62,7 @@ export function ProfilePage() {
       confirmTimerRef.current = setTimeout(() => setConfirmClear(false), 3000)
     } else {
       if (confirmTimerRef.current) clearTimeout(confirmTimerRef.current)
-      clearMutation.mutate()
+      resetMutation.mutate()
     }
   }
 
@@ -122,13 +124,13 @@ export function ProfilePage() {
       </div>
 
       <div className={styles.card}>
-        <div className={styles.cardLabel}>PROGRESSION · CARTES MÉMOIRE</div>
+        <div className={styles.cardLabel}>PROGRESSION · RÉINITIALISATION</div>
         <p className={styles.dangerDesc}>
-          Réinitialise toute votre progression de révision. Les mots restent débloqués,
-          mais tous vos intervalles et scores FSRS sont effacés.
+          Remet la progression à zéro : leçon Assimil remise à 1, toutes les cartes
+          effacées, et les cartes de la leçon 1 rechargées.
         </p>
 
-        {clearMutation.isError && (
+        {resetMutation.isError && (
           <p className={styles.serverError} role="alert">
             Une erreur est survenue. Veuillez réessayer.
           </p>
@@ -139,13 +141,13 @@ export function ProfilePage() {
             type="button"
             className={confirmClear ? styles.btnDangerConfirm : styles.btnDanger}
             onClick={handleClearClick}
-            disabled={clearMutation.isPending}
+            disabled={resetMutation.isPending}
           >
-            {clearMutation.isPending
+            {resetMutation.isPending
               ? 'Réinitialisation…'
               : confirmClear
               ? 'Confirmer la réinitialisation'
-              : 'Réinitialiser les cartes'}
+              : 'Réinitialiser la progression'}
           </button>
           {cleared && <span className={styles.savedBadge}>Réinitialisé ✓</span>}
         </div>

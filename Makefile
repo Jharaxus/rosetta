@@ -4,6 +4,7 @@ ENV_FILE      ?= .env.dev
 .PHONY: help dev dev-build dev-down dev-clean \
         prod-build prod-up prod-down \
         migrate-status migrate-up migrate-down \
+        filter-verbs conjugate-verbs seed-conjugations \
         kc-export logs
 
 # ── Help ───────────────────────────────────────────────────────────────────────
@@ -26,6 +27,10 @@ help:
 	@echo ""
 	@echo "  kc-export     Export the Keycloak realm to keycloak/realm-export.json"
 	@echo "  logs          Tail logs from all dev services"
+	@echo ""
+	@echo "  filter-verbs          Extract verb rows from Deutch.csv → resources/Deutch_verbs.csv"
+	@echo "  conjugate-verbs       Fetch Wiktionary conjugations → resources/Deutch_verbs_and_conjugations.csv"
+	@echo "  seed-conjugations     Load conjugations into DB (requires running stack)"
 	@echo ""
 	@echo "  ENV_FILE=<path>  Override the env file (default: .env.dev)"
 	@echo ""
@@ -80,3 +85,22 @@ kc-export:
 	docker compose -f compose.dev.yml --env-file $(ENV_FILE) \
 	  cp keycloak:/tmp/realm-export.json ./keycloak/realm-export.json
 	@echo "Done. Review keycloak/realm-export.json before committing."
+
+# ── Conjugation data ──────────────────────────────────────────────────────────
+filter-verbs:
+	@echo "Filtering verb rows from Deutch.csv..."
+	python3 resources/fetch_conjugations.py filter \
+	  resources/Deutch.csv \
+	  resources/Deutch_verbs.csv
+	@echo "Done. Commit resources/Deutch_verbs.csv."
+
+conjugate-verbs:
+	@echo "Fetching Wiktionary conjugations (~1 req/s, several minutes)..."
+	python3 resources/fetch_conjugations.py conjugate \
+	  resources/Deutch_verbs.csv \
+	  resources/Deutch_verbs_and_conjugations.csv
+	@echo "Done. Commit resources/Deutch_verbs_and_conjugations.csv."
+
+seed-conjugations:
+	docker compose -f compose.dev.yml --env-file $(ENV_FILE) exec backend \
+	  go run ./cmd/migrate seed-conjugations

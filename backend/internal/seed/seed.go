@@ -17,7 +17,7 @@ import (
 	"github.com/jackc/pgx/v5/pgxpool"
 )
 
-const defaultSeedFile = "/app/resources/Lexique Allemand - export.csv"
+const defaultSeedFile = "/app/resources/Deutch.csv"
 
 // row mirrors one CSV record after parsing.
 type row struct {

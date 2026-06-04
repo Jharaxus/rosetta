@@ -252,8 +252,9 @@ func (h *Handler) UpdateProfile(c *gin.Context) {
 	})
 }
 
-// DeleteCards removes all SRS card rows for the authenticated user.
-func (h *Handler) DeleteCards(c *gin.Context) {
+// ResetProgression resets the user to lesson 1: clears all cards, resets
+// assimil_number, and re-seeds lesson-1 cards — all in one transaction.
+func (h *Handler) ResetProgression(c *gin.Context) {
 	sessionUser, ok := c.Get(contextKeyUser)
 	if !ok {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "context_missing_user"})
@@ -261,12 +262,19 @@ func (h *Handler) DeleteCards(c *gin.Context) {
 	}
 	su := sessionUser.(*model.SessionUser)
 
-	if err := h.queries.DeleteUserCards(c.Request.Context(), su.ID); err != nil {
-		slog.Error("delete user cards", "id", su.ID, "err", err)
+	user, err := h.queries.ResetProgressionTx(c.Request.Context(), su.ID)
+	if err != nil {
+		slog.Error("reset progression", "id", su.ID, "err", err)
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "server_error"})
 		return
 	}
-	c.Status(http.StatusNoContent)
+	c.JSON(http.StatusOK, gin.H{
+		"id":             user.ID,
+		"sub":            user.Subject,
+		"email":          user.Email,
+		"display_name":   user.DisplayName,
+		"assimil_number": user.AssimilNumber,
+	})
 }
 
 // HealthCheck responds 200 for liveness probes.

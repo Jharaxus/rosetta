@@ -201,10 +201,40 @@ func (q *Queries) UpdateCard(ctx context.Context, card model.Card) error {
 	return err
 }
 
-// DeleteUserCards removes all card rows for the given user, resetting their SRS progress.
-func (q *Queries) DeleteUserCards(ctx context.Context, userID uuid.UUID) error {
-	_, err := q.pool.Exec(ctx, `DELETE FROM cards WHERE user_id = $1`, userID)
-	return err
+// ResetProgressionTx resets the user to lesson 1 in a single transaction:
+// clears all card rows, resets assimil_number to 1, then re-seeds lesson-1 cards.
+func (q *Queries) ResetProgressionTx(ctx context.Context, userID uuid.UUID) (model.User, error) {
+	tx, err := q.pool.Begin(ctx)
+	if err != nil {
+		return model.User{}, err
+	}
+	defer tx.Rollback(ctx) //nolint:errcheck
+
+	if _, err := tx.Exec(ctx, `DELETE FROM cards WHERE user_id = $1`, userID); err != nil {
+		return model.User{}, err
+	}
+	if _, err := tx.Exec(ctx, `DELETE FROM writing_cards WHERE user_id = $1`, userID); err != nil {
+		return model.User{}, err
+	}
+
+	var u model.User
+	row := tx.QueryRow(ctx, `
+		UPDATE users SET assimil_number = 1, updated_at = now()
+		WHERE id = $1
+		RETURNING id, subject, email, display_name, assimil_number, created_at, updated_at
+	`, userID)
+	if err := row.Scan(&u.ID, &u.Subject, &u.Email, &u.DisplayName, &u.AssimilNumber, &u.CreatedAt, &u.UpdatedAt); err != nil {
+		return model.User{}, err
+	}
+
+	if err := insertMissingCards(ctx, tx, userID, 1); err != nil {
+		return model.User{}, err
+	}
+	if err := insertMissingWritingCards(ctx, tx, userID, 1); err != nil {
+		return model.User{}, err
+	}
+
+	return u, tx.Commit(ctx)
 }
 
 // GetNextDueWritingCard returns the oldest due writing card for the user joined with its word.

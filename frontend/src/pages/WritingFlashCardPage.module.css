@@ -165,6 +165,24 @@
   margin: 0;
 }
 
+/* ── User spelling diff (back face) ── */
+.userSpelling {
+  font-family: var(--font-display);
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.8px;
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* match   → sage green (same hue as Bien rating button) */
+.charMatch   { color: #3a7a52; }
+/* wrong   → terracotta (same hue as Encore rating button): substitution or extra char */
+.charWrong   { color: #a0442a; }
+/* missing → dim placeholder for a character the user omitted */
+.charMissing { color: var(--color-dim); opacity: 0.45; }
+
 .frenchSm {
   font-family: var(--font-display);
   font-size: 18px;

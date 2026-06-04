@@ -18,6 +18,10 @@ make migrate-up     # Run pending migrations
 make migrate-down   # Roll back latest migration
 
 make kc-export      # Export Keycloak realm to keycloak/realm-export.json
+
+make filter-verbs       # Extract verb rows from Deutch.csv → resources/Deutch_verbs.csv
+make conjugate-verbs    # Fetch Wiktionary conjugations → resources/Deutch_verbs_and_conjugations.csv
+make seed-conjugations  # Load conjugations into DB (requires running Docker stack)
 ```
 
 **Services when running:**
@@ -191,9 +195,65 @@ Generate secrets: `openssl rand -hex 32` (for 32-byte keys) or `openssl rand -he
 
 ## Database
 
-Three tables (see `backend/migrations/`):
+Tables (see `backend/migrations/`):
 - `users` — one row per Keycloak `sub`, upserted on every login
 - `login_records` — one row per login event (IP, user agent, session ID)
 - `sessions` — SCS store (opaque token → encrypted blob)
+- `words` — vocabulary entries seeded from `resources/Deutch.csv`
+- `conjugations` — verb conjugation forms; PK on `(word_id, tense, person)`; trigger enforces `word_id` must reference a Verb
 
 Migration files use timestamp-based naming: `20260503000001_<name>.sql`. The `migrate` init container runs before the backend starts in Docker Compose.
+
+## Conjugation pipeline
+
+### Overview
+
+German verb conjugations are stored in the `conjugations` table and seeded from
+`resources/Deutch_verbs_and_conjugations.csv`. The pipeline has three stages:
+
+1. **Filter**: extract verb rows from the full lexicon → `Deutch_verbs.csv`
+2. **Conjugate**: fetch conjugations from de.wiktionary.org → `Deutch_verbs_and_conjugations.csv`
+3. **Seed**: load the conjugation CSV into the DB via the Go seeder
+
+### Generating the data files
+
+Both CSV files are committed to the repo and should only be regenerated when the lexicon changes or conjugation data needs refreshing.
+
+```bash
+make filter-verbs    # Step 1: filter verb rows (fast, no network)
+make conjugate-verbs # Step 2: fetch conjugations (~1 req/s, ~5 min for ~250 verbs)
+make seed-conjugations # Step 3: seed the DB (requires running Docker stack)
+```
+
+To force re-seeding even if the table is already populated:
+```bash
+docker compose -f compose.dev.yml exec migrate \
+  sh -c "FORCE_RESEED_CONJ=true go run ./cmd/migrate seed-conjugations"
+```
+
+### Python script (`resources/fetch_conjugations.py`)
+
+Handles both `filter` and `conjugate` subcommands. Install dependencies:
+```bash
+pip install -r resources/requirements.txt
+```
+
+**TDD requirement**: `resources/fetch_conjugations_test.py` uses pytest with pre-fetched HTML fixtures in `resources/fixtures/`. Run tests with:
+```bash
+cd resources && pytest fetch_conjugations_test.py -v
+```
+
+Tests must pass before any change to `fetch_conjugations.py` is valid. Fixture JSON files (`resources/fixtures/flexion_*.json`) are committed and must not be auto-regenerated. The E2E reference is `resources/fixtures/expected_conjugations.csv`.
+
+### Environment variables (conjugation seeder)
+
+| Variable | Default | Description |
+|---|---|---|
+| `CONJ_SEED_FILE` | `/app/resources/Deutch_verbs_and_conjugations.csv` | Path to conjugation CSV |
+| `FORCE_RESEED_CONJ` | `"false"` | Set to `"true"` to truncate and reload |
+
+### Schema
+
+- `verb_tense` — PostgreSQL enum with 15 values (tense × mood: e.g. `praesens_indikativ`, `futur_1_konjunktiv_2`)
+- `verb_person` — PostgreSQL enum: `p1_sg` (ich) through `p3_pl` (sie)
+- `conjugations (word_id, tense, person, forms TEXT[])` — PK on the first three columns; trigger prevents inserting non-Verb word IDs

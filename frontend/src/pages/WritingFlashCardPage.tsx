@@ -5,7 +5,8 @@ import { fetchWritingFlashCard, submitWritingReview } from '../api/words'
 import { ApiError } from '../api/auth'
 import { RATING_LABELS } from '../types/words'
 import type { Rating } from '../types/words'
-import { computeAccuracy, accuracyToRating } from '../utils/levenshtein'
+import { diffStrings, accuracyToRating } from '../utils/levenshtein'
+import type { StringDiff } from '../utils/levenshtein'
 import styles from './WritingFlashCardPage.module.css'
 
 type Phase = 'input' | 'result'
@@ -13,6 +14,7 @@ type Phase = 'input' | 'result'
 interface Result {
   accuracy: number
   rating: Rating
+  diff: StringDiff
 }
 
 export function WritingFlashCardPage() {
@@ -41,9 +43,11 @@ export function WritingFlashCardPage() {
 
   function handleValidate() {
     if (!card || phase !== 'input') return
-    const accuracy = computeAccuracy(input, card.german)
+    const diff = diffStrings(input, card.german)
+    const maxLen = Math.max(Array.from(input).length, Array.from(card.german).length)
+    const accuracy = maxLen === 0 ? 1 : 1 - diff.distance / maxLen
     const rating = accuracyToRating(accuracy)
-    setResult({ accuracy, rating })
+    setResult({ accuracy, rating, diff })
     setSkipTransition(false)
     setFlipped(true)
     setPhase('result')
@@ -164,6 +168,24 @@ export function WritingFlashCardPage() {
               </div>
               <div className={styles.wordBlock}>
                 <p className={styles.german}>{card.german}</p>
+                {result && (
+                  <p className={styles.userSpelling} aria-label="Votre saisie">
+                    {result.diff.inputTokens.map((token, idx) => (
+                      <span
+                        key={idx}
+                        className={
+                          token.op === 'match'
+                            ? styles.charMatch
+                            : token.op === 'insert'
+                              ? styles.charMissing
+                              : styles.charWrong
+                        }
+                      >
+                        {token.char}
+                      </span>
+                    ))}
+                  </p>
+                )}
                 <p className={styles.frenchSm}>{card.french}</p>
               </div>
               <div className={styles.tags}>

@@ -60,8 +60,14 @@ func main() {
 			slog.Error("seed", "err", err)
 			os.Exit(1)
 		}
+	case "seed-conjugations":
+		slog.Info("seeding conjugation data")
+		if err := seed.SeedConjugations(context.Background(), pool); err != nil {
+			slog.Error("seed-conjugations", "err", err)
+			os.Exit(1)
+		}
 	default:
-		fmt.Fprintf(os.Stderr, "unknown command %q — use: up | down | status | seed\n", command)
+		fmt.Fprintf(os.Stderr, "unknown command %q — use: up | down | status | seed | seed-conjugations\n", command)
 		os.Exit(1)
 	}
 

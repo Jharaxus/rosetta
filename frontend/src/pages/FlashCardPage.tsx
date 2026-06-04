@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { fetchFlashCard, submitReview } from '../api/words'
@@ -38,6 +38,23 @@ export function FlashCardPage() {
     if (!card || reviewMutation.isPending) return
     reviewMutation.mutate({ wordId: card.id, rating })
   }
+
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if (e.key !== ' ' && e.key !== 'ArrowRight') return
+      if (e.target instanceof HTMLButtonElement) return
+      e.preventDefault()
+      if (!card || reviewMutation.isPending) return
+      if (!flipped) {
+        setSkipTransition(false)
+        setFlipped(true)
+      } else {
+        reviewMutation.mutate({ wordId: card.id, rating: 3 })
+      }
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [card, flipped, reviewMutation])
 
   return (
     <main className={styles.page}>

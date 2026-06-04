@@ -69,7 +69,7 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile.dev
-    command: ["sh", "-c", "go run ./cmd/migrate up && go run ./cmd/migrate seed"]
+    command: ["sh", "-c", "go run ./cmd/migrate up && go run ./cmd/migrate seed && ([ -f /app/resources/Deutch_verbs_and_conjugations.csv ] && go run ./cmd/migrate seed-conjugations || true)"]
     environment:
       DATABASE_URL:   postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@app-db:5432/${POSTGRES_DB}?sslmode=disable
       # Required by config.Load() — supply minimal values
@@ -84,10 +84,12 @@ services:
       SESSION_SECRET:       ${SESSION_SECRET}
       COOKIE_HASH_KEY:      ${COOKIE_HASH_KEY}
       COOKIE_ENCRYPT_KEY:   ${COOKIE_ENCRYPT_KEY}
-      # Path to the vocabulary CSV inside the container (see resources/ mount below).
-      # Set FORCE_RESEED=true to truncate and reload even when the table is populated.
-      SEED_FILE:    /app/resources/Lexique Allemand - export.csv
-      FORCE_RESEED: "false"
+      # Paths to CSV files inside the container (see resources/ mount below).
+      # Set FORCE_RESEED=true / FORCE_RESEED_CONJ=true to truncate and reload.
+      SEED_FILE:         /app/resources/Deutch.csv
+      FORCE_RESEED:      "false"
+      CONJ_SEED_FILE:    /app/resources/Deutch_verbs_and_conjugations.csv
+      FORCE_RESEED_CONJ: "false"
     volumes:
       - ./backend:/app
       - ./resources:/app/resources:ro
