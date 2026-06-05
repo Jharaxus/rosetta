@@ -3,6 +3,10 @@
 .env.local
 *.env.local
 nginx/certs/
+credentials/
+
+# Generated audio files — run `make generate-audio` to regenerate
+resources/audio/
 
 # Go
 backend/tmp/

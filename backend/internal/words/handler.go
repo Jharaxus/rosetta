@@ -20,11 +20,12 @@ import (
 var scheduler = fsrs.NewScheduler()
 
 type Handler struct {
-	queries *db.Queries
+	queries      *db.Queries
+	audioBaseURL string
 }
 
-func NewHandler(queries *db.Queries) *Handler {
-	return &Handler{queries: queries}
+func NewHandler(queries *db.Queries, audioBaseURL string) *Handler {
+	return &Handler{queries: queries, audioBaseURL: audioBaseURL}
 }
 
 // GetFlashCard returns the oldest due card for the authenticated user.
@@ -46,6 +47,11 @@ func (h *Handler) GetFlashCard(c *gin.Context) {
 		return
 	}
 
+	audioURL := ""
+	if cw.AudioFile != nil {
+		audioURL = h.audioBaseURL + *cw.AudioFile
+	}
+
 	c.JSON(http.StatusOK, gin.H{
 		"id":             cw.Card.WordID,
 		"french":         cw.French,
@@ -53,6 +59,7 @@ func (h *Handler) GetFlashCard(c *gin.Context) {
 		"assimil_number": cw.AssimilNumber,
 		"category":       cw.Category,
 		"is_regular":     cw.IsRegular,
+		"audio_url":      audioURL,
 	})
 }
 
@@ -121,6 +128,11 @@ func (h *Handler) GetWritingFlashCard(c *gin.Context) {
 		return
 	}
 
+	audioURL := ""
+	if cw.AudioFile != nil {
+		audioURL = h.audioBaseURL + *cw.AudioFile
+	}
+
 	c.JSON(http.StatusOK, gin.H{
 		"id":             cw.Card.WordID,
 		"french":         cw.French,
@@ -128,6 +140,7 @@ func (h *Handler) GetWritingFlashCard(c *gin.Context) {
 		"assimil_number": cw.AssimilNumber,
 		"category":       cw.Category,
 		"is_regular":     cw.IsRegular,
+		"audio_url":      audioURL,
 	})
 }
 

@@ -2,11 +2,13 @@ import { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { fetchWritingFlashCard, submitWritingReview } from '../api/words'
+import { synthesizeSpeech } from '../api/tts'
 import { ApiError } from '../api/auth'
 import { RATING_LABELS } from '../types/words'
 import type { Rating } from '../types/words'
 import { diffStrings, accuracyToRating } from '../utils/levenshtein'
 import type { StringDiff } from '../utils/levenshtein'
+import { useAudio } from '../hooks/useAudio'
 import styles from './WritingFlashCardPage.module.css'
 
 type Phase = 'input' | 'result'
@@ -33,10 +35,22 @@ export function WritingFlashCardPage() {
     retry: false,
   })
 
+  const audio = useAudio()
+
   const reviewMutation = useMutation({
     mutationFn: ({ wordId, rating }: { wordId: string; rating: Rating }) =>
       submitWritingReview(wordId, rating),
   })
+
+  const synthesizeMutation = useMutation({
+    mutationFn: () => synthesizeSpeech(card!.german),
+    onSuccess: (blob) => audio.playBlob(blob),
+  })
+
+  // Preload static audio when card changes
+  useEffect(() => {
+    if (card?.audio_url) audio.preload(card.audio_url)
+  }, [card?.id]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const noCardsDue = error instanceof ApiError && error.code === 'no_cards_due'
   const noCardsAvailable = error instanceof ApiError && error.code === 'no_cards_available'
@@ -127,7 +141,7 @@ export function WritingFlashCardPage() {
         </div>
       )}
 
-      {card && (
+      {card && !error && (
         <div className={styles.cardScene}>
           <div
             className={`${styles.cardInner} ${flipped ? styles.flipped : ''} ${skipTransition ? styles.noTransition : ''}`}
@@ -216,12 +230,34 @@ export function WritingFlashCardPage() {
                   Précision : {pct} % — {RATING_LABELS[result.rating]}
                 </div>
               )}
+              {phase === 'result' && (
+                <div className={styles.audioRow}>
+                  {card.audio_url && (
+                    <button
+                      type="button"
+                      className={`${styles.audioBtn} ${audio.isError ? styles.audioBtnError : ''}`}
+                      onClick={() => audio.playUrl(card.audio_url)}
+                      disabled={audio.isPlaying}
+                    >
+                      {audio.isError ? 'ERREUR' : 'ÉCOUTER'}
+                    </button>
+                  )}
+                  <button
+                    type="button"
+                    className={`${styles.audioBtn} ${synthesizeMutation.isError ? styles.audioBtnError : ''}`}
+                    onClick={() => synthesizeMutation.mutate()}
+                    disabled={synthesizeMutation.isPending || audio.isPlaying}
+                  >
+                    {synthesizeMutation.isPending ? '…' : synthesizeMutation.isError ? 'INDISPONIBLE' : 'SYNTHÈSE'}
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
       )}
 
-      {card && phase === 'result' && (
+      {card && !error && phase === 'result' && (
         <button
           type="button"
           className={styles.nextBtn}
@@ -231,7 +267,7 @@ export function WritingFlashCardPage() {
         </button>
       )}
 
-      {card && phase === 'input' && (
+      {card && !error && phase === 'input' && (
         <p className={styles.hint}>
           Saisissez la traduction allemande, puis validez.
         </p>

@@ -5,6 +5,7 @@ ENV_FILE      ?= .env.dev
         prod-build prod-up prod-down \
         migrate-status migrate-up migrate-down \
         filter-verbs conjugate-verbs seed-conjugations \
+        generate-audio seed-audio \
         kc-export logs
 
 # ── Help ───────────────────────────────────────────────────────────────────────
@@ -31,6 +32,8 @@ help:
 	@echo "  filter-verbs          Extract verb rows from Deutch.csv → resources/Deutch_verbs.csv"
 	@echo "  conjugate-verbs       Fetch Wiktionary conjugations → resources/Deutch_verbs_and_conjugations.csv"
 	@echo "  seed-conjugations     Load conjugations into DB (requires running stack)"
+	@echo "  generate-audio        Generate OGG audio files via Google TTS (~1 req/s, ~30 min)"
+	@echo "  seed-audio            Populate words.audio_file from resources/audio/ (requires running stack)"
 	@echo ""
 	@echo "  ENV_FILE=<path>  Override the env file (default: .env.dev)"
 	@echo ""
@@ -89,14 +92,14 @@ kc-export:
 # ── Conjugation data ──────────────────────────────────────────────────────────
 filter-verbs:
 	@echo "Filtering verb rows from Deutch.csv..."
-	python3 resources/fetch_conjugations.py filter \
+	python3 resources/scripts/fetch_conjugations.py filter \
 	  resources/Deutch.csv \
 	  resources/Deutch_verbs.csv
 	@echo "Done. Commit resources/Deutch_verbs.csv."
 
 conjugate-verbs:
 	@echo "Fetching Wiktionary conjugations (~1 req/s, several minutes)..."
-	python3 resources/fetch_conjugations.py conjugate \
+	python3 resources/scripts/fetch_conjugations.py conjugate \
 	  resources/Deutch_verbs.csv \
 	  resources/Deutch_verbs_and_conjugations.csv
 	@echo "Done. Commit resources/Deutch_verbs_and_conjugations.csv."
@@ -104,3 +107,15 @@ conjugate-verbs:
 seed-conjugations:
 	docker compose -f compose.dev.yml --env-file $(ENV_FILE) exec backend \
 	  go run ./cmd/migrate seed-conjugations
+
+# ── Audio data ────────────────────────────────────────────────────────────────
+generate-audio:
+	@echo "Generating German audio files via Google TTS (~1 req/s, ~30 min for ~1800 words)..."
+	python3 resources/scripts/generate_audio.py \
+	  resources/Deutch.csv \
+	  resources/audio/
+	@echo "Done. Do NOT commit resources/audio/ — it is gitignored."
+
+seed-audio:
+	docker compose -f compose.dev.yml --env-file $(ENV_FILE) exec backend \
+	  go run ./cmd/migrate seed-audio

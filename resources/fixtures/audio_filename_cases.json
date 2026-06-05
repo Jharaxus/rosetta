@@ -1,0 +1,34 @@
+[
+  {
+    "note": "basic word",
+    "input": "lernen",
+    "expected": "9533f477c512a096fa5f556319db4b98548ce6e7029a54d3ee6065056092b376.ogg"
+  },
+  {
+    "note": "word with umlaut (NFC form)",
+    "input": "üben",
+    "expected": "9f2aaaa62593233232d3494f8d1f3d50394406fdcd63f938b7ed0c51a018a74d.ogg"
+  },
+  {
+    "note": "same word as lernen but with surrounding whitespace and uppercase — must produce identical hash",
+    "input": "  LERNEN  ",
+    "expected": "9533f477c512a096fa5f556319db4b98548ce6e7029a54d3ee6065056092b376.ogg"
+  },
+  {
+    "note": "NFD-encoded üben (u=0x75 + combining diaeresis=0x308 + ben) — must equal NFC form",
+    "input_hex": "c3bc62656e",
+    "input": "üben",
+    "nfd_input_hex": "75cc8862656e",
+    "expected": "9f2aaaa62593233232d3494f8d1f3d50394406fdcd63f938b7ed0c51a018a74d.ogg"
+  },
+  {
+    "note": "common verb",
+    "input": "sein",
+    "expected": "f0abec8675ebc5503c13051760a3052b3f50baf79c5825b6767ec69e82ce501d.ogg"
+  },
+  {
+    "note": "common verb",
+    "input": "arbeiten",
+    "expected": "f1ce4cfaa9130b286bb732aa935b7e4a39930f137f7574acd33f836cddecbfc9.ogg"
+  }
+]

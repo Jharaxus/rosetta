@@ -383,3 +383,41 @@
   animation: fadeUp 0.9s ease-out both;
   animation-delay: 0.2s;
 }
+
+/* ── Audio buttons ── */
+.audioRow {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.audioBtn {
+  height: 32px;
+  padding: 0 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-rule-hi);
+  background: transparent;
+  color: var(--color-dim);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.audioBtn:hover:not(:disabled) {
+  border-color: var(--color-gold);
+  color: var(--color-gold);
+}
+
+.audioBtn:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.audioBtnError {
+  border-color: #a0442a;
+  color: #a0442a;
+  pointer-events: none;
+}

@@ -23,6 +23,10 @@ type Config struct {
 	IsProduction         bool
 	CapAPIURL            string
 	CapSecretKey         string
+	GoogleTTSVoice       string
+	AudioDir             string
+	AudioBaseURL         string
+	ValkeyAddr           string
 }
 
 func Load() *Config {
@@ -43,6 +47,11 @@ func Load() *Config {
 	cfg.IsProduction = cfg.AppEnv == "production"
 	cfg.CapAPIURL    = envOr("CAP_API_URL", "")
 	cfg.CapSecretKey = envOr("CAP_SECRET_KEY", "")
+
+	cfg.GoogleTTSVoice = envOr("GOOGLE_TTS_VOICE", "de-DE-Neural2-F")
+	cfg.AudioDir       = envOr("AUDIO_DIR", "/app/resources/audio")
+	cfg.AudioBaseURL   = envOr("AUDIO_BASE_URL", "/static/audio/")
+	cfg.ValkeyAddr     = envOr("VALKEY_ADDR", "valkey:6379")
 
 	sessionSecret := []byte(requireEnv("SESSION_SECRET"))
 	if len(sessionSecret) < 32 {

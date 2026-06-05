@@ -56,6 +56,7 @@ type CardWithWord struct {
 	AssimilNumber int
 	Category      string
 	IsRegular     *bool
+	AudioFile     *string
 }
 
 type UserSettings struct {

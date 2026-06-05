@@ -2,9 +2,11 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query'
 import { fetchFlashCard, submitReview } from '../api/words'
+import { synthesizeSpeech } from '../api/tts'
 import { ApiError } from '../api/auth'
 import { RATING_LABELS } from '../types/words'
 import type { Rating } from '../types/words'
+import { useAudio } from '../hooks/useAudio'
 import styles from './FlashCardPage.module.css'
 
 const RATINGS: Rating[] = [1, 2, 3, 4]
@@ -21,6 +23,8 @@ export function FlashCardPage() {
     retry: false,
   })
 
+  const audio = useAudio()
+
   const reviewMutation = useMutation({
     mutationFn: ({ wordId, rating }: { wordId: string; rating: Rating }) =>
       submitReview(wordId, rating),
@@ -30,6 +34,16 @@ export function FlashCardPage() {
       queryClient.invalidateQueries({ queryKey: ['flashcard'] })
     },
   })
+
+  const synthesizeMutation = useMutation({
+    mutationFn: () => synthesizeSpeech(card!.german),
+    onSuccess: (blob) => audio.playBlob(blob),
+  })
+
+  // Preload static audio when card changes
+  useEffect(() => {
+    if (card?.audio_url) audio.preload(card.audio_url)
+  }, [card?.id]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const noCardsDue = error instanceof ApiError && error.code === 'no_cards_due'
   const noCardsAvailable = error instanceof ApiError && error.code === 'no_cards_available'
@@ -84,7 +98,7 @@ export function FlashCardPage() {
         </div>
       )}
 
-      {card && (
+      {card && !error && (
         <div
           className={styles.cardScene}
           onClick={() => { if (!flipped) { setSkipTransition(false); setFlipped(true) } }}
@@ -121,6 +135,26 @@ export function FlashCardPage() {
                 <p className={styles.german}>{card.german}</p>
                 <p className={styles.frenchSm}>{card.french}</p>
               </div>
+              <div className={styles.audioRow}>
+                {card.audio_url && (
+                  <button
+                    type="button"
+                    className={`${styles.audioBtn} ${audio.isError ? styles.audioBtnError : ''}`}
+                    onClick={(e) => { e.stopPropagation(); audio.playUrl(card.audio_url) }}
+                    disabled={audio.isPlaying}
+                  >
+                    {audio.isError ? 'ERREUR' : 'ÉCOUTER'}
+                  </button>
+                )}
+                <button
+                  type="button"
+                  className={`${styles.audioBtn} ${synthesizeMutation.isError ? styles.audioBtnError : ''}`}
+                  onClick={(e) => { e.stopPropagation(); synthesizeMutation.mutate() }}
+                  disabled={synthesizeMutation.isPending || audio.isPlaying}
+                >
+                  {synthesizeMutation.isPending ? '…' : synthesizeMutation.isError ? 'INDISPONIBLE' : 'SYNTHÈSE'}
+                </button>
+              </div>
               <div className={styles.tags}>
                 <span className={styles.tag}>{card.category}</span>
                 {card.is_regular !== null && (
@@ -134,7 +168,7 @@ export function FlashCardPage() {
         </div>
       )}
 
-      {card && flipped && (
+      {card && !error && flipped && (
         <div className={styles.ratingRow} role="group" aria-label="Évaluer votre souvenir">
           {RATINGS.map((r) => (
             <button
@@ -150,7 +184,7 @@ export function FlashCardPage() {
         </div>
       )}
 
-      {card && !flipped && (
+      {card && !error && !flipped && (
         <p className={styles.ratingHint}>
           Retournez la carte, puis évaluez votre souvenir.
         </p>

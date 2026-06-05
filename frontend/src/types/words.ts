@@ -5,6 +5,7 @@ export interface Word {
   assimil_number: number
   category: string
   is_regular: boolean | null
+  audio_url: string
 }
 
 export type Rating = 1 | 2 | 3 | 4

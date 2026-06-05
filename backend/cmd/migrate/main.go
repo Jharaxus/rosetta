@@ -66,8 +66,14 @@ func main() {
 			slog.Error("seed-conjugations", "err", err)
 			os.Exit(1)
 		}
+	case "seed-audio":
+		slog.Info("seeding audio file references")
+		if err := seed.SeedAudio(context.Background(), pool); err != nil {
+			slog.Error("seed-audio", "err", err)
+			os.Exit(1)
+		}
 	default:
-		fmt.Fprintf(os.Stderr, "unknown command %q — use: up | down | status | seed | seed-conjugations\n", command)
+		fmt.Fprintf(os.Stderr, "unknown command %q — use: up | down | status | seed | seed-conjugations | seed-audio\n", command)
 		os.Exit(1)
 	}
 

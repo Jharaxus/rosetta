@@ -30,7 +30,7 @@ import responses as rsps_lib
 # Helpers
 # ---------------------------------------------------------------------------
 
-FIXTURES = Path(__file__).parent / "fixtures"
+FIXTURES = Path(__file__).parent.parent / "fixtures"
 
 WIKTIONARY_API = "https://de.wiktionary.org/w/api.php"
 
