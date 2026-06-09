@@ -401,6 +401,44 @@ def extract_wiktionary_infinitive(german_csv_value: str) -> str | None:
     return s
 
 
+# ── Format helpers ───────────────────────────────────────────────────────────
+
+def parse_alternatives(german: str) -> list[str]:
+    """
+    Parse the [alt1;alt2;...] format used in the words.german column.
+
+    Every german column value is wrapped in [...]; this strips the brackets
+    and splits on ';'. Must NOT be used on raw Wiktionary HTML.
+    """
+    return german[1:-1].split(";")
+
+
+def format_forms(forms: list[str]) -> str:
+    """Format a list of conjugated forms as [form1;form2;...] TEXT column value."""
+    return "[" + ";".join(forms) + "]"
+
+
+def merge_forms(
+    a: dict[tuple[str, int], list[str]],
+    b: dict[tuple[str, int], list[str]],
+) -> dict[tuple[str, int], list[str]]:
+    """
+    Merge two (tense, person) → [forms] dicts without mutating either input.
+
+    Keys present in both dicts have their form lists concatenated. This is used
+    both to merge conjugation tables from the same verb (e.g. backen has a strong
+    and a weak table) and to merge forms from multiple alternative verbs
+    (e.g. [können;wissen]).
+    """
+    result = {k: list(v) for k, v in a.items()}
+    for key, forms in b.items():
+        if key in result:
+            result[key] = result[key] + forms
+        else:
+            result[key] = list(forms)
+    return result
+
+
 # ── CLI commands ──────────────────────────────────────────────────────────────
 
 def cmd_filter(input_csv: str, output_csv: str) -> None:
@@ -445,31 +483,44 @@ def cmd_conjugate(verbs_csv: str, output_csv: str) -> None:
         writer.writerow(["verb", "tense", "person", "conjugation"])
 
         for i, german in enumerate(unique_verbs, 1):
-            infinitive = extract_wiktionary_infinitive(german)
-            if infinitive is None:
-                log.warning("[%d/%d] %s → SKIPPED (cannot derive infinitive)",
-                            i, total, german)
+            # Parse alternatives from [alt1;alt2;...] format
+            alternatives = parse_alternatives(german)
+
+            # Fetch and merge conjugations for all alternatives
+            merged: dict[tuple[str, int], list[str]] = {}
+            any_fetched = False
+
+            for alt in alternatives:
+                infinitive = extract_wiktionary_infinitive(alt)
+                if infinitive is None:
+                    log.warning("[%d/%d] %s (alt %r) → SKIPPED (cannot derive infinitive)",
+                                i, total, german, alt)
+                    continue
+
+                html = fetch_wiktionary(infinitive)
+                if html is None:
+                    log.warning("[%d/%d] %s (alt %r) → SKIPPED (no Flexion page)",
+                                i, total, german, infinitive)
+                    continue
+
+                conjugations = parse_conjugations(html)
+                if not conjugations:
+                    log.warning("[%d/%d] %s (alt %r) → SKIPPED (no conjugations parsed)",
+                                i, total, german, infinitive)
+                    continue
+
+                any_fetched = True
+                for conj in conjugations:
+                    merged = merge_forms(merged, {(conj["tense"], conj["person"]): conj["forms"]})
+
+                log.info("[%d/%d] %s (alt %r) → %d forms", i, total, german, infinitive,
+                         len(conjugations))
+
+            if not any_fetched:
                 continue
 
-            html = fetch_wiktionary(infinitive)
-            if html is None:
-                log.warning("[%d/%d] %s → SKIPPED (no Flexion page)", i, total, infinitive)
-                continue
-
-            conjugations = parse_conjugations(html)
-            if not conjugations:
-                log.warning("[%d/%d] %s → SKIPPED (no conjugations parsed)", i, total, infinitive)
-                continue
-
-            for conj in conjugations:
-                writer.writerow([
-                    german,
-                    conj["tense"],
-                    conj["person"],
-                    ", ".join(conj["forms"]),
-                ])
-
-            log.info("[%d/%d] %s → %d forms", i, total, infinitive, len(conjugations))
+            for (tense, person), forms in merged.items():
+                writer.writerow([german, tense, person, format_forms(forms)])
 
 
 # ── Entry point ───────────────────────────────────────────────────────────────

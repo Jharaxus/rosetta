@@ -78,13 +78,13 @@ class TestEndToEnd:
     def test_output_matches_expected_csv(self, tmp_path):
         from fetch_conjugations import cmd_conjugate
 
-        # Build a small verbs CSV with sein, arbeiten, verstehen
+        # Build a small verbs CSV with sein, arbeiten, verstehen in [;] format
         verbs_csv = tmp_path / "verbs.csv"
         verbs_csv.write_text(
             "french;german;assimil_lesson;category;regularity\n"
-            "être;sein;1;Verb;irregular\n"
-            "travailler;arbeiten;1;Verb;regular\n"
-            "comprendre;verstehen;1;Verb;irregular\n",
+            "être;[sein];1;Verb;irregular\n"
+            "travailler;[arbeiten];1;Verb;regular\n"
+            "comprendre;[verstehen];1;Verb;irregular\n",
             encoding="utf-8",
         )
 
@@ -434,3 +434,212 @@ class TestExtractWiktionaryInfinitive:
     def test_returns_none_for_empty(self):
         from fetch_conjugations import extract_wiktionary_infinitive
         assert extract_wiktionary_infinitive("") is None
+
+
+# ---------------------------------------------------------------------------
+# 8. Unit tests — new format helpers (TDD: written before implementation)
+# ---------------------------------------------------------------------------
+
+class TestNewFormat:
+    """Unit tests for parse_alternatives, format_forms, and merge_forms."""
+
+    def test_parse_alternatives_single(self):
+        from fetch_conjugations import parse_alternatives
+        assert parse_alternatives("[lernen]") == ["lernen"]
+
+    def test_parse_alternatives_multiple(self):
+        from fetch_conjugations import parse_alternatives
+        assert parse_alternatives("[können;wissen]") == ["können", "wissen"]
+
+    def test_parse_alternatives_three(self):
+        from fetch_conjugations import parse_alternatives
+        assert parse_alternatives("[fahren;losfahren;weggehen]") == ["fahren", "losfahren", "weggehen"]
+
+    def test_format_forms_single(self):
+        from fetch_conjugations import format_forms
+        assert format_forms(["fuhr"]) == "[fuhr]"
+
+    def test_format_forms_multiple(self):
+        from fetch_conjugations import format_forms
+        assert format_forms(["buk", "backte"]) == "[buk;backte]"
+
+    def test_format_forms_three(self):
+        from fetch_conjugations import format_forms
+        assert format_forms(["a", "b", "c"]) == "[a;b;c]"
+
+    def test_merge_forms_disjoint_keys(self):
+        from fetch_conjugations import merge_forms
+        a = {("praesens_indikativ", 1): ["kann"]}
+        b = {("praesens_indikativ", 2): ["kannst"]}
+        merged = merge_forms(a, b)
+        assert merged[("praesens_indikativ", 1)] == ["kann"]
+        assert merged[("praesens_indikativ", 2)] == ["kannst"]
+
+    def test_merge_forms_same_key_concatenates(self):
+        from fetch_conjugations import merge_forms
+        a = {("praesens_indikativ", 1): ["kann"]}
+        b = {("praesens_indikativ", 1): ["weiß"]}
+        merged = merge_forms(a, b)
+        assert merged[("praesens_indikativ", 1)] == ["kann", "weiß"]
+
+    def test_merge_forms_does_not_mutate_inputs(self):
+        from fetch_conjugations import merge_forms
+        a = {("praesens_indikativ", 1): ["kann"]}
+        b = {("praesens_indikativ", 1): ["weiß"]}
+        _ = merge_forms(a, b)
+        assert a[("praesens_indikativ", 1)] == ["kann"]
+        assert b[("praesens_indikativ", 1)] == ["weiß"]
+
+    def test_merge_forms_empty_first(self):
+        from fetch_conjugations import merge_forms
+        b = {("praesens_indikativ", 1): ["kann"]}
+        merged = merge_forms({}, b)
+        assert merged[("praesens_indikativ", 1)] == ["kann"]
+
+
+# ---------------------------------------------------------------------------
+# 9. Unit tests — backen (single verb with multiple forms per tense/person)
+# ---------------------------------------------------------------------------
+
+def make_merged_tense_map(name: str) -> dict[tuple[str, int], list[str]]:
+    """
+    Parse fixture HTML and return {(tense_enum, person_int): [forms]} dict,
+    merging duplicate (tense, person) entries (e.g. backen has two conjugation
+    tables — one strong, one weak — producing duplicate keys in parse_conjugations).
+    """
+    from fetch_conjugations import parse_conjugations, merge_forms
+    tm: dict[tuple[str, int], list[str]] = {}
+    for r in parse_conjugations(load_html(name)):
+        tm = merge_forms(tm, {(r["tense"], r["person"]): r["forms"]})
+    return tm
+
+
+class TestParseConjugationsBacken:
+    """
+    HTML parsing unit tests for 'backen'.
+    backen has both a strong (buk) and a weak (backte) conjugation table on
+    Wiktionary. After merging, both forms should appear for the same person.
+    """
+
+    def setup_method(self):
+        self.tm = make_merged_tense_map("backen")
+
+    def test_praeteritum_indikativ_p1_has_buk(self):
+        forms = self.tm.get(("praeteritum_indikativ", 1), [])
+        assert "buk" in forms, f"buk not in {forms}"
+
+    def test_praeteritum_indikativ_p1_has_backte(self):
+        forms = self.tm.get(("praeteritum_indikativ", 1), [])
+        assert "backte" in forms, f"backte not in {forms}"
+
+    def test_praeteritum_indikativ_p1_has_two_forms(self):
+        forms = self.tm.get(("praeteritum_indikativ", 1), [])
+        assert len(forms) >= 2, f"Expected at least 2 forms, got {forms}"
+
+    def test_praesens_indikativ_p1_is_backe(self):
+        forms = self.tm.get(("praesens_indikativ", 1), [])
+        assert "backe" in forms, f"backe not in {forms}"
+
+    def test_all_six_praesens_persons_present(self):
+        persons = {p for (t, p) in self.tm if t == "praesens_indikativ"}
+        assert persons == {1, 2, 3, 4, 5, 6}
+
+
+# ---------------------------------------------------------------------------
+# 10. E2E test — multi-alternative german column [können;wissen]
+# ---------------------------------------------------------------------------
+
+class TestConjugateMultipleAlternatives:
+    """
+    Full conjugate pipeline for a single row with german='[können;wissen]'.
+    Both verbs must be fetched separately and their forms merged in the output.
+    """
+
+    @rsps_lib.activate
+    def test_output_verb_column_is_original_german_value(self, tmp_path):
+        from fetch_conjugations import cmd_conjugate
+        import unittest.mock as mock
+
+        verbs_csv = tmp_path / "verbs.csv"
+        verbs_csv.write_text(
+            "french;german;assimil_lesson;category;regularity\n"
+            # [;] inside the german field must be quoted when the CSV delimiter is ';'
+            'pouvoir+savoir;"[können;wissen]";1;Verb;irregular\n',
+            encoding="utf-8",
+        )
+
+        rsps_lib.add(rsps_lib.GET, WIKTIONARY_API, body=load_html_bytes("koennen"),
+                     status=200, content_type="application/json", match_querystring=False)
+        rsps_lib.add(rsps_lib.GET, WIKTIONARY_API, body=load_html_bytes("wissen"),
+                     status=200, content_type="application/json", match_querystring=False)
+
+        output_csv = tmp_path / "out.csv"
+        with mock.patch("time.sleep"):
+            cmd_conjugate(str(verbs_csv), str(output_csv))
+
+        with open(output_csv, newline="", encoding="utf-8") as f:
+            rows = list(csv.DictReader(f, delimiter=";"))
+
+        verbs = {r["verb"] for r in rows}
+        assert verbs == {"[können;wissen]"}, f"Expected only [können;wissen] verb, got {verbs}"
+
+    @rsps_lib.activate
+    def test_praesens_p1_contains_kann_and_weiss(self, tmp_path):
+        from fetch_conjugations import cmd_conjugate
+        import unittest.mock as mock
+
+        verbs_csv = tmp_path / "verbs.csv"
+        verbs_csv.write_text(
+            "french;german;assimil_lesson;category;regularity\n"
+            # [;] inside the german field must be quoted when the CSV delimiter is ';'
+            'pouvoir+savoir;"[können;wissen]";1;Verb;irregular\n',
+            encoding="utf-8",
+        )
+
+        rsps_lib.add(rsps_lib.GET, WIKTIONARY_API, body=load_html_bytes("koennen"),
+                     status=200, content_type="application/json", match_querystring=False)
+        rsps_lib.add(rsps_lib.GET, WIKTIONARY_API, body=load_html_bytes("wissen"),
+                     status=200, content_type="application/json", match_querystring=False)
+
+        output_csv = tmp_path / "out.csv"
+        with mock.patch("time.sleep"):
+            cmd_conjugate(str(verbs_csv), str(output_csv))
+
+        with open(output_csv, newline="", encoding="utf-8") as f:
+            by_key = {
+                (r["verb"], r["tense"], int(r["person"])): r["conjugation"]
+                for r in csv.DictReader(f, delimiter=";")
+            }
+
+        key = ("[können;wissen]", "praesens_indikativ", 1)
+        assert key in by_key, f"{key} not in output"
+        conj = by_key[key]
+        assert conj.startswith("[") and conj.endswith("]"), f"Not in [;] format: {conj!r}"
+        forms = conj[1:-1].split(";")
+        assert "kann" in forms, f"'kann' not in {forms}"
+        assert "weiß" in forms, f"'weiß' not in {forms}"
+
+    @rsps_lib.activate
+    def test_two_http_requests_made(self, tmp_path):
+        """Exactly 2 HTTP calls are made — one per alternative."""
+        from fetch_conjugations import cmd_conjugate
+        import unittest.mock as mock
+
+        verbs_csv = tmp_path / "verbs.csv"
+        verbs_csv.write_text(
+            "french;german;assimil_lesson;category;regularity\n"
+            # [;] inside the german field must be quoted when the CSV delimiter is ';'
+            'pouvoir+savoir;"[können;wissen]";1;Verb;irregular\n',
+            encoding="utf-8",
+        )
+
+        rsps_lib.add(rsps_lib.GET, WIKTIONARY_API, body=load_html_bytes("koennen"),
+                     status=200, content_type="application/json", match_querystring=False)
+        rsps_lib.add(rsps_lib.GET, WIKTIONARY_API, body=load_html_bytes("wissen"),
+                     status=200, content_type="application/json", match_querystring=False)
+
+        output_csv = tmp_path / "out.csv"
+        with mock.patch("time.sleep"):
+            cmd_conjugate(str(verbs_csv), str(output_csv))
+
+        assert len(rsps_lib.calls) == 2, f"Expected 2 HTTP calls, got {len(rsps_lib.calls)}"

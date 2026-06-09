@@ -6,6 +6,7 @@ export interface Word {
   category: string
   is_regular: boolean | null
   audio_url: string
+  annotation?: string | null
 }
 
 export type Rating = 1 | 2 | 3 | 4

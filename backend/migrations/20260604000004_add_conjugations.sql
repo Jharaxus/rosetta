@@ -31,7 +31,7 @@ CREATE TABLE conjugations (
     word_id UUID        NOT NULL REFERENCES words(id) ON DELETE CASCADE,
     tense   verb_tense  NOT NULL,
     person  verb_person NOT NULL,
-    forms   TEXT[]      NOT NULL,
+    forms   TEXT        NOT NULL,
     PRIMARY KEY (word_id, tense, person)
 );
 

@@ -59,6 +59,7 @@ func (h *Handler) GetFlashCard(c *gin.Context) {
 		"assimil_number": cw.AssimilNumber,
 		"category":       cw.Category,
 		"is_regular":     cw.IsRegular,
+		"annotation":     cw.Annotation,
 		"audio_url":      audioURL,
 	})
 }
@@ -140,6 +141,7 @@ func (h *Handler) GetWritingFlashCard(c *gin.Context) {
 		"assimil_number": cw.AssimilNumber,
 		"category":       cw.Category,
 		"is_regular":     cw.IsRegular,
+		"annotation":     cw.Annotation,
 		"audio_url":      audioURL,
 	})
 }

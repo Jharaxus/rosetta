@@ -8,6 +8,11 @@ credentials/
 # Generated audio files — run `make generate-audio` to regenerate
 resources/audio/
 
+# CSV normalisation build artifacts — one-time transform, not needed after Deutch.csv is committed
+resources/Deutch_normalized.csv
+resources/scripts/transform_csv.py
+resources/scripts/patch_csv_stage_a2.py
+
 # Go
 backend/tmp/
 backend/vendor/

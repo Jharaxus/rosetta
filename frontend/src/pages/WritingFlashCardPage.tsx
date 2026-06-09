@@ -6,7 +6,7 @@ import { synthesizeSpeech } from '../api/tts'
 import { ApiError } from '../api/auth'
 import { RATING_LABELS } from '../types/words'
 import type { Rating } from '../types/words'
-import { diffStrings, accuracyToRating } from '../utils/levenshtein'
+import { bestDiff, parseAlternatives, accuracyToRating } from '../utils/levenshtein'
 import type { StringDiff } from '../utils/levenshtein'
 import { useAudio } from '../hooks/useAudio'
 import styles from './WritingFlashCardPage.module.css'
@@ -17,6 +17,7 @@ interface Result {
   accuracy: number
   rating: Rating
   diff: StringDiff
+  matched: string
 }
 
 export function WritingFlashCardPage() {
@@ -43,7 +44,7 @@ export function WritingFlashCardPage() {
   })
 
   const synthesizeMutation = useMutation({
-    mutationFn: () => synthesizeSpeech(card!.german),
+    mutationFn: () => synthesizeSpeech(result?.matched ?? parseAlternatives(card!.german)[0]),
     onSuccess: (blob) => audio.playBlob(blob),
   })
 
@@ -57,11 +58,11 @@ export function WritingFlashCardPage() {
 
   function handleValidate() {
     if (!card || phase !== 'input') return
-    const diff = diffStrings(input, card.german)
-    const maxLen = Math.max(Array.from(input).length, Array.from(card.german).length)
+    const { diff, matched } = bestDiff(input, card.german)
+    const maxLen = Math.max(Array.from(input).length, Array.from(matched).length)
     const accuracy = maxLen === 0 ? 1 : 1 - diff.distance / maxLen
     const rating = accuracyToRating(accuracy)
-    setResult({ accuracy, rating, diff })
+    setResult({ accuracy, rating, diff, matched })
     setSkipTransition(false)
     setFlipped(true)
     setPhase('result')
@@ -193,7 +194,10 @@ export function WritingFlashCardPage() {
                 TRADUCTION · LEÇON {card.assimil_number}
               </div>
               <div className={styles.wordBlock}>
-                <p className={styles.german}>{card.german}</p>
+                <p className={styles.german}>{result ? result.matched : card.german}</p>
+                {card.annotation && (
+                  <p className={styles.annotation}>{card.annotation}</p>
+                )}
                 {result && (
                   <p className={styles.userSpelling} aria-label="Votre saisie">
                     {result.diff.inputTokens.map((token, idx) => (

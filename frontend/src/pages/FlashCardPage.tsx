@@ -6,6 +6,7 @@ import { synthesizeSpeech } from '../api/tts'
 import { ApiError } from '../api/auth'
 import { RATING_LABELS } from '../types/words'
 import type { Rating } from '../types/words'
+import { parseAlternatives } from '../utils/levenshtein'
 import { useAudio } from '../hooks/useAudio'
 import styles from './FlashCardPage.module.css'
 
@@ -36,7 +37,7 @@ export function FlashCardPage() {
   })
 
   const synthesizeMutation = useMutation({
-    mutationFn: () => synthesizeSpeech(card!.german),
+    mutationFn: () => synthesizeSpeech(parseAlternatives(card!.german)[0]),
     onSuccess: (blob) => audio.playBlob(blob),
   })
 
@@ -132,7 +133,10 @@ export function FlashCardPage() {
                 TRADUCTION · LEÇON {card.assimil_number}
               </div>
               <div className={styles.wordBlock}>
-                <p className={styles.german}>{card.german}</p>
+                <p className={styles.german}>{parseAlternatives(card.german).join(' / ')}</p>
+                {card.annotation && (
+                  <p className={styles.annotation}>{card.annotation}</p>
+                )}
                 <p className={styles.frenchSm}>{card.french}</p>
               </div>
               <div className={styles.audioRow}>

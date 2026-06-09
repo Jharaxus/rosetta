@@ -319,6 +319,62 @@ describe('computeAccuracy', () => {
   })
 })
 
+// ── parseAlternatives ─────────────────────────────────────────────────────────
+
+describe('parseAlternatives', () => {
+  it('handles single value', () =>
+    import('./levenshtein').then(({ parseAlternatives }) =>
+      expect(parseAlternatives('[lernen]')).toEqual(['lernen'])))
+
+  it('handles two alternatives', () =>
+    import('./levenshtein').then(({ parseAlternatives }) =>
+      expect(parseAlternatives('[fahren;losfahren]')).toEqual(['fahren', 'losfahren'])))
+
+  it('handles three alternatives', () =>
+    import('./levenshtein').then(({ parseAlternatives }) =>
+      expect(parseAlternatives('[a;b;c]')).toEqual(['a', 'b', 'c'])))
+
+  it('handles German words with umlauts', () =>
+    import('./levenshtein').then(({ parseAlternatives }) =>
+      expect(parseAlternatives('[können;wissen]')).toEqual(['können', 'wissen'])))
+})
+
+// ── bestDiff ─────────────────────────────────────────────────────────────────
+
+describe('bestDiff', () => {
+  it('exact match on first alternative gives distance 0', () =>
+    import('./levenshtein').then(({ bestDiff }) =>
+      expect(bestDiff('fahren', '[fahren;losfahren]').diff.distance).toBe(0)))
+
+  it('exact match on second alternative gives distance 0', () =>
+    import('./levenshtein').then(({ bestDiff }) =>
+      expect(bestDiff('losfahren', '[fahren;losfahren]').diff.distance).toBe(0)))
+
+  it('picks the alternative with lowest distance', () =>
+    import('./levenshtein').then(({ bestDiff }) => {
+      // 'fahre' is closer to 'fahren' (distance 1) than to 'losfahren' (distance 4)
+      const { diff, matched } = bestDiff('fahre', '[fahren;losfahren]')
+      expect(matched).toBe('fahren')
+      expect(diff.distance).toBe(1)
+    }))
+
+  it('returns the matched alternative string', () =>
+    import('./levenshtein').then(({ bestDiff }) => {
+      const { matched } = bestDiff('losfahren', '[fahren;losfahren]')
+      expect(matched).toBe('losfahren')
+    }))
+
+  it('single alternative behaves like plain diffStrings', () =>
+    import('./levenshtein').then(({ bestDiff }) =>
+      expect(bestDiff('ohne', '[ohne]').diff.distance).toBe(0)))
+
+  it('distance is 0 when input matches any alternative exactly', () =>
+    import('./levenshtein').then(({ bestDiff }) => {
+      const { diff } = bestDiff('weggehen', '[fahren;losfahren;weggehen]')
+      expect(diff.distance).toBe(0)
+    }))
+})
+
 // ── accuracyToRating ──────────────────────────────────────────────────────────
 
 describe('accuracyToRating', () => {

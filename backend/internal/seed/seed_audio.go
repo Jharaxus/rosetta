@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"log/slog"
 	"os"
-	"path/filepath"
 	"strings"
 
 	"github.com/jackc/pgx/v5"
@@ -17,11 +16,20 @@ import (
 
 const defaultAudioDir = "/app/resources/audio"
 
+// canonicalGerman returns the first alternative from the [alt1;alt2;...] format
+// used in words.german. This is the form used for TTS generation and filename hashing.
+func canonicalGerman(german string) string {
+	s := strings.TrimPrefix(strings.TrimSuffix(german, "]"), "[")
+	first, _, _ := strings.Cut(s, ";")
+	return first
+}
+
 // audioFilename is the cross-language contract function.
 // It MUST produce identical output to resources/scripts/generate_audio.py::audio_filename().
 // Algorithm: NFC-normalise → lowercase → trim → SHA256 → hex → + ".ogg"
 func audioFilename(german string) string {
-	normalised := norm.NFC.String(strings.ToLower(strings.TrimSpace(german)))
+	canonical := canonicalGerman(german)
+	normalised := norm.NFC.String(strings.ToLower(strings.TrimSpace(canonical)))
 	h := sha256.Sum256([]byte(normalised))
 	return hex.EncodeToString(h[:]) + ".ogg"
 }
@@ -120,10 +128,4 @@ func SeedAudio(ctx context.Context, pool *pgxpool.Pool) error {
 		return fmt.Errorf("seed_audio: %d updates failed", updateErrors)
 	}
 	return nil
-}
-
-// AudioFilenameForPath returns the full path to the audio file for a given German word.
-// Only used by the seeder; not exported as a public API.
-func audioFilenameForPath(audioDir, german string) string {
-	return filepath.Join(audioDir, audioFilename(german))
 }

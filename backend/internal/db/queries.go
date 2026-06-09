@@ -140,7 +140,7 @@ func (q *Queries) GetNextDueCard(ctx context.Context, userID uuid.UUID) (model.C
 			c.user_id, c.word_id,
 			c.stability, c.difficulty, c.state, c.step,
 			c.due, c.last_review, c.reps, c.lapses,
-			w.french, w.german, w.assimil_number, w.category, w.is_regular, w.audio_file
+			w.french, w.german, w.assimil_number, w.category, w.is_regular, w.annotation, w.audio_file
 		FROM cards c
 		JOIN words w ON w.id = c.word_id
 		WHERE c.user_id = $1
@@ -154,7 +154,7 @@ func (q *Queries) GetNextDueCard(ctx context.Context, userID uuid.UUID) (model.C
 		&cw.Card.UserID, &cw.Card.WordID,
 		&cw.Card.Stability, &cw.Card.Difficulty, &cw.Card.State, &cw.Card.Step,
 		&cw.Card.Due, &cw.Card.LastReview, &cw.Card.Reps, &cw.Card.Lapses,
-		&cw.French, &cw.German, &cw.AssimilNumber, &cw.Category, &cw.IsRegular, &cw.AudioFile,
+		&cw.French, &cw.German, &cw.AssimilNumber, &cw.Category, &cw.IsRegular, &cw.Annotation, &cw.AudioFile,
 	)
 	return cw, err
 }
@@ -245,7 +245,7 @@ func (q *Queries) GetNextDueWritingCard(ctx context.Context, userID uuid.UUID) (
 			wc.user_id, wc.word_id,
 			wc.stability, wc.difficulty, wc.state, wc.step,
 			wc.due, wc.last_review, wc.reps, wc.lapses,
-			w.french, w.german, w.assimil_number, w.category, w.is_regular, w.audio_file
+			w.french, w.german, w.assimil_number, w.category, w.is_regular, w.annotation, w.audio_file
 		FROM writing_cards wc
 		JOIN words w ON w.id = wc.word_id
 		WHERE wc.user_id = $1
@@ -259,7 +259,7 @@ func (q *Queries) GetNextDueWritingCard(ctx context.Context, userID uuid.UUID) (
 		&cw.Card.UserID, &cw.Card.WordID,
 		&cw.Card.Stability, &cw.Card.Difficulty, &cw.Card.State, &cw.Card.Step,
 		&cw.Card.Due, &cw.Card.LastReview, &cw.Card.Reps, &cw.Card.Lapses,
-		&cw.French, &cw.German, &cw.AssimilNumber, &cw.Category, &cw.IsRegular, &cw.AudioFile,
+		&cw.French, &cw.German, &cw.AssimilNumber, &cw.Category, &cw.IsRegular, &cw.Annotation, &cw.AudioFile,
 	)
 	return cw, err
 }

@@ -22,6 +22,7 @@ CREATE TABLE words (
     assimil_number INTEGER       NOT NULL CHECK (assimil_number BETWEEN 1 AND 100),
     category       word_category NOT NULL,
     is_regular     BOOLEAN,
+    annotation     TEXT,
     created_at     TIMESTAMPTZ   NOT NULL DEFAULT now(),
     CONSTRAINT words_unique UNIQUE (french, german, assimil_number),
     -- Only verbs carry a regularity value; all other categories must leave it NULL.

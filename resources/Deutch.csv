@@ -1,1873 +1,1872 @@
-Français;Allemand;Leçon;Catégorie;Régularité
-allemand (langue);das Deutsch;1;Noun;
-apprendre;lernen;1;Verb;regular
-comprendre;verstehen;1;Verb;irregular
-connaître;kennen;1;Verb;irregular
-et;und;1;Conjunction;
-je;ich;1;Personal pronoun;
-oui;ja;1;Modal particle;
-peine;die Mühe;1;Noun;
-rien;nichts;1;Adjective/Adverb;
-sans;ohne (+ acc.);1;Preposition;
-tu;du;1;Personal pronoun;
-beau (adj.);schön;2;Adjective/Adverb;
-ce;das;2;Adjective/Adverb;
-de (provenance);aus;2;Preposition;
-elle;sie;2;Personal pronoun;
-être;sein;2;Verb;irregular
-femme;die Frau;2;Noun;
-ici;hier;2;Adjective/Adverb;
-la (art. déf. f. sujet = nom.);die;2;Article;
-nouveau;neu;2;Adjective/Adverb;
-où (origine);woher;2;Interrogative;
-professeure;die Lehrerin;2;Noun;
-qui (p. int. nom.);wer;2;Interrogative;
-russe (langue);das Russisch;2;Noun;
-Saint-Pétersbourg;Sankt Petersburg;2;Fixed expression;
-venir;kommen;2;Verb;regular
-beaucoup;viel;3;Adjective/Adverb;
-dormir;schlafen;3;Verb;irregular
-fatigué;müde;3;Adjective/Adverb;
-mais;aber;3;Conjunction;
-ou;oder;3;Conjunction;
-paresseux;faul;3;Adjective/Adverb;
-peu;wenig;3;Adjective/Adverb;
-peu (trop ~);zu wenig;3;Adjective/Adverb;
-travailler;arbeiten;3;Verb;regular
-trop;zu viel;3;Adjective/Adverb;
-chambre;das Zimmer;4;Noun;
-chambre à coucher;das Schlafzimmer;4;Noun;
-combien;wie viel;4;Interrogative;
-coûter;kosten;4;Verb;regular
-cuisine;die Küche;4;Noun;
-euro;der Euro;4;Noun;
-il/elle (sujet neutre);es;4;Personal pronoun;
-jardin;der Garten;4;Noun;
-la (art. déf. neutre sujet = nom.);das;4;Article;
-le (art. déf. m. sujet = nom.);der;4;Article;
-le (art. déf. neutre sujet = nom.);das;4;Article;
-les (art. déf. pl. sujet = nom.);die;4;Article;
-maison;das Haus;4;Noun;
-problème;das Problem;4;Noun;
-appeler (s');heißen;5;Verb;regular
-bon (adj.);gut;5;Adjective/Adverb;
-comment;wie;5;Interrogative;
-dire;sagen;5;Verb;regular
-jour;der Tag;5;Noun;
-nous (p. pers. sujet = nom.);wir;5;Personal pronoun;
-nous (p. réciproque);uns;5;Personal pronoun;
-pas de;keine;5;Article;
-pouvoir (v.);können;5;Verb;irregular
-toujours;immer;5;Adjective/Adverb;
-tutoyer;duzen;5;Verb;regular
-vous (politesse – sujet);Sie;5;Personal pronoun;
-aller;gehen;6;Verb;irregular
-aller (en avion);fliegen;6;Verb;irregular
-aller (véhicule à roues);fahren;6;Verb;irregular
-aujourd'hui;heute;6;Adjective/Adverb;
-bien (adv.);gut;6;Adjective/Adverb;
-ça;es;6;Personal pronoun;
-champignon;der Pilz;6;Noun;
-chance;das Glück;6;Noun;
-chanceux;der Glückspilz;6;Noun;
-conduire;fahren;6;Verb;irregular
-congé;der Urlaub;6;Noun;
-en;in;6;Preposition;
-mettre à jour (données);updaten;6;Verb;regular
-où (vers);wohin;6;Interrogative;
-partir;fahren / losfahren / weggehen;6;Verb;irregular
-rouler (conduire);fahren;6;Verb;irregular
-toi (à) (datif);dir;6;Personal pronoun;
-vacances;die Ferien / der Urlaub;6;Noun;
-vacances (partir en);in die Ferien fahren / in Urlaub fahren;6;Fixed expression;
-veinard;der Glückspilz;6;Noun;
-vers / à (direction);nach;6;Preposition;
-voler;fliegen;6;Verb;irregular
-après (prép.);nach (+ dat.);8;Preposition;
-avant (prép.);vor (+ acc./dat.);8;Preposition;
-devant (prép.);vor;8;Preposition;
-exactement;genau;8;Adjective/Adverb;
-famille;die Familie;8;Noun;
-inversé;umgekehrt;8;Adjective/Adverb;
-mon / ma / mes;mein / meine / mein;8;Possessive adjective;
-nom;der Name;8;Noun;
-nom de famille;der Familienname / der Nachname;8;Noun;
-prénom;der Vorname;8;Noun;
-sous;unter (+ dat./acc.);8;Preposition;
-sur;auf (+ dat./acc.);8;Preposition;
-sous;unter (+ dat./acc.);8;Preposition;
-sur;auf (+ dat./acc.);8;Preposition;
-ton / ta / tes;dein / deine;8;Possessive adjective;
-voyager;reisen;8;Verb;regular
-vraiment;wirklich;8;Adjective/Adverb;
-aller (y ~);los;9;Adjective/Adverb;
-arriver;kommen;9;Verb;regular
-aussi;auch;9;Modal particle;
-avoir;haben;9;Verb;irregular
-avoir sur soi;dabeihaben;9;Verb;irregular
-déjà;schon;9;Modal particle;
-enfin;endlich;9;Modal particle;
-faire;machen;9;Verb;regular
-il (tournure impersonnelle);es;9;Personal pronoun;
-là;da;9;Adjective/Adverb;
-que;was;9;Interrogative;
-qu'est-ce que;was;9;Interrogative;
-quoi;was;9;Interrogative;
-tôt;früh;9;Adjective/Adverb;
-tout;alles;9;Adjective/Adverb;
-tout de suite;sofort / gleich;9;Adjective/Adverb;
-très;sehr / ganz;9;Adjective/Adverb;
-vous (tutoiement plusieurs personnes – sujet);ihr;9;Personal pronoun;
-à;in (+ acc. ou dat.);10;Preposition;
-Constance (ville);Konstanz;10;Fixed expression;
-cuisinier;der Koch;10;Noun;
-entrer;hereinkommen;10;Verb;irregular
-fifre;der Pfeiffer;10;Noun;
-habiter;wohnen;10;Verb;regular
-indiscret;indiskret;10;Adjective/Adverb;
-meunier;der Müller;10;Noun;
-où (lieu);wo;10;Interrogative;
-pêcheur;der Fischer;10;Noun;
-place;der Platz;10;Noun;
-prendre;nehmen;10;Verb;irregular
-question;die Frage;10;Noun;
-Rhin;der Rhein;10;Noun;
-route;die Straße;10;Noun;
-rue;die Straße;10;Noun;
-sortir;"hinaus/gehen ; aus/gehen";10;Verb;irregular
-sortir;hinausgehen / ausgehen;10;Verb;irregular
-une;eine;10;Article;
-vieux;alt;10;Adjective/Adverb;
-votre / vos (vouvoiement);Ihr;10;Possessive adjective;
-âge;alt;11;Adjective/Adverb;
-alors;also;11;Modal particle;
-commencer;anfangen;11;Verb;irregular
-elles;sie;11;Personal pronoun;
-frère;der Bruder;11;Noun;
-homme (personne);der Mensch;11;Noun;
-ils;sie;11;Personal pronoun;
-jeune;jung;11;Adjective/Adverb;
-maintenant;jetzt;11;Adjective/Adverb;
-non;nein;11;Modal particle;
-peu (un ~);"etwas ; ein bisschen";11;Adjective/Adverb;
-raison (avoir ~);recht haben;11;Fixed expression;
-rester;bleiben;11;Verb;irregular
-sept;sieben;11;Number/Numeral;
-six;sechs;11;Number/Numeral;
-sœur;die Schwester;11;Noun;
-souvent;oft;11;Adjective/Adverb;
-souvent;oft;11;Adjective/Adverb;
-tous / toutes;alle;11;Adjective/Adverb;
-zen;cool;11;Adjective/Adverb;
-bien;ja;12;Modal particle;
-bon (pas ~);nicht gut;12;Fixed expression;
-bon (très ~);sehr gut;12;Fixed expression;
-bon (être ~);gut schmecken;12;Fixed expression;
-cuisiner;kochen;12;Verb;regular
-donc;denn;12;Conjunction;
-fois (une ~);einmal;12;Number/Numeral;
-goût (avoir le ~);schmecken;12;Verb;regular
-goûter;probieren;12;Verb;regular
-il;er;12;Personal pronoun;
-manger;essen;12;Verb;irregular
-mari;der Mann;12;Noun;
-médecin;der Arzt;12;Noun;
-on;man;12;Personal pronoun;
-quel/le (excl.);was für ein/e;12;Fixed expression;
-repas;"das Essen ; die Mahlzeit";12;Noun;
-un;ein;12;Article;
-un;ein;12;Article;
-à;zu (+ inf.);13;Preposition;
-au;zu dem (= zum);13;Preposition;
-avec;mit (+ dat.);13;Preposition;
-beurre;die Butter;13;Noun;
-boire;trinken;13;Verb;regular
-café (boisson);der Kaffee;13;Noun;
-charcuterie;die Wurst;13;Noun;
-fromage;der Käse;13;Noun;
-fruit;die Frucht;13;Noun;
-fruits;das Obst;13;Noun;
-lever (se ~);aufstehen;13;Verb;irregular
-matin;der Morgen;13;Noun;
-monde (tout le ~);alle;13;Adjective/Adverb;
-morceau;das Stück;13;Noun;
-ne… pas;nicht;13;Adjective/Adverb;
-œuf;das Ei;13;Noun;
-œuf à la coque;das Frühstücksei;13;Noun;
-oublier;vergessen;13;Verb;irregular
-pain;das Brot;13;Noun;
-petit pain;das Brötchen;13;Noun;
-petit-déjeuner;das Frühstück;13;Noun;
-petit-déjeuner (au ~);zum Frühstück;13;Fixed expression;
-thé;der Tee;13;Noun;
-voir;sehen;13;Verb;irregular
-apporter;bringen;15;Verb;irregular
-assiette;der Teller;15;Noun;
-cassé;kaputt;15;Adjective/Adverb;
-casser;kaputt machen;15;Fixed expression;
-clé;der Schlüssel;15;Noun;
-clé de la maison;der Hausschlüssel;15;Noun;
-débris;die Scherben;15;Noun;
-désordre;die Unordnung;15;Noun;
-fumier;der Mist;15;Noun;
-heureux;glücklich;15;Adjective/Adverb;
-juste (être ~);stimmen;15;Verb;regular
-laisser;lassen;15;Verb;irregular
-malchance;das Unglück;15;Noun;
-malheureux;unglücklich;15;Adjective/Adverb;
-miracle;das Wunder;15;Noun;
-nous (p. pers. acc.);uns;15;Personal pronoun;
-ordre;die Ordnung;15;Noun;
-papiers;die Papiere;15;Noun;
-papiers (voiture);die Autopapiere;15;Noun;
-pièce;das Zimmer;15;Noun;
-ranger;auf/räumen;15;Verb;irregular
-salon;das Wohnzimmer;15;Noun;
-serrure;das Schloss;15;Noun;
-table;der Tisch;15;Noun;
-toi (équivalent tonique);du;15;Personal pronoun;
-trouver;finden;15;Verb;irregular
-vacarme;das Poltern;15;Noun;
-vacarme (faire du);poltern;15;Verb;regular
-verre;das Glas;15;Noun;
-voiture;das Auto / der Wagen;15;Noun;
-à;nach;16;Preposition;
-bêtise;der Quatsch;16;Noun;
-certain;sicher;16;Adjective/Adverb;
-chemin;der Weg;16;Noun;
-demander;fragen;16;Verb;regular
-devoir;müssen;16;Verb;irregular
-droit (tout ~);geradeaus;16;Adjective/Adverb;
-droite;rechts;16;Adjective/Adverb;
-gauche;links;16;Adjective/Adverb;
-monsieur;der Herr;16;Noun;
-pourquoi;"warum ; wieso";16;Interrogative;
-quand même;doch;16;Modal particle;
-sûr;sicher;16;Adjective/Adverb;
-sûr;sicher;16;Adjective/Adverb;
-appeler (téléphoner);anrufen;17;Verb;irregular
-entendre;hören;17;Verb;regular
-être (numéro, adresse);lauten;17;Verb;regular
-la (p. pers. acc.);es;17;Personal pronoun;
-la (p. pers. f. acc.);sie;17;Personal pronoun;
-le (p. pers. acc.);es;17;Personal pronoun;
-le (p. pers. m. acc.);ihn;17;Personal pronoun;
-les (p. pers. pl. acc.);sie;17;Personal pronoun;
-mal;schlecht;17;Adjective/Adverb;
-malheureusement;leider;17;Adjective/Adverb;
-me (p. pers. acc.);mich;17;Personal pronoun;
-mieux;besser;17;Adjective/Adverb;
-numéro;die Nummer;17;Noun;
-numéro de portable;die Handynummer;17;Noun;
-numéro de téléphone;die Telefonnummer;17;Noun;
-parler;sprechen / reden;17;Verb;irregular
-portable (téléphone);das Handy;17;Noun;
-qui (p. int. acc.);wen;17;Interrogative;
-téléphone;das Telefon;17;Noun;
-téléphoner;anrufen;17;Verb;irregular
-vouloir;mögen / wollen;17;Verb;irregular
-vous (tutoiement pluriel – acc.);euch;17;Personal pronoun;
-vous (politesse – acc.);Sie;17;Personal pronoun;
-année;die Jahr;18;Noun;
-autant (de);so viel;18;Adjective/Adverb;
-autour;um (+ acc.);18;Preposition;
-cerise;die Kirsche;18;Noun;
-contre;gegen;18;Preposition;
-donner;geben;18;Verb;irregular
-droit (avoir le ~);dürfen;18;Verb;irregular
-kilo;das Kilo;18;Noun;
-(à) moi (p. pers. dat.);mir;18;Personal pronoun;
-orange;die Orange;18;Noun;
-par;durch / von;18;Preposition;
-poire;die Birne;18;Noun;
-pomme;der Apfel;18;Noun;
-pour;für (+ acc.);18;Preposition;
-résolution;der Vorsatz;18;Noun;
-sain;gesund;18;Adjective/Adverb;
-sainement;gesund;18;Adjective/Adverb;
-travers (à);durch;18;Preposition;
-zéro;null;18;Number/Numeral;
-à;um;19;Preposition;
-bonhomme;das Männchen;19;Noun;
-bonhomme;das Männlein;19;Noun;
-compter;zählen;19;Verb;regular
-demain;morgen;19;Adjective/Adverb;
-demi;halb;19;Adjective/Adverb;
-demi (heure);halb;19;Adjective/Adverb;
-demi-heure;die halbe Stunde;19;Noun;
-demoiselle;das Fräulein;19;Noun;
-donc;doch;19;Modal particle;
-essayer;versuchen;19;Verb;regular
-fille;das Mädchen;19;Noun;
-heure (60 minutes);die Stunde;19;Noun;
-heure(s);Uhr;19;Fixed expression;
-heure (quelle ~);wie spät;19;Interrogative;
-heure (quelle ~);wie viel Uhr;19;Interrogative;
-homme (monsieur);der Mann;19;Noun;
-il est (+ heure);es ist;19;Fixed expression;
-mouton;das Schaf;19;Noun;
-mouton (petit);das Schäfchen;19;Noun;
-nuit;die Nacht;19;Noun;
-soir;der Abend;19;Noun;
-tard;spät;19;Adjective/Adverb;
-à;zu + dem (= zum);20;Preposition;
-ami;der Freund;20;Noun;
-dans;in;20;Preposition;
-de (+ inf. subst.);zu + dem (= zum);20;Preposition;
-désolé (être);leid tun;20;Fixed expression;
-dimanche;der Sonntag;20;Noun;
-envie;die Lust;20;Noun;
-faire;tun;20;Verb;irregular
-inviter;einladen;20;Verb;irregular
-jeudi;der Donnerstag;20;Noun;
-lundi;der Montag;20;Noun;
-mardi;der Dienstag;20;Noun;
-mercredi;der Mittwoch;20;Noun;
-ne… plus (de);keine… mehr;20;Modal particle;
-parents;die Eltern;20;Noun;
-pour (+ inf. subst.);zu + dem (= zum);20;Preposition;
-prochain;nächste;20;Adjective/Adverb;
-professeur;der Lehrer;20;Noun;
-quand;"wann ; wenn ; als";20;Interrogative;
-rencontrer;treffen;20;Verb;irregular
-samedi;der Samstag;20;Noun;
-semaine;die Woche;20;Noun;
-toi (à);dir;20;Personal pronoun;
-vendredi;der Freitag;20;Noun;
-après (heure);nach;22;Preposition;
-ascenseur;der Aufzug;22;Noun;
-attendre;warten;22;Verb;regular
-attendre qn;warten auf;22;Verb;regular
-autre;andere;22;Adjective/Adverb;
-besoin (avoir ~ de);brauchen;22;Verb;regular
-devoir;sollen;22;Verb;irregular
-ensuite;danach;22;Adjective/Adverb;
-entrée;der Eingang;22;Noun;
-environ;ungefähr;22;Adjective/Adverb;
-moins (heure);vor;22;Preposition;
-parfait;perfekt;22;Adjective/Adverb;
-passer prendre;abholen;22;Verb;irregular
-quart;das Viertel;22;Noun;
-sortie;der Ausgang;22;Noun;
-sortie;der Ausgang;22;Noun;
-un et demi;anderthalb / eineinhalb;22;Number/Numeral;
-anglais (langue);das Englisch;23;Noun;
-auto;das Auto;23;Noun;
-avant tout;bevor;23;Conjunction;
-décharger;ausladen;23;Verb;irregular
-drôle;witzig;23;Adjective/Adverb;
-écrit (être);stehen;23;Verb;irregular
-espagnol (langue);das Spanisch;23;Noun;
-français (langue);das Französisch;23;Noun;
-fumer;rauchen;23;Verb;regular
-ici (rapprochement);hierher;23;Adjective/Adverb;
-interdit;verboten;23;Adjective/Adverb;
-jusque;bis;23;Preposition;
-lire;lesen;23;Verb;irregular
-nager;schwimmen;23;Verb;irregular
-plein (voitures);vollgeparkt;23;Adjective/Adverb;
-plein (adj. qual.);voll;23;Adjective/Adverb;
-police;die Polizei;23;Noun;
-porter;tragen;23;Verb;irregular
-que (seulement);nur;23;Modal particle;
-savoir (v.);"können ; wissen";23;Verb;irregular
-seulement;nur;23;Modal particle;
-valise;der Koffer;23;Noun;
-vite;schnell / kurz;23;Adjective/Adverb;
-anniversaire;der Geburtstag;24;Noun;
-août;der August;24;Noun;
-avril;der April;24;Noun;
-certainement;bestimmt;24;Adjective/Adverb;
-chaud;warm;24;Adjective/Adverb;
-cher;teuer;24;Adjective/Adverb;
-comme ça;so;24;Adjective/Adverb;
-décembre;der Dezember;24;Noun;
-devenir;werden;24;Verb;irregular
-fait (au ~);eigentlich;24;Modal particle;
-féliciter;gratulieren;24;Verb;regular
-février;der Februar;24;Noun;
-froid;kalt;24;Adjective/Adverb;
-janvier;der Januar;24;Noun;
-juillet;der Juli;24;Noun;
-juin;der Juni;24;Noun;
-le (date);am (date);24;Preposition;
-longtemps;lange;24;Adjective/Adverb;
-mai ; der Mai ;24;Noun;
-mars;der März;24;Noun;
-naissance;die Geburt;24;Noun;
-novembre;der November;24;Noun;
-octobre;der Oktober;24;Noun;
-plus (ne ~);nicht mehr;24;Modal particle;
-quelque chose;etwas;24;Modal particle;
-quelque chose comme ça;so etwas;24;Modal particle;
-septembre;der September;24;Noun;
-venir avec qqn;mitkommen;24;Verb;irregular
-absurdité;der Unsinn;25;Noun;
-aide;die Hilfe;25;Noun;
-allemand (adj.);deutsch;25;Adjective/Adverb;
-autoroute;die Autobahn;25;Noun;
-content (être ~);sich freuen;25;Verb;irregular
-feu;das Feuer;25;Noun;
-haut;hoch;25;Adjective/Adverb;
-kilomètre;der Kilometer;25;Noun;
-kilomètre par heure;Stundenkilometer;25;Noun;
-le (art. déf. neutre dat.);dem;25;Article;
-lentement;langsam;25;Adjective/Adverb;
-main;die Hand;25;Noun;
-panneau;das Schild;25;Noun;
-payer;zahlen;25;Verb;regular
-réjouir (se ~);sich freuen;25;Verb;irregular
-tenir;halten;25;Verb;irregular
-voie;die Bahn;25;Noun;
-à;zu;26;Preposition;
-aider;helfen;26;Verb;irregular
-avion;der Flieger;26;Noun;
-œil;das Auge;26;Noun;
-passeport;der Pass / der Reisepass;26;Noun;
-plus;mehr;26;Adjective/Adverb;
-que (+ cp. sup.);als;26;Conjunction;
-rater (vol, train, film…);verpassen;26;Verb;regular
-soudain;plötzlich;26;Adjective/Adverb;
-soudain;plötzlich;26;Adjective/Adverb;
-tout de même;doch;26;Modal particle;
-voyage;die Reise;26;Noun;
-vrai;wahr;26;Adjective/Adverb;
-bizarre;komisch;27;Adjective/Adverb;
-comme;wie;27;Conjunction;
-comme c'est…;wie + adj. qual.;27;Fixed expression;
-dernier;letzte;27;Adjective/Adverb;
-dommage;schade;27;Modal particle;
-eau;das Wasser;27;Noun;
-fin (n.);das Ende;27;Noun;
-fini (être);zu Ende sein;27;Fixed expression;
-magnifique ; herrlich ;27;Adjective/Adverb;
-moment;der Moment / die Zeit;27;Noun;
-penser à;denken an;27;Verb;irregular
-que (conj. sub.);dass;27;Conjunction;
-que c'est… (excl.);wie + adj. qual.;27;Fixed expression;
-rêve;der Traum;27;Noun;
-savourer;genießen;27;Verb;irregular
-si (tellement);so;27;Adjective/Adverb;
-simple;einfach;27;Adjective/Adverb;
-simplement;einfach;27;Adjective/Adverb;
-tellement;so;27;Adjective/Adverb;
-temps (durée);die Zeit;27;Noun;
-âge;das Alter;29;Noun;
-chercher;suchen;29;Verb;regular
-fille (vs fils);die Tochter;29;Noun;
-fils;der Sohn;29;Noun;
-grossir;zunehmen;29;Verb;irregular
-long;lang;29;Adjective/Adverb;
-madame ; Frau ;29;Noun;
-maigrir ; abnehmen ;29;Verb;irregular
-marier (se);heiraten;29;Verb;regular
-notre/nos;unser / unsere;29;Possessive adjective;
-occasion;die Gelegenheit;29;Noun;
-quel (adj. int.);welch-;29;Interrogative;
-robe;das Kleid;29;Noun;
-son;sein / ihr;29;Possessive adjective;
-vous (politesse – dat.);Ihnen;29;Personal pronoun;
-aimable;freundlich;30;Adjective/Adverb;
-aise (à l');wohl;30;Adjective/Adverb;
-après-demain;übermorgen;30;Adjective/Adverb;
-avoir l'air;aussehen;30;Verb;irregular
-bien;wohl;30;Adjective/Adverb;
-chaleureux;herzlich;30;Adjective/Adverb;
-colocation;die Wohngemeinschaft;30;Noun;
-communauté;die Gemeinschaft;30;Noun;
-cours (étude);der Unterricht;30;Noun;
-dame;die Dame;30;Noun;
-depuis;seit;30;Preposition;
-hier;gestern;30;Adjective/Adverb;
-honoré;geehrt;30;Adjective/Adverb;
-premier;erste;30;Adjective/Adverb;
-salutation;der Gruß;30;Noun;
-sympa;nett;30;Adjective/Adverb;
-sympathique;sympathisch;30;Adjective/Adverb;
-sympa;nett;30;Adjective/Adverb;
-sympathique;sympathisch;30;Adjective/Adverb;
-sympa;nett;30;Adjective/Adverb;
-sympathique;sympathisch;30;Adjective/Adverb;
-violon;die Geige;30;Noun;
-violon (cours de);der Geigenunterricht;30;Noun;
-votre / vos;eu / re;30;Possessive adjective;
-vous (tutoiement – dat.);euch;30;Personal pronoun;
-cour;der Hof;31;Noun;
-difficile;schwer;31;Adjective/Adverb;
-employer;benutzen;31;Verb;regular
-enfant;das Kind;31;Noun;
-exemple;das Beispiel;31;Noun;
-exemple (par ~);zum Beispiel;31;Fixed expression;
-gare;der Bahnhof;31;Noun;
-livre;das Buch;31;Noun;
-mère;die Mutter;31;Noun;
-père;der Vater;31;Noun;
-personne (individu);die Person;31;Noun;
-plusieurs;mehrere;31;Adjective/Adverb;
-regarder;schauen;31;Verb;regular
-seul;allein;31;Adjective/Adverb;
-si (condition);wenn;31;Conjunction;
-soit… soit…;entweder… oder…;31;Conjunction;
-stylo;der Stift;31;Noun;
-stylo;der Stift;31;Noun;
-train;die Bahn / der Zug;31;Noun;
-vouvoyer;siezen;31;Verb;regular
-communiqué;der Bericht;32;Noun;
-de;von;32;Preposition;
-de… à…;von… bis;32;Preposition;
-été;der Sommer;32;Noun;
-exagérer;übertreiben;32;Verb;regular
-fois;das Mal;32;Noun;
-fort (adj.);stark;32;Adjective/Adverb;
-humide (temps);nass;32;Adjective/Adverb;
-jusqu'à;bis / bis zu;32;Preposition;
-juste (au ~);eigentlich;32;Modal particle;
-météo (bulletin ~);der Wetterbericht;32;Noun;
-mouillé;nass;32;Adjective/Adverb;
-part (de la ~);von;32;Preposition;
-pluie;der Regen;32;Noun;
-pluie (chute de ~);der Regenfall;32;Noun;
-poisse;das Pech;32;Noun;
-poisse (avoir la ~);Pech haben;32;Fixed expression;
-temps (météo);das Wetter;32;Noun;
-acheter;kaufen;33;Verb;regular
-bière;das Bier;33;Noun;
-championnat;die Meisterschaft;33;Noun;
-championnat d'Europe;die Europameisterschaft;33;Noun;
-championnat du monde;die Weltmeisterschaft;33;Noun;
-commencer;beginnen;33;Verb;irregular
-dépêcher (se ~);sich beeilen;33;Verb;irregular
-durer;dauern;33;Verb;regular
-Europe;Europa;33;Noun;
-idée;die Idee;33;Noun;
-maman;die Mama / die Mami;33;Noun;
-minute;die Minute;33;Noun;
-monde;die Welt;33;Noun;
-papa;der Papa / der Papi;33;Noun;
-peur;die Angst;33;Noun;
-se (p. réciproque acc.);sich;33;Personal pronoun;
-bronzé;braun;34;Adjective/Adverb;
-bronzer;braun werden;34;Verb;irregular
-changer (travail, argent);wechseln;34;Verb;regular
-Corse;Korsika;34;Noun;
-gagner;gewinnen;34;Verb;irregular
-hôtel;das Hotel;34;Noun;
-job;der Job;34;Noun;
-loterie;die Lotterie;34;Noun;
-marron;braun;34;Adjective/Adverb;
-même;sogar;34;Modal particle;
-plage;der Strand;34;Noun;
-plage privée;der Privatstrand;34;Noun;
-privé;privat;34;Adjective/Adverb;
-réserver;"buchen ; reservieren";34;Verb;regular
-salaire;das Gehalt;34;Noun;
-soleil;die Sonne;34;Noun;
-bikini;der Bikini;36;Noun;
-chantilly;die Sahne;36;Noun;
-chocolat;die Schokolade;36;Noun;
-dessert;der Nachtisch;36;Noun;
-encore (une fois);schon wieder;36;Modal particle;
-gâteau;der Kuchen;36;Noun;
-gâteau au chocolat;der Schokoladenkuchen;36;Noun;
-gâteau aux fruits;der Obstkuchen;36;Noun;
-langues (livre de ~);das Sprachbuch;36;Noun;
-nouveau (de ~);wieder;36;Adjective/Adverb;
-quel genre de;was für ein/e;36;Interrogative;
-régime;die Diät;36;Noun;
-tarte;die Torte;36;Noun;
-volontiers;gern;36;Adjective/Adverb;
-amoureux (tomber ~ de);sich verlieben in;37;Verb;irregular
-au-dessus de;über;37;Preposition;
-autour de;um (+ acc.);37;Preposition;
-chez;zu (+ dat.);37;Preposition;
-chez (loc.);bei (+ dat.);37;Preposition;
-cours (au ~ de);auf;37;Preposition;
-ensemble;zusammen;37;Adjective/Adverb;
-esquimau;der Eskimo;37;Noun;
-étranger (pays);das Ausland;37;Noun;
-expliquer;erklären;37;Verb;regular
-globe-trotteuse;die Globetrotterin;37;Noun;
-né (être ~);geboren sein;37;Fixed expression;
-nous (p. pers. dat.);uns;37;Personal pronoun;
-nuage;die Wolke;37;Noun;
-patrie;die Heimat;37;Noun;
-pays;das Land;37;Noun;
-recevoir;"bekommen ; erhalten";37;Verb;irregular
-sur (localisation);an (+ dat./acc.);37;Preposition;
-sur (sujet);über (+ acc.);37;Preposition;
-sur (localisation);an (+ dat./acc.);37;Preposition;
-sur (sujet);über (+ acc.);37;Preposition;
-aller (bien);jm gut stehen;38;Fixed expression;
-amie;die Freundin;38;Noun;
-bleu;blau;38;Adjective/Adverb;
-cool;cool;38;Adjective/Adverb;
-court;kurz;38;Adjective/Adverb;
-discuter;streiten;38;Verb;irregular
-goût;der Geschmack;38;Noun;
-jaune;gelb;38;Adjective/Adverb;
-me (p. pers. dat.);mir;38;Personal pronoun;
-mode (à la ~);modisch;38;Adjective/Adverb;
-penser;meinen;38;Verb;regular
-plaire;"gefallen ; Spaß machen";38;Verb;irregular
-pull;der Pulli;38;Noun;
-rouge (adj. qual.);rot;38;Adjective/Adverb;
-vieux jeu;altmodisch;38;Adjective/Adverb;
-achat;der Kauf;39;Noun;
-blanc;das Weiß;39;Noun;
-derrière;hinten;39;Adjective/Adverb;
-devant;vorne;39;Adjective/Adverb;
-enchères;die Auktion;39;Noun;
-fois (deux ~) enchères;zum Zweiten;39;Fixed expression;
-fois (une ~) enchères;zum Ersten;39;Fixed expression;
-là-bas;dort;39;Adjective/Adverb;
-libre;frei;39;Adjective/Adverb;
-lit;das Bett;39;Noun;
-noir;das Schwarz;39;Noun;
-proposer;"bieten ; vor/schlagen";39;Verb;irregular
-revenir;"zurück/kommen ; wieder/kommen";39;Verb;irregular
-vendu;verkauft;39;Adjective/Adverb;
-après (prép.);nach;40;Preposition;
-bientôt;bald;40;Modal particle;
-combien (le ~) date;der Wievielte;40;Noun;
-école;die Schule;40;Noun;
-encore;noch;40;Modal particle;
-endroit;der Ort;40;Noun;
-État fédéral;das Bundesland;40;Noun;
-idée (n'avoir aucune ~);keine Ahnung haben;40;Fixed expression;
-meilleur(e) (le/la ~);der, die, das beste;40;Adjective/Adverb;
-passer (temps);vergehen;40;Verb;irregular
-pressentiment;die Ahnung;40;Noun;
-savoir (ne pas ~);keine Ahnung haben;40;Fixed expression;
-suivre;folgen;40;Verb;regular
-suivre;folgen;40;Verb;regular
-bon (être ~);schmecken;41;Verb;regular
-de (causal);vor;41;Preposition;
-faim;der Hunger;41;Noun;
-fermé (être);zuhaben;41;Verb;irregular
-hamburger;der Burger;41;Noun;
-indien;indisch;41;Adjective/Adverb;
-italien;italienisch;41;Adjective/Adverb;
-livraison;der Lieferservice;41;Noun;
-livrer;liefern;41;Verb;regular
-mois;der Monat;41;Noun;
-mourir;sterben;41;Verb;irregular
-mourir de faim;vor Hunger sterben;41;Fixed expression;
-ouvert (être ~);aufhaben;41;Verb;irregular
-pizza;die Pizza;41;Noun;
-pratique;praktisch;41;Adjective/Adverb;
-proposition;der Vorschlag;41;Noun;
-reconnaître;zu/geben;41;Verb;irregular
-restauration rapide;das Fast Food;41;Noun;
-service;der Service;41;Noun;
-soif;der Durst;41;Noun;
-accueillir;empfangen;43;Verb;irregular
-après-midi;der Nachmittag;43;Noun;
-Berlinois;der Berliner;43;Noun;
-Berlin-Ouest;Westberlin;43;Noun;
-Berlin-Ouest (habitant);der Westberliner;43;Noun;
-chute;der Fall;43;Noun;
-chute du mur de Berlin;der Mauerfall;43;Noun;
-croire;glauben;43;Verb;regular
-embrasser;sich umarmen;43;Verb;irregular
-époque (à l');damals;43;Adjective/Adverb;
-fêter;feiern;43;Verb;regular
-gens;die Menschen;43;Noun;
-heureux (très);überglücklich;43;Adjective/Adverb;
-honte;die Schande;43;Noun;
-matinée;der Vormittag;43;Noun;
-midi;der Mittag;43;Noun;
-mousseux;der Sekt;43;Noun;
-mur (extérieur);die Mauer;43;Noun;
-ouest;der Westen;43;Noun;
-parti;weg;43;Adjective/Adverb;
-peuple;das Volk;43;Noun;
-soirée;der Abend;43;Noun;
-sud;der Süden;43;Noun;
-sud;der Süden;43;Noun;
-tombé (mur);weg;43;Adjective/Adverb;
-tous les;alle;43;Adjective/Adverb;
-avant;früher;44;Adjective/Adverb;
-avis;die Meinung;44;Noun;
-bon (plat);lecker;44;Adjective/Adverb;
-changer;sich ändern;44;Verb;irregular
-faire (pâtisserie);backen;44;Verb;irregular
-faute (culpabilité);die Schuld;44;Noun;
-feignant;faul;44;Adjective/Adverb;
-jeune (personne);der Jugendliche;44;Noun;
-jeunesse;die Jugend;44;Noun;
-offrir;anbieten;44;Verb;irregular
-ordinateur;der Computer;44;Noun;
-petite-fille;die Enkelin;44;Noun;
-qui (à ~) (p. int. dat.);wem;44;Interrogative;
-tout;alles;44;Adjective/Adverb;
-ce/cette/ces;dieser/diese/dieses;45;Adjective/Adverb;
-changer;sich verändern;45;Verb;irregular
-danser;tanzen;45;Verb;regular
-démissionner;kündigen;45;Verb;regular
-fonder;gründen;45;Verb;regular
-grand;groß;45;Adjective/Adverb;
-il y a (préposition temps);vor;45;Preposition;
-japonais;japanisch;45;Adjective/Adverb;
-raconter;erzählen;45;Verb;regular
-ravissant;hübsch;45;Adjective/Adverb;
-Rome;Rom;45;Noun;
-tard (plus ~);später;45;Adjective/Adverb;
-tout aussi;(genau) so;45;Adjective/Adverb;
-vie;das Leben;45;Noun;
-altitude;wie hoch;46;Interrogative;
-argent;das Geld;46;Noun;
-chanter;singen;46;Verb;irregular
-combien de;wie viel;46;Interrogative;
-dépendre de;ankommen auf;46;Verb;irregular
-encore (une fois);noch;46;Modal particle;
-géographie;die Erdkunde;46;Noun;
-juste;richtig;46;Adjective/Adverb;
-longueur;wie lang;46;Interrogative;
-mètre;der Meter;46;Noun;
-Nil (le ~);der Nil;46;Noun;
-quiz;das Quiz;46;Noun;
-réponse;die Antwort;46;Noun;
-seconde;die Sekunde;46;Noun;
-série;die Reihe;46;Noun;
-sorte;die Art;46;Noun;
-supérieur;höher;46;Adjective/Adverb;
-sorte;die Art;46;Noun;
-supérieur;höher;46;Adjective/Adverb;
-tester;testen;46;Verb;regular
-tour (jeu, endroit);die Runde;46;Noun;
-autrement;anders;47;Adjective/Adverb;
-chef;der Chef;47;Noun;
-continuer;weitergehen;47;Verb;irregular
-écouter;zuhören;47;Verb;irregular
-éteindre;ausmachen;47;Verb;irregular
-lui (à elle);ihr;47;Personal pronoun;
-lui (à lui);ihm;47;Personal pronoun;
-ponctualité;die Pünktlichkeit;47;Noun;
-quart d'heure;die Viertelstunde;47;Noun;
-quelqu'un;jemand;47;Adjective/Adverb;
-quelqu'un d'autre;jemand anders;47;Adjective/Adverb;
-rendez-vous;der Termin;47;Noun;
-semblable;ähnlich;47;Adjective/Adverb;
-séparé;getrennt;47;Adjective/Adverb;
-belle (la plus ~);die Schönste;48;Noun;
-Blanche-Neige;Schneewittchen;48;Noun;
-celui-ci;dieser;48;Adjective/Adverb;
-conte;das Märchen;48;Noun;
-content;zufrieden;48;Adjective/Adverb;
-grandir;wachsen;48;Verb;irregular
-mamie;die Oma / die Omi;48;Noun;
-même(s) (en personne);selbst;48;Adjective/Adverb;
-miroir;der Spiegel;48;Noun;
-miroir (diminutif);das Spieglein;48;Noun;
-mur (intérieur);die Wand;48;Noun;
-papy;der Opa / der Opi;48;Noun;
-reine;die Königin;48;Noun;
-répondre;antworten;48;Verb;regular
-vérité;die Wahrheit;48;Noun;
-cause (à ~ de);wegen;49;Preposition;
-hauteur;wie hoch;49;Interrogative;
-pendant;während;49;Conjunction;
-afin de;um ... zu;50;Conjunction;
-bien (faire du ~);gut tun;50;Fixed expression;
-clapet;die Klappe;50;Noun;
-contact;der Umgang;50;Noun;
-débloquer;spinnen;50;Verb;irregular
-effet (en ~);nämlich;50;Modal particle;
-énerver;nerven;50;Verb;regular
-enseigner;beibringen;50;Verb;irregular
-être (adresse, tel);lauten;50;Verb;regular
-expression;der Ausdruck;50;Noun;
-fréquentations;der Umgang;50;Noun;
-intituler (s');lauten;50;Verb;regular
-jurer;fluchen / schwören;50;Verb;irregular
-langage familier;die Umgangssprache;50;Noun;
-langage parlé;die Umgangssprache;50;Noun;
-langue;die Sprache;50;Noun;
-leçon;die Lektion;50;Noun;
-mal faire;weh tun;50;Fixed expression;
-mot;das Wort;50;Noun;
-nerf;der Nerv;50;Noun;
-nez;die Nase;50;Noun;
-ni… ni…;weder… noch…;50;Conjunction;
-oui et non;jein;50;Modal particle;
-partie;der Teil;50;Noun;
-peine (faire de la ~);leid/tun;50;Verb;irregular
-pester;fluchen;50;Verb;regular
-peu (un ~ de);etwas;50;Adjective/Adverb;
-pièce (élément);das Teil;50;Noun;
-pleuvoir;regnen;50;Verb;regular
-pour (+ inf.);um … zu;50;Conjunction;
-progrès;der Fortschritt;50;Noun;
-quel/le/s que soit/soient le/la/les;egal in welch-;50;Fixed expression;
-souffler;pusten;50;Verb;regular
-souffler;pusten;50;Verb;regular
-assurance;die Versicherung;51;Noun;
-autorisation;die Genehmigung;51;Noun;
-centre-ville;die Innenstadt;51;Noun;
-Constance (habitant);der Konstanzer;51;Noun;
-contrat;der Vertrag;51;Noun;
-contrat d'assurance vie;der Lebensversicherungsvertrag;51;Noun;
-début;der Anfang;51;Noun;
-discipline;die Disziplin;51;Noun;
-fiabilité;die Zuverlässigkeit;51;Noun;
-gens;die Leute;51;Noun;
-intéressant;interessant;51;Adjective/Adverb;
-interroger;befragen;51;Verb;regular
-marché;der Markt;51;Noun;
-Munich;München;51;Noun;
-obstination;die Sturheit;51;Noun;
-parole;das Wort;51;Noun;
-permis de séjour;die Aufenthaltsgenehmigung;51;Noun;
-place du marché;der Marktplatz;51;Noun;
-prononcer;aus/sprechen;51;Verb;irregular
-propreté;die Sauberkeit;51;Noun;
-séjour;der Aufenthalt;51;Noun;
-suisse (adj.);schweizerisch;51;Adjective/Adverb;
-Suisse (pays);die Schweiz;51;Noun;
-suisse (adj.);schweizerisch;51;Adjective/Adverb;
-Suisse (pays);die Schweiz;51;Noun;
-trouver (se);sich befinden;51;Verb;irregular
-typique(ment);typisch;51;Adjective/Adverb;
-vin;der Wein;51;Noun;
-arbre;der Baum;52;Noun;
-arrière-petite-fille;die Urenkelin;52;Noun;
-arrière-petit-fils;der Urenkel;52;Noun;
-arrière-petits-enfants;das Urenkelkind;52;Noun;
-asseoir (s');sich setzen;52;Verb;irregular
-assis (être);sitzen;52;Verb;irregular
-cerisier;der Kirschbaum;52;Noun;
-chaussette;der Strumpf;52;Noun;
-cœur;das Herz;52;Noun;
-côté (à ~ de);neben;52;Preposition;
-entre;zwischen;52;Preposition;
-être (droit/debout);stehen;52;Verb;irregular
-joie;die Freude;52;Noun;
-mettre (se ~) (droit/debout);sich stellen;52;Verb;irregular
-paire;das Paar;52;Noun;
-particulier;besondere;52;Adjective/Adverb;
-particulier (adv.);besonders;52;Adjective/Adverb;
-petit (n.);der/die/das Kleine;52;Noun;
-petit-fils;der Enkel;52;Noun;
-petits-enfants;das Enkelkind;52;Noun;
-photo;"das Foto ; das Bild";52;Noun;
-posé (être ~) (droit / debout);stehen;52;Verb;irregular
-quelques;"ein paar ; einige";52;Adjective/Adverb;
-réuni (adv.);beisammen;52;Adjective/Adverb;
-trinquer;anstoßen;52;Verb;irregular
-accroché (être);hängen;53;Verb;irregular
-agréable;angenehm;53;Adjective/Adverb;
-aimer;lieben;53;Verb;regular
-bref;kurzum;53;Adjective/Adverb;
-briller;scheinen;53;Verb;irregular
-couleur;die Farbe;53;Noun;
-fait (au ~);übrigens;53;Modal particle;
-fleur;die Blume;53;Noun;
-fois (première ~);zum ersten Mal;53;Fixed expression;
-magnifique ; wunderschön ;53;Adjective/Adverb;
-mieux (le/de ~);am besten;53;Adjective/Adverb;
-paraître;scheinen;53;Verb;irregular
-personne (p. ind.);niemand;53;Adjective/Adverb;
-photographe;der Fotograf;53;Noun;
-poisson;der Fisch;53;Noun;
-presque;fast;53;Adjective/Adverb;
-sembler;scheinen;53;Verb;irregular
-souris;die Maus;53;Noun;
-souris;die Maus;53;Noun;
-vernissage;die Vernissage;53;Noun;
-aimer (+ v. inf.);gern;54;Adjective/Adverb;
-Allemagne;Deutschland;54;Noun;
-allemand (non-~);der Nichtdeutsche;54;Noun;
-Américain;der Amerikaner;54;Noun;
-attirer;anlocken;54;Verb;irregular
-bière (fête de la ~);das Oktoberfest;54;Noun;
-blonde (bière);ein Helles;54;Noun;
-brasserie;das Brauhaus;54;Noun;
-Britannique;der Brite;54;Noun;
-brune (bière);ein Dunkles;54;Noun;
-chaque;jeder/jede/jedes;54;Adjective/Adverb;
-commander;bestellen;54;Verb;regular
-différent;verschieden;54;Adjective/Adverb;
-fête;das Fest;54;Noun;
-finir;enden;54;Verb;regular
-Français;der Franzose;54;Noun;
-Japonais;der Japaner;54;Noun;
-panaché;der Radler;54;Noun;
-prairie;die Wiese;54;Noun;
-préférer (+ v. inf.);v. inf. + lieber;54;Fixed expression;
-touriste;der Tourist;54;Noun;
-variété;die Vielfalt;54;Noun;
-à;an (acc. ou dat.);55;Preposition;
-allongé (être);liegen;55;Verb;irregular
-appartenir à;gehören;55;Verb;regular
-bondé;überfüllt;55;Adjective/Adverb;
-bord (au ~ de);an;55;Preposition;
-bouché;verstopft;55;Adjective/Adverb;
-but;das Ziel;55;Noun;
-chérie;der Liebling;55;Noun;
-couché (être ~);liegen;55;Verb;irregular
-destination;das Ziel;55;Noun;
-directement;direkt;55;Adjective/Adverb;
-Internet;das Internet;55;Noun;
-louer (donner en location);vermieten;55;Verb;regular
-louer (prendre en location);mieten;55;Verb;regular
-maison (dir.);nach Hause;55;Fixed expression;
-maison (loc.);zu Hause;55;Fixed expression;
-maison de vacances;das Ferienhaus;55;Noun;
-objectif;das Ziel;55;Noun;
-ouvert;offen;55;Adjective/Adverb;
-partie (faire ~ de);gehören zu;55;Verb;regular
-pas encore;noch nicht;55;Adjective/Adverb;
-passer (vacances);verbringen;55;Verb;irregular
-porte;die Tür;55;Noun;
-posé (être ~) (à plat / à l'horizontale);liegen;55;Verb;irregular
-région;die Gegend;55;Noun;
-salle de bains;das Bad;55;Noun;
-sous-sol;der Keller;55;Noun;
-sous-sol;der Keller;55;Noun;
-télécharger;herunterladen;55;Verb;irregular
-télévision;das Fernsehen;55;Noun;
-voir (à);sehenswert;55;Adjective/Adverb;
-derrière;hinter;56;Preposition;
-appétit;der Appetit;57;Noun;
-après (adv.);nachher;57;Adjective/Adverb;
-boisson;das Getränk;57;Noun;
-bouche;der Mund;57;Noun;
-café (établissement);das Kaffeehaus;57;Noun;
-car;denn;57;Conjunction;
-chat;die Katze;57;Noun;
-chien;der Hund;57;Noun;
-connu;bekannt;57;Adjective/Adverb;
-cou;der Hals;57;Noun;
-courir;laufen;57;Verb;irregular
-désirer;wünschen;57;Verb;regular
-emmener;ausführen;57;Verb;irregular
-ensuite;nachher;57;Adjective/Adverb;
-escalope;das Schnitzel;57;Noun;
-fois (deux ~);zweimal;57;Number/Numeral;
-grenouille;der Frosch;57;Noun;
-loup;der Wolf;57;Noun;
-moins (du ~);zumindest;57;Adjective/Adverb;
-original;original;57;Adjective/Adverb;
-ours;der Bär;57;Noun;
-plaisir;das Vergnügen;57;Noun;
-pommes frites;die Pommes Frites;57;Noun;
-Sachertorte;die Sachertorte;57;Noun;
-serveur;der Kellner;57;Noun;
-servir;bedienen;57;Verb;regular
-souhait;der Wunsch;57;Noun;
-souhaiter;wünschen;57;Verb;regular
-souhait;der Wunsch;57;Noun;
-souhaiter;wünschen;57;Verb;regular
-tasse;die Tasse;57;Noun;
-traditionnel;traditionell;57;Adjective/Adverb;
-viennois;Wiener;57;Adjective/Adverb;
-vin rouge;der Rotwein;57;Noun;
-vivre;leben;57;Verb;regular
-aimer;mögen;58;Verb;irregular
-apparition;die Erscheinung;58;Noun;
-coiffure;die Frisur;58;Noun;
-dent;der Zahn;58;Noun;
-dos;der Rücken;58;Noun;
-dos (mal au ~);die Rückenschmerzen;58;Noun;
-douleur;der Schmerz;58;Noun;
-espérer;hoffen;58;Verb;regular
-fantastique;fantastisch;58;Adjective/Adverb;
-flatteur;schmeichelhaft;58;Adjective/Adverb;
-gris;das Grau;58;Noun;
-mal (avoir ~);Schmerzen haben;58;Fixed expression;
-manteau;der Mantel;58;Noun;
-même chose;das Gleiche;58;Noun;
-nécessaire;notwendig / nötig;58;Adjective/Adverb;
-oreille;das Ohr;58;Noun;
-parce que;weil;58;Conjunction;
-tête;der Kopf;58;Noun;
-ventre;der Bauch;58;Noun;
-bien sûr;natürlich;59;Adjective/Adverb;
-déborder;überkochen;59;Verb;irregular
-dépasser;überholen;59;Verb;regular
-doubler (véhicule);überholen;59;Verb;regular
-épeler;buchstabieren;59;Verb;regular
-étonner;überraschen;59;Verb;regular
-hasard;der Zufall;59;Noun;
-lettre (de l'alphabet);der Buchstabe;59;Noun;
-majuscule;großes A, B…;59;Noun;
-minuscule (a, b...);kleines (a, b...);59;Adjective/Adverb;
-pensée (idée);der Gedanke;59;Noun;
-réfléchir;"überlegen ; nach/denken";59;Verb;irregular
-réservation;die Reservierung;59;Noun;
-réserver une table;die Tischreservierung;59;Noun;
-surprendre;überraschen;59;Verb;regular
-surprendre;überraschen;59;Verb;regular
-surprendre;überraschen;59;Verb;regular
-traduire;übersetzen;59;Verb;regular
-aéroport;der Flughafen;60;Noun;
-arrêter (s');anhalten;60;Verb;irregular
-bébé;das Baby;60;Noun;
-chéri;der Schatz;60;Noun;
-côté;die Seite;60;Noun;
-croisement;die Kreuzung;60;Noun;
-demander (chemin, heure);fragen;60;Verb;regular
-énervement;die Aufregung;60;Noun;
-examen;das Examen;60;Noun;
-félicitation;die Glückwünsche;60;Noun;
-feu tricolore;die Ampel;60;Noun;
-garçon;der Junge;60;Noun;
-heure (horaires);die Uhrzeit;60;Noun;
-hôpital;das Krankenhaus;60;Noun;
-malade (n.);der Kranke;60;Noun;
-marcher (vite);laufen;60;Verb;irregular
-perdre (se ~);sich verlaufen;60;Verb;irregular
-policier;der Polizist;60;Noun;
-port (bateau);der Hafen;60;Noun;
-soigner;pflegen;60;Verb;regular
-taxi;das Taxi;60;Noun;
-tourner (à droite / gauche);rechts / links abbiegen;60;Verb;irregular
-trésor;der Schatz;60;Noun;
-tromper de chemin (se);sich verlaufen;60;Verb;irregular
-tromper de route (se);sich verfahren;60;Verb;irregular
-vol (avion);der Flug;60;Noun;
-amour;die Liebe;61;Noun;
-apparemment;anscheinend;61;Adjective/Adverb;
-architecte;der Architekt;61;Noun;
-bois;das Holz;61;Noun;
-casser;knacken;61;Verb;regular
-charmant;charmant;61;Adjective/Adverb;
-connaître (faire connaissance);kennenlernen;61;Verb;irregular
-craquer;knacken;61;Verb;regular
-fête;die Fete;61;Noun;
-jackpot;der Jackpot;61;Noun;
-noisette;die Haselnuss;61;Noun;
-noix;die Walnuss;61;Noun;
-panorama;das Panorama;61;Noun;
-pied;der Fuß;61;Noun;
-président;der Präsident;61;Noun;
-qui (à/de ~);wessen;61;Interrogative;
-rappeler (se remémorer);sich an jn/etwas erinnern an;61;Verb;irregular
-regard;der Blick;61;Noun;
-riche;reich;61;Adjective/Adverb;
-signe;das Zeichen;61;Noun;
-souvenir;die Erinnerung;61;Noun;
-souvenir (se ~);sich erinnern;61;Verb;irregular
-souvenir;die Erinnerung;61;Noun;
-souvenir (se ~);sich erinnern;61;Verb;irregular
-toit;das Dach;61;Noun;
-toit panoramique;das Panoramadach;61;Noun;
-vert;grün;61;Adjective/Adverb;
-aborder;ansprechen;62;Verb;irregular
-absolument;gar;62;Adjective/Adverb;
-ici (par ~);her;62;Adjective/Adverb;
-jamais;nie(mals);62;Adjective/Adverb;
-marguerite;die Margerite;62;Noun;
-œillet;die Nelke;62;Noun;
-oser;sich trauen;62;Verb;irregular
-perce-neige;das Schneeglöckchen;62;Noun;
-pissenlit;der Löwenzahn;62;Noun;
-quoi (prép.);wo(r)- (+ prép.);62;Interrogative;
-risquer;wagen;62;Verb;regular
-rose;die Rose;62;Noun;
-tulipe;die Tulpe;62;Noun;
-y;hin;62;Adjective/Adverb;
-automate;der Automat;64;Noun;
-blog;das Blog;64;Noun;
-canicule;die Hitze;64;Noun;
-chaleur;die Hitze;64;Noun;
-chaud (très ~);heiß;64;Adjective/Adverb;
-cola;die Cola;64;Noun;
-compréhensif;verständnisvoll;64;Adjective/Adverb;
-compréhension;das Verständnis;64;Noun;
-congé canicule;Hitzefrei;64;Noun;
-d'abord;zuerst;64;Adjective/Adverb;
-degré;das Grad;64;Noun;
-direction (entreprise);das Management;64;Noun;
-distributeur automatique;der Bankautomat;64;Noun;
-droit;das Recht;64;Noun;
-e-mail;die E-Mail;64;Noun;
-informations;die Nachrichten;64;Noun;
-instant (à l');eben / gerade;64;Adjective/Adverb;
-insupportable;unerträglich;64;Adjective/Adverb;
-personnellement;persönlich;64;Adjective/Adverb;
-sec;trocken;64;Adjective/Adverb;
-silence;die Stille;64;Noun;
-silencieux;still;64;Adjective/Adverb;
-supporter;ertragen;64;Verb;irregular
-système;das System;64;Noun;
-supporter;ertragen;64;Verb;irregular
-système;das System;64;Noun;
-système;das System;64;Noun;
-venir de;eben (+ v. passé);64;Fixed expression;
-déraisonnable;unvernünftig;65;Adjective/Adverb;
-flots;in Strömen;65;Fixed expression;
-France;Frankreich;65;Noun;
-grec;griechisch;65;Adjective/Adverb;
-île;die Insel;65;Noun;
-impossible;unmöglich;65;Adjective/Adverb;
-Italie;Italien;65;Noun;
-maisonnette;das Häuschen;65;Noun;
-malheur;das Unglück;65;Noun;
-nature;die Natur;65;Noun;
-plage de sable;der Sandstrand;65;Noun;
-possible;möglich;65;Adjective/Adverb;
-préférer (superlatif);am liebsten;65;Adjective/Adverb;
-raisonnable;vernünftig;65;Adjective/Adverb;
-rarement;selten;65;Adjective/Adverb;
-réalité;die Realität;65;Noun;
-réfléchir à;nach/denken (über);65;Verb;irregular
-sable;der Sand;65;Noun;
-saison;die Jahreszeit;65;Noun;
-seau;"der Eimer ; der Kübel";65;Noun;
-tempête;der Sturm;65;Noun;
-travail;die Arbeit;65;Noun;
-vivre (un événement);erleben;65;Verb;regular
-y (direction);dahin;65;Adjective/Adverb;
-achever;fertig machen;66;Fixed expression;
-ancien;alt;66;Adjective/Adverb;
-curiosité touristique;die Sehenswürdigkeit;66;Noun;
-descendre (lit, bus, train);aus dem Bett / Bus / Zug steigen;66;Fixed expression;
-dimanche (le ~ / tous les ~);sonntags;66;Adjective/Adverb;
-escalader;auf einen Berg steigen;66;Fixed expression;
-excursion;der Ausflug;66;Noun;
-fatigant;anstrengend;66;Adjective/Adverb;
-fermé;geschlossen;66;Adjective/Adverb;
-groupe;die Gruppe;66;Noun;
-groupe de voyage;die Reisegruppe;66;Noun;
-honnêtement;ehrlich;66;Adjective/Adverb;
-lac;der See;66;Noun;
-manifester (se ~);sich melden;66;Verb;irregular
-matin au soir;von morgens bis abends;66;Fixed expression;
-matin(s) (le/tous les ~);morgens;66;Adjective/Adverb;
-mer;die See / das Meer;66;Noun;
-mer du Nord;die Nordsee;66;Noun;
-montagne;der Berg;66;Noun;
-monter (augmenter);steigen;66;Verb;irregular
-monter (dans bus/train);in den Bus / Zug steigen;66;Fixed expression;
-motiver;motivieren;66;Verb;regular
-parti (être ~);unterwegs sein;66;Fixed expression;
-plus (le ~);am meisten;66;Adjective/Adverb;
-prêt (fini, fait);"fertig ; bereit";66;Adjective/Adverb;
-prix (coût);der Preis;66;Noun;
-réseau (avoir du ~);der Empfang;66;Noun;
-route (être en ~);unterwegs sein;66;Fixed expression;
-sincère;ehrlich;66;Adjective/Adverb;
-sincèrement;ehrlich;66;Adjective/Adverb;
-sommet;der Gipfel;66;Noun;
-suivant;folgende;66;Adjective/Adverb;
-suivant;folgende;66;Adjective/Adverb;
-terrain;das Gelände;66;Noun;
-tuer (sens figuré);fertig machen;66;Fixed expression;
-à;über;67;Preposition;
-Bavière;Bayern;67;Noun;
-château;das Schloss;67;Noun;
-cousin;der Cousin;67;Noun;
-cousine;die Cousine;67;Noun;
-féerique;märchenhaft;67;Adjective/Adverb;
-gratuitement;umsonst;67;Adjective/Adverb;
-haut (en ~);oben;67;Adjective/Adverb;
-là (jusque-/d'ici ~) (temporel);bis dahin;67;Adjective/Adverb;
-liste;die Liste;67;Noun;
-neige;der Schnee;67;Noun;
-neiger;schneien;67;Verb;regular
-Noël;Weihnachten;67;Noun;
-Pâques;Ostern;67;Noun;
-Pentecôte;Pfingsten;67;Noun;
-pour (compl. de tps);über (+ n. de fête, compl. de tps);67;Preposition;
-rocher;der Felsen;67;Noun;
-semaine (fin de ~);das Wochenende;67;Noun;
-ski;der Ski;67;Noun;
-skier;Ski fahren;67;Fixed expression;
-visiter;besichtigen / sich ansehen;67;Verb;irregular
-vouloir parler de;meinen;67;Verb;irregular
-assez;genug;68;Adjective/Adverb;
-bureau;das Büro;68;Noun;
-chef d'orchestre;der Dirigent;68;Noun;
-chercher (aller ~);holen;68;Verb;regular
-collaborateur;der Mitarbeiter;68;Noun;
-énerver (s');sich aufregen;68;Verb;irregular
-énerver (s' contre);sich über jdn aufregen;68;Verb;irregular
-ennuis;der Ärger;68;Noun;
-erreur;der Fehler;68;Noun;
-faute;der Fehler;68;Noun;
-humeur;die Laune;68;Noun;
-jambe;das Bein;68;Noun;
-luné (être ~);gut/schlecht gelaunt sein;68;Fixed expression;
-passer (se);passieren;68;Verb;regular
-prix (lauréat);der Preis;68;Noun;
-se (p. réciproque dat.);sich;68;Personal pronoun;
-travailleur;der Arbeiter;68;Noun;
-violoniste;der Geiger;68;Noun;
-vite fait;kurz;68;Adjective/Adverb;
-auberge;die Herberge;69;Noun;
-auberge de jeunesse;die Jugendherberge;69;Noun;
-aucunement;keineswegs;69;Adjective/Adverb;
-campagne;auf dem Land;69;Fixed expression;
-camping;das Camping;69;Noun;
-camping (terrain);der Campingplatz;69;Noun;
-contredire;widersprechen;69;Verb;irregular
-déranger;stören;69;Verb;regular
-dîner;das Abendessen;69;Noun;
-endroit;die Stelle;69;Noun;
-épicerie;das Lebensmittelgeschäft;69;Noun;
-essence;tanken;69;Verb;regular
-excuser;entschuldigen;69;Verb;regular
-gîte;die Herberge;69;Noun;
-gueule;das Maul;69;Noun;
-heure (à cette ~);um die Uhrzeit;69;Fixed expression;
-horaires;die Uhrzeit;69;Noun;
-librairie;die Buchhandlung;69;Noun;
-magasin ; das Geschäft ;69;Noun;
-moyen;das Mittel;69;Noun;
-"ne… que (pas plus tôt/tard ; pas avant)";erst;69;Modal particle;
-plus (en ~);außerdem;69;Adjective/Adverb;
-préparer;vor/bereiten;69;Verb;irregular
-raviole;die Maultasche;69;Noun;
-sac;"die Tasche ; der Sack";69;Noun;
-souper;das Abendessen;69;Noun;
-Stuttgart;Stuttgart;69;Noun;
-supermarché;der Supermarkt;69;Noun;
-souper;das Abendessen;69;Noun;
-Stuttgart;Stuttgart;69;Noun;
-supermarché;der Supermarkt;69;Noun;
-un;eins;69;Number/Numeral;
-voisin;der Nachbar;69;Noun;
-proche (adj. qual.);nah;70;Adjective/Adverb;
-acide;sauer;71;Adjective/Adverb;
-agir (s'~ de);sich handeln um;71;Verb;irregular
-aigre;sauer;71;Adjective/Adverb;
-contrat;der Auftrag;71;Noun;
-d'abord;erstmal;71;Adjective/Adverb;
-difficilement;schwer;71;Adjective/Adverb;
-écrire;schreiben;71;Verb;irregular
-estomac;der Magen;71;Noun;
-garder (place/table);freihalten;71;Verb;irregular
-important;wichtig;71;Adjective/Adverb;
-joindre;erreichen;71;Verb;regular
-partir (à ~ de);ab;71;Preposition;
-plat (mets);das Gericht;71;Noun;
-plat du jour;das Tagesgericht;71;Noun;
-rôti;der Braten;71;Noun;
-roue;das Rad;71;Noun;
-si (question indirecte);ob;71;Conjunction;
-spécialité;die Spezialität;71;Noun;
-spécialité;die Spezialität;71;Noun;
-traduction;die Übersetzung;71;Noun;
-vélo;das Fahrrad / das Rad;71;Noun;
-vide;leer;71;Adjective/Adverb;
-allumer;anmachen / anschalten;72;Verb;irregular
-billet;der Schein;72;Noun;
-billet de loterie;der Lotterieschein;72;Noun;
-carrière (faire ~);Karriere machen;72;Fixed expression;
-chance (jour de ~);der Glückstag;72;Noun;
-descendre (véhicule);aussteigen;72;Verb;irregular
-donc;bloß;72;Modal particle;
-finir son assiette;aufessen;72;Verb;irregular
-finir son verre;austrinken;72;Verb;irregular
-grasse matinée;ausschlafen;72;Verb;irregular
-habiller (qqn);jdn anziehen;72;Verb;irregular
-habiller (s');sich anziehen;72;Verb;irregular
-lecteur;der Leser;72;Noun;
-lève-tard;der Spätaufsteher;72;Noun;
-lève-tôt;der Frühaufsteher;72;Noun;
-loisirs;das Hobby;72;Noun;
-lumière;das Licht;72;Noun;
-mi-temps (à ~);halbtags;72;Adjective/Adverb;
-ouvrir;aufmachen / öffnen;72;Verb;irregular
-raccrocher (téléphone);auf/legen;72;Verb;irregular
-réveil;der Wecker;72;Noun;
-rêver;träumen;72;Verb;regular
-sentir;"spüren ; riechen";72;Verb;irregular
-sortir (tirer);heraus/ziehen;72;Verb;irregular
-sortir (publier);heraus/geben;72;Verb;irregular
-sortir (tirer);herausziehen;72;Verb;irregular
-sortir (publier);herausgeben;72;Verb;irregular
-voix;die Stimme;72;Noun;
-auteur;der Autor;73;Noun;
-avantage;der Vorteil;73;Noun;
-beaucoup de choses;vieles;73;Adjective/Adverb;
-carte;die Karte;73;Noun;
-ce que;was;73;Interrogative;
-celui/celle/ceux;derjenige/diejenige/dasjenige;73;Adjective/Adverb;
-cependant;allerdings;73;Adjective/Adverb;
-certaines;manche;73;Adjective/Adverb;
-chose;die Sache;73;Noun;
-compréhensible;verständlich;73;Adjective/Adverb;
-conclusion;der Schluss;73;Noun;
-conversation;das Gespräch;73;Noun;
-conversation courante;das Alltagsgespräch;73;Noun;
-dictionnaire;das Wörterbuch;73;Noun;
-entrée (dictionnaire);das Stichwort;73;Noun;
-exprimer;ausdrücken;73;Verb;irregular
-formuler;formulieren;73;Verb;regular
-grave;schlimm;73;Adjective/Adverb;
-important (le plus);Hauptsache;73;Fixed expression;
-linguiste;der Sprachwissenschaftler;73;Noun;
-locuteur natif;der Muttersprachler;73;Noun;
-orthographier;rechtschreiben;73;Verb;irregular
-panique;die Panik;73;Noun;
-perdre;verlieren;73;Verb;irregular
-phrase;der Satz;73;Noun;
-principal (le ~) (l'essentiel);Hauptsache;73;Fixed expression;
-quotidien;der Alltag;73;Noun;
-renommé;angesehen;73;Adjective/Adverb;
-scientifique;der Wissenschaftler;73;Noun;
-signification;die Bedeutung;73;Noun;
-surtout;vor allem;73;Fixed expression;
-surtout;vor allem;73;Fixed expression;
-surtout;vor allem;73;Fixed expression;
-terme;der Begriff;73;Noun;
-version originale (en);im Original;73;Fixed expression;
-appuyer;drücken;74;Verb;regular
-argent (métal);das Silber;74;Noun;
-cadeau;das Geschenk;74;Noun;
-calculer;berechnen;74;Verb;regular
-calorie;die Kalorie;74;Noun;
-dépense;der Verbrauch;74;Noun;
-dépense calorique;der Kalorienverbrauch;74;Noun;
-dépenser;ausgeben;74;Verb;irregular
-design;das Design;74;Noun;
-diamant;der Diamant;74;Noun;
-fer;das Eisen;74;Noun;
-fin (adj.);fein;74;Adjective/Adverb;
-fonctionner;bedienen;74;Verb;regular
-frontière;die Grenze;74;Noun;
-idée (représentation/image);die Vorstellung;74;Noun;
-juste (adapté);richtig;74;Adjective/Adverb;
-mariage;die Hochzeit;74;Noun;
-modèle;das Modell;74;Noun;
-montre;die Uhr;74;Noun;
-noces d'argent;die Silberhochzeit;74;Noun;
-noces d'or;die Goldhochzeit;74;Noun;
-noces de diamant;die Diamanthochzeit;74;Noun;
-obtenir;erhalten;74;Verb;irregular
-occasion (événement);der Anlass;74;Noun;
-or;das Gold;74;Noun;
-précis;genau;74;Adjective/Adverb;
-regarder (avec attention/intérêt);sich etw. an/sehen;74;Verb;irregular
-serrer;drücken;74;Verb;regular
-siège;der Sitz;74;Noun;
-siège (auto);der Autositz;74;Noun;
-suffire;reichen;74;Verb;regular
-suffire;reichen;74;Verb;regular
-taxe;die Steuer;74;Noun;
-touche (clavier);die Taste;74;Noun;
-après (adv.);danach;75;Adjective/Adverb;
-automne;der Herbst;75;Noun;
-avant (adv.);davor;75;Adjective/Adverb;
-bord (à ~);an Bord;75;Fixed expression;
-côté (à ~);daneben;75;Adjective/Adverb;
-dedans;drinnen;75;Adjective/Adverb;
-dehors;draußen;75;Adjective/Adverb;
-déménager;umziehen;75;Verb;irregular
-départ;die Abreise;75;Noun;
-derrière;dahinter;75;Adjective/Adverb;
-devant (adv.);davor;75;Adjective/Adverb;
-différence;der Unterschied;75;Noun;
-hiver;der Winter;75;Noun;
-passager;der Passagier;75;Noun;
-passé;die Vergangenheit;75;Noun;
-printemps;der Frühling;75;Noun;
-vêtements;die Kleidung;75;Noun;
-café au lait;der Milchkaffee;76;Noun;
-candidat;der Kandidat;76;Noun;
-candidate;die Kandidatin;76;Noun;
-chef;der Leiter;76;Noun;
-coquille;die Schale;76;Noun;
-directeur RH;der Personalleiter;76;Noun;
-énervé;aufgeregt;76;Adjective/Adverb;
-énerver;ärgern;76;Verb;regular
-entretien;das Gespräch;76;Noun;
-entretien d'embauche;das Vorstellungsgespräch;76;Noun;
-exercice;die Aufgabe;76;Noun;
-facile;leicht;76;Adjective/Adverb;
-facilement;leicht;76;Adjective/Adverb;
-impressionner;beeindrucken;76;Verb;regular
-jeter;schmeißen;76;Verb;irregular
-lait;die Milch;76;Noun;
-lancer;werfen;76;Verb;irregular
-léger;leicht;76;Adjective/Adverb;
-légèrement;leicht;76;Adjective/Adverb;
-marcher (bien/mal);gut/schlecht laufen;76;Verb;irregular
-passer (bien/mal se ~);gut/schlecht laufen;76;Verb;irregular
-présentation;die Vorstellung;76;Noun;
-saucisse;die Wurst;76;Noun;
-saucisse grillée;die Bratwurst;76;Noun;
-sauf (excepté / à part);außer (+ dat.);76;Preposition;
-tâche;die Aufgabe;76;Noun;
-abréviation;die Abkürzung;78;Noun;
-actuel;jetzig;78;Adjective/Adverb;
-après que;nachdem;78;Conjunction;
-aujourd'hui (d'~);heutig;78;Adjective/Adverb;
-capitale;die Hauptstadt;78;Noun;
-construire;bauen;78;Verb;regular
-coucher (se ~);untergehen;78;Verb;irregular
-date;das Datum;78;Noun;
-divertissement;der Spaß;78;Noun;
-diviser;teilen;78;Verb;regular
-division;die Teilung;78;Noun;
-État;der Staat;78;Noun;
-guerre;der Krieg;78;Noun;
-histoire;die Geschichte;78;Noun;
-Lune;der Mond;78;Noun;
-officiel;offiziell;78;Adjective/Adverb;
-République démocratique allemande (RDA);die Deutsche Demokratische Republik;78;Noun;
-République fédérale d'Allemagne (RFA);die Bundesrepublik Deutschland (ab. BRD);78;Noun;
-réunification;die Wiedervereinigung;78;Noun;
-savoir (n.);das Wissen;78;Noun;
-siècle;das Jahrhundert;78;Noun;
-unité;die Einheit;78;Noun;
-ville;die Stadt;78;Noun;
-bus;der Bus;79;Noun;
-communication;die Kommunikation;79;Noun;
-communication (moyen de ~);das Kommunikationsmittel;79;Noun;
-extra-terrestre;der Außerirdische;79;Noun;
-frontières (sans ~);grenzenlos;79;Adjective/Adverb;
-gars;Jungs;79;Noun;
-impression;der Eindruck;79;Noun;
-machin ; das Ding ;79;Noun;
-métro;die U-Bahn;79;Noun;
-métropolitain;die Untergrundbahn;79;Noun;
-mobile (adj.);mobil;79;Adjective/Adverb;
-observer;beobachten;79;Verb;regular
-offrir (permettre);bieten;79;Verb;irregular
-partout;überall;79;Adjective/Adverb;
-planète;der Planet;79;Noun;
-plutôt;eher;79;Adjective/Adverb;
-positif (n.);das Positive;79;Noun;
-singe;der Affe;79;Noun;
-technique;die Technik;79;Noun;
-terre;die Erde;79;Noun;
-terrestre;irdisch;79;Adjective/Adverb;
-tramway;die Straßenbahn;79;Noun;
-viande;das Fleisch;79;Noun;
-viande (sans);fleischlos;79;Adjective/Adverb;
-audacieux;gewagt;80;Adjective/Adverb;
-branche;der Zweig;80;Noun;
-candidature;die Bewerbung;80;Noun;
-carnaval;der Fasching;80;Noun;
-carrière;die Karriere;80;Noun;
-coin;die Ecke;80;Noun;
-commencer;starten;80;Verb;regular
-documents;die Unterlagen;80;Noun;
-dossier de candidature;die Bewerbungsunterlagen;80;Noun;
-étage;der Stock;80;Noun;
-filiale;die Zweigstelle;80;Noun;
-hésiter;zögern;80;Verb;regular
-mentalité;die Mentalität;80;Noun;
-poli;höflich;80;Adjective/Adverb;
-politesse;die Höflichkeit;80;Noun;
-ponctuel;pünktlich;80;Adjective/Adverb;
-précisément;gerade;80;Adjective/Adverb;
-prétentions salariales;die Gehaltsvorstellungen;80;Noun;
-profil;das Profil;80;Noun;
-prometteur;vielversprechend;80;Adjective/Adverb;
-retard;die Verspätung;80;Noun;
-retourner (se ~);sich um/drehen;80;Verb;irregular
-roi;der König;80;Noun;
-sans (+ inf.);ohne zu (+ inf.);80;Preposition;
-sans que;ohne dass;80;Conjunction;
-situation;die Situation;80;Noun;
-succès;der Erfolg;80;Noun;
-succès;der Erfolg;80;Noun;
-tâche (travail);die Arbeit;80;Noun;
-vendeur;der Verkäufer;80;Noun;
-aussi bien… que;sowohl… als auch;81;Conjunction;
-céréales;das Getreide;81;Noun;
-composer;komponieren;81;Verb;regular
-compositeur;der Komponist;81;Noun;
-composition;das Komponieren;81;Noun;
-concert;das Konzert;81;Noun;
-conseil;der Tipp;81;Noun;
-cour princière;der Fürstenhof;81;Noun;
-cours de musique;der Musikunterricht;81;Noun;
-dettes;die Schulden;81;Noun;
-deviner;erraten;81;Verb;irregular
-enfant prodige;das Wunderkind;81;Noun;
-ensemble;gemeinsam;81;Adjective/Adverb;
-époque;die Zeit;81;Noun;
-flûte;die Flöte;81;Noun;
-Flûte enchantée;die Zauberflöte;81;Noun;
-gagner (argent);verdienen;81;Verb;regular
-gaspilleur;verschwenderisch;81;Adjective/Adverb;
-maison natale;das Geburtshaus;81;Noun;
-musique;die Musik;81;Noun;
-œuvre;das Werk;81;Noun;
-opéra;die Oper;81;Noun;
-parmi;darunter;81;Adjective/Adverb;
-pauvre;arm;81;Adjective/Adverb;
-pauvreté;die Armut;81;Noun;
-prince;der Fürst;81;Noun;
-profiter de;nutzen;81;Verb;regular
-ruelle;die Gasse;81;Noun;
-Salzbourg;Salzburg;81;Noun;
-tout (en tout);insgesamt;81;Adjective/Adverb;
-apprenti;der Geselle;82;Noun;
-biscuit;das Plätzchen;82;Noun;
-botte;der Stiefel;82;Noun;
-boulanger;der Bäcker;82;Noun;
-boulanger (apprenti);der Bäckergeselle;82;Noun;
-boulanger (maître);der Bäckermeister;82;Noun;
-boulangerie;die Bäckerei;82;Noun;
-chauffer;erhitzen;82;Verb;regular
-compte à rebours;der Countdown;82;Noun;
-contrôler;überprüfen;82;Verb;regular
-disputer (se ~);streiten;82;Verb;irregular
-four;der Ofen;82;Noun;
-four (de cuisine);der Backofen;82;Noun;
-friandises;die Süßigkeiten;82;Noun;
-lourd;schwer;82;Adjective/Adverb;
-maître (contremaître);der Meister;82;Noun;
-ne… (plus) que;nur noch;82;Fixed expression;
-note (scolaire);die Note;82;Noun;
-pâte;der Teig;82;Noun;
-pendant que;während;82;Conjunction;
-recommencer;wieder los/gehen;82;Verb;irregular
-réjouir (se ~ de qqch. à venir);sich freuen auf;82;Verb;irregular
-réjouir (se ~ de qqch. qui a eu lieu);sich freuen über;82;Verb;irregular
-saint Nicolas;der Nikolaus;82;Noun;
-soulever;heben;82;Verb;irregular
-soulever;heben;82;Verb;irregular
-tour (être au tour de);dran kommen / dran sein;82;Fixed expression;
-à cause de;durch;83;Preposition;
-accompagner;begleiten;83;Verb;regular
-amende;das Bußgeld;83;Noun;
-changement;der Wechsel;83;Noun;
-entrer;reinkommen;83;Verb;irregular
-espérons que;hoffentlich;83;Adjective/Adverb;
-grâce à;durch;83;Preposition;
-inclus;inbegriffen;83;Adjective/Adverb;
-lequel (p. int.);welch-;83;Interrogative;
-mers du Sud;die Südsee;83;Noun;
-mieux (il y a ~);es gibt Besseres;83;Fixed expression;
-opération;die Operation;83;Noun;
-papier peint;die Tapete;83;Noun;
-pénitence;die Buße;83;Noun;
-pire (il y a ~);es gibt Schlimmeres;83;Fixed expression;
-point;der Punkt;83;Noun;
-prendre (attraper);erwischen;83;Verb;regular
-rouge (passer au ~);über Rot fahren;83;Fixed expression;
-sauver;retten;83;Verb;regular
-train (être en train de + inf.);beim;83;Fixed expression;
-urgence (d');dringend;83;Adjective/Adverb;
-visage;das Gesicht;83;Noun;
-afin que;damit;85;Conjunction;
-battre (au jeu);schlagen;85;Verb;irregular
-cape;das Cape;85;Noun;
-cape de pluie;das Regencape;85;Noun;
-dicton;das Sprichwort;85;Noun;
-exercice (physique);die Bewegung;85;Noun;
-fleuve;der Fluss;85;Noun;
-fort (bruyant);laut;85;Adjective/Adverb;
-frapper;schlagen;85;Verb;irregular
-giboulées de mars;das Aprilwetter;85;Noun;
-irrésistible;unwiderstehlich;85;Adjective/Adverb;
-lieu (au ~ de);anstatt;85;Preposition;
-lieu (au ~ que);anstatt dass;85;Conjunction;
-long (le ~ de);entlang;85;Preposition;
-nourriture;das Essen;85;Noun;
-nuire;schaden;85;Verb;regular
-particulièrement;besonders;85;Adjective/Adverb;
-partir (pouvoir);loskommen;85;Verb;irregular
-piste cyclable;der Radweg;85;Noun;
-pourquoi (dans quel but);wozu;85;Interrogative;
-voix (à haute);laut;85;Adjective/Adverb;
-bouteille;die Flasche;86;Noun;
-chanson;das Lied;86;Noun;
-cuillère;der Löffel;86;Noun;
-cuillère (petite);der Teelöffel;86;Noun;
-cure;die Kur;86;Noun;
-dessin;das Bild;86;Noun;
-détail;die Kleinigkeit;86;Noun;
-hôte (amphitryon);der Gast;86;Noun;
-hôte (invité);der Gast;86;Noun;
-hypocalorique;kalorienarm;86;Adjective/Adverb;
-inattendu;unerwartet;86;Adjective/Adverb;
-manomètre;das Manometer;86;Noun;
-manquer;fehlen;86;Verb;regular
-manquer (à qqn);jdn vermissen;86;Verb;regular
-oncle;der Onkel;86;Noun;
-passer (tendre);herüberreichen / überreichen;86;Verb;regular
-poivre;der Pfeffer;86;Noun;
-schnaps;der Schnaps;86;Noun;
-sel;das Salz;86;Noun;
-sentir (odeur);riechen;86;Verb;irregular
-sucre;der Zucker;86;Noun;
-sucre;der Zucker;86;Noun;
-tableau;das Bild;86;Noun;
-action;die Tat;87;Noun;
-arrivée;die Ankunft;87;Noun;
-atteindre;erreichen;87;Verb;regular
-attendre (s' à);rechnen mit;87;Verb;regular
-avoir lieu;stattfinden;87;Verb;irregular
-battre (se ~);kämpfen;87;Verb;regular
-battre (se ~ pour);kämpfen (für);87;Verb;regular
-carnaval;die Fasnacht;87;Noun;
-carnaval;die Fastnacht;87;Noun;
-cas (en ~ de);bei;87;Preposition;
-centaine de milliers;das Hunderttausend;87;Noun;
-clamer;rufen;87;Verb;irregular
-Cologne;Köln;87;Noun;
-dangereux;gefährlich;87;Adjective/Adverb;
-dédommagement;die Entschädigung;87;Noun;
-défilé;der Umzug;87;Noun;
-Düsseldorf;Düsseldorf;87;Noun;
-élève (fille);die Schülerin;87;Noun;
-élève (garçon);der Schüler;87;Noun;
-environnement;die Umwelt;87;Noun;
-Europe du Nord;Nordeuropa;87;Noun;
-exiger;verlangen;87;Verb;regular
-fermer;schließen;87;Verb;irregular
-groupe (entreprise);der Konzern;87;Noun;
-mais (au contraire);sondern;87;Conjunction;
-Mayence;Mainz;87;Noun;
-mieux... mieux;je besser ... desto / umso besser;87;Fixed expression;
-millier;das Tausend;87;Noun;
-moins… moins;je weniger … desto / umso weniger;87;Fixed expression;
-plus… plus…;je + cp. desto/umso + cp.;87;Fixed expression;
-point culminant;der Höhepunkt;87;Noun;
-rhénan;rheinisch;87;Adjective/Adverb;
-solide;fest;87;Adjective/Adverb;
-train grandes lignes;der Fernzug;87;Noun;
-voyageur;der Reisende;87;Noun;
-adresse;die Adresse;88;Noun;
-allécher;anlocken;88;Verb;irregular
-arriver à qqun;jdm vorkommen;88;Verb;irregular
-attraper;fangen;88;Verb;irregular
-bec;der Schnabel;88;Noun;
-bois (forêt);der Wald;88;Noun;
-chant;der Gesang;88;Noun;
-corbeau;der Rabe;88;Noun;
-discours;die Rede;88;Noun;
-doute;der Zweifel;88;Noun;
-écouter qch;hören;88;Verb;regular
-écouter qqun;auf jdn hören;88;Verb;regular
-leçon (enseignement);die Lehre;88;Noun;
-maître;der Meister;88;Noun;
-odeur;der Geruch;88;Noun;
-peu (à ~ près);etwa;88;Adjective/Adverb;
-phénix;der Phönix;88;Noun;
-pleurer;weinen;88;Verb;regular
-plumage;das Gefieder;88;Noun;
-proie;die Beute;88;Noun;
-renard;der Fuchs;88;Noun;
-retenir qqch. (mémoire);sich etwas merken;88;Verb;irregular
-rire;lachen;88;Verb;regular
-saisir;schnappen;88;Verb;regular
-serment;der Schwur;88;Noun;
-sourire;lächeln;88;Verb;regular
-sourire;lächeln;88;Verb;regular
-valoir qqch.;etw. + acc. wert sein;88;Fixed expression;
-bien que;obwohl;89;Conjunction;
-boîte de nuit;die Disko;89;Noun;
-cinéma;das Kino;89;Noun;
-d'accord;einverstanden;89;Adjective/Adverb;
-États-Unis;die Vereinigten Staaten;89;Noun;
-football;der Fußball;89;Noun;
-jouer;spielen;89;Verb;regular
-loin;weit;89;Adjective/Adverb;
-lunettes;die Brille;89;Noun;
-malade (adj.);krank;89;Adjective/Adverb;
-parfois;manchmal;89;Adjective/Adverb;
-piscine;das Schwimmbad;89;Noun;
-pourquoi (c'est ~);deshalb;89;Adjective/Adverb;
-quitter;verlassen;89;Verb;irregular
-répéter;wiederholen;89;Verb;regular
-retour (de ~);zurück;89;Adjective/Adverb;
-retrouver;wieder/finden;89;Verb;irregular
-revoir;wieder/sehen;89;Verb;irregular
-sport;der Sport;89;Noun;
-sportif;sportlich;89;Adjective/Adverb;
-sport;der Sport;89;Noun;
-sportif;sportlich;89;Adjective/Adverb;
-tennis;das Tennis;89;Noun;
-théâtre;das Theater;89;Noun;
-travers (aller de);schief gehen / schief laufen;89;Verb;irregular
-adapté (à);geeignet (für);90;Adjective/Adverb;
-appareil;das Gerät;90;Noun;
-celui qui;wer;90;Interrogative;
-cheveux;das Haar;90;Noun;
-demi-tour (faire ~);umdrehen;90;Verb;irregular
-doux;süß;90;Adjective/Adverb;
-effet (faire ~);wirken;90;Verb;regular
-énergie;die Energie;90;Noun;
-fin (adj.);dünn;90;Adjective/Adverb;
-force;die Kraft;90;Noun;
-forme (en ~);fit;90;Adjective/Adverb;
-garantir;garantieren;90;Verb;regular
-gras;fettig;90;Adjective/Adverb;
-jus;der Saft;90;Noun;
-jus de fruits;der Obstsaft;90;Noun;
-lavage;das Waschen;90;Noun;
-matelas;die Matratze;90;Noun;
-méthode;die Methode;90;Noun;
-pourtant;trotzdem;90;Adjective/Adverb;
-renoncer à;verzichten auf;90;Verb;regular
-satisfait;zufrieden;90;Adjective/Adverb;
-satisfait (de);zufrieden (mit);90;Adjective/Adverb;
-sucré;süß;90;Adjective/Adverb;
-sucré;süß;90;Adjective/Adverb;
-tache;der Fleck;90;Noun;
-tendre;zart;90;Adjective/Adverb;
-tour de main (en un);im Handumdrehen;90;Fixed expression;
-transformer (édifice);umbauen;90;Verb;irregular
-vitamine;das Vitamin;90;Noun;
-allumer (s');angehen;92;Verb;irregular
-armoire;der Schrank;92;Noun;
-bon marché;billig;92;Adjective/Adverb;
-éteindre (s');ausgehen;92;Verb;irregular
-foutu;futsch;92;Adjective/Adverb;
-journal;die Zeitung;92;Noun;
-lave-linge;die Waschmaschine;92;Noun;
-laver;waschen;92;Verb;irregular
-laver (vaisselle);spülen;92;Verb;regular
-lave-vaisselle;die Spülmaschine;92;Noun;
-machine ; die Maschine ;92;Noun;
-merde;die Scheiße;92;Noun;
-mien(s)/mienne(s);meiner / meine / meins;92;Possessive adjective;
-n'importe;irgend-;92;Adjective/Adverb;
-n'importe quand;irgendwann;92;Adjective/Adverb;
-n'importe quel/le;irgendeine/r;92;Adjective/Adverb;
-n'importe qui;irgendwer;92;Adjective/Adverb;
-quelconque (un/e ~);irgendein/e;92;Adjective/Adverb;
-rafraîchir;kühlen;92;Verb;regular
-réfrigérateur;der Kühlschrank;92;Noun;
-réparation;die Reparatur;92;Noun;
-tien(s)/tienne(s);deiner / deine / deins;92;Possessive adjective;
-chaussure;der Schuh;93;Noun;
-ciel;der Himmel;93;Noun;
-couteau;das Messer;93;Noun;
-créer;erstellen;93;Verb;regular
-étonné (être);staunen;93;Verb;regular
-fourchette;die Gabel;93;Noun;
-frères et sœurs;die Geschwister;93;Noun;
-gros;dick;93;Adjective/Adverb;
-interdiction;das Verbot;93;Noun;
-légumes;das Gemüse;93;Noun;
-lettre (courrier);der Brief;93;Noun;
-mettre la table;den Tisch decken;93;Fixed expression;
-non seulement… mais aussi;nicht nur… sondern auch;93;Fixed expression;
-poser (de côté);weg/legen;93;Verb;irregular
-sonner;klingeln;93;Verb;regular
-sonner;klingeln;93;Verb;regular
-train (être en train de);gerade;93;Adjective/Adverb;
-valoir;gelten;93;Verb;irregular
-venir de + inf.;gerade (+ v. au parfait);93;Fixed expression;
-visite (invités);der Besuch;93;Noun;
-visite (rendre);besuchen;93;Verb;regular
-arriver (événement);passieren;94;Verb;regular
-bête (adj.);dumm;94;Adjective/Adverb;
-comme (étant donné que);da;94;Conjunction;
-dès que;sobald;94;Conjunction;
-disputer (se ~ avec);sich mit jdm streiten;94;Verb;irregular
-échouer;durchfallen;94;Verb;irregular
-étudier;studieren;94;Verb;regular
-examen;die Prüfung;94;Noun;
-examen de conduite;die Fahrprüfung;94;Noun;
-examinateur;der Prüfer;94;Noun;
-fenêtre;das Fenster;94;Noun;
-gentil;lieb;94;Adjective/Adverb;
-heure de conduite;die Fahrstunde;94;Noun;
-inspecteur du permis;der Fahrprüfer;94;Noun;
-journal intime;das Tagebuch;94;Noun;
-lire (en entier);durchlesen;94;Verb;irregular
-méchant;böse;94;Adjective/Adverb;
-même(s) (le/la/les ~);derselbe / dieselbe / dasselbe / dieselben;94;Adjective/Adverb;
-montrer;zeigen;94;Verb;regular
-nerveux;nervös;94;Adjective/Adverb;
-pantalon;die Hose;94;Noun;
-plus de;über;94;Preposition;
-refléter (se ~);sich wider/spiegeln;94;Verb;irregular
-slip;der Slip;94;Noun;
-toilettes;das Klo / die Toilette;94;Noun;
-tomber;fallen;94;Verb;irregular
-arrêter;aufhören;95;Verb;irregular
-canapé;das Sofa;95;Noun;
-chaise;der Stuhl;95;Noun;
-correctement;richtig;95;Adjective/Adverb;
-docteur (médecin);der Doktor;95;Noun;
-docteur (titre);Doktor;95;Noun;
-entre-temps;inzwischen;95;Adjective/Adverb;
-fauteuil;der Sessel;95;Noun;
-grammaire;die Grammatik;95;Noun;
-lampe;die Lampe;95;Noun;
-lire (à haute voix);vorlesen;95;Verb;irregular
-placer;aufstellen;95;Verb;irregular
-projecteur;der Projektor;95;Noun;
-récompense;die Belohnung;95;Noun;
-récréation;die Pause;95;Noun;
-sol;der Boden;95;Noun;
-toilettes (aller aux);auf die Toilette gehen;95;Fixed expression;
-à;bei;96;Preposition;
-absolument;überhaupt;96;Adjective/Adverb;
-autonome;selbständig;96;Adjective/Adverb;
-café (établissement);das Café;96;Noun;
-circulation;der Verkehr;96;Noun;
-compte (se mettre à son ~);sich selbständig machen;96;Verb;irregular
-démission;die Kündigung;96;Noun;
-dépendre de;abhängen von;96;Verb;irregular
-en train de;beim;96;Preposition;
-journée;sich den Tag frei nehmen;96;Verb;irregular
-licenciement;die Kündigung;96;Noun;
-licencier;kündigen;96;Verb;regular
-marcher (fonctionner);klappen;96;Verb;regular
-négatif;negativ;96;Adjective/Adverb;
-poste (bureau de ~ ou poste);die Post;96;Noun;
-prudent;vorsichtig;96;Adjective/Adverb;
-soigneusement;sorgfältig;96;Adjective/Adverb;
-solution;die Lösung;96;Noun;
-triste;traurig;96;Adjective/Adverb;
-volonté;der Wille;96;Noun;
-vouloir dire (par là);damit meinen;96;Fixed expression;
-académie;die Akademie;97;Noun;
-Académie des beaux-arts;die Kunstakademie;97;Noun;
-amusant;Spaß machen;97;Fixed expression;
-amuser;Spaß machen;97;Fixed expression;
-art;die Kunst;97;Noun;
-colocataire;die Mitbewohnerin;97;Noun;
-étudiant;der Student;97;Noun;
-gestion;die Verwaltung;97;Noun;
-habitante;die Bewohnerin;97;Noun;
-page web;die Internetseite;97;Noun;
-présenter;vor/stellen;97;Verb;irregular
-saluer (bienvenue);begrüßen;97;Verb;regular
-saluer (bonjour);grüßen;97;Verb;regular
-spectacle;die Vorstellung;97;Noun;
-spectacle;die Vorstellung;97;Noun;
-surfer;surfen;97;Verb;regular
-assidûment;fleißig;99;Adjective/Adverb;
-avant-dernier;vorletzte;99;Adjective/Adverb;
-bien sûr;selbstverständlich;99;Adjective/Adverb;
-chambre d'hôtel;das Hotelzimmer;99;Noun;
-collègue;der Kollege;99;Noun;
-connaissances;die Kenntnisse;99;Noun;
-courses (faire les ~);einkaufen gehen;99;Verb;irregular
-dentiste;der Zahnarzt;99;Noun;
-export;der Export;99;Noun;
-faux;falsch;99;Adjective/Adverb;
-finir (pour);zum Schluss;99;Fixed expression;
-garage;die Werkstatt;99;Noun;
-inviter à boire;auf ein Bier / Kaffee einladen;99;Verb;irregular
-rendez-vous (avoir ~ avec qqn);mit jdm verabredet sein;99;Fixed expression;
-réussir;schaffen;99;Verb;irregular
-rouillé;eingerostet;99;Adjective/Adverb;
-texte;der Text;99;Noun;
-traduire (en…);auf übersetzen;99;Verb;irregular
-air;die Luft;100;Noun;
-air marin;die Meeresluft;100;Noun;
-ambiance;die Stimmung;100;Noun;
-approfondir;vertiefen;100;Verb;regular
-Autriche;Österreich;100;Noun;
-congé (prendre ~);Abschied nehmen;100;Fixed expression;
-culture;die Kultur;100;Noun;
-difficile;schwierig;100;Adjective/Adverb;
-difficile (le plus);das Schwierigste;100;Noun;
-diversité;die Vielfalt;100;Noun;
-enchanteur;stimmungsvoll;100;Adjective/Adverb;
-festival;die Festspiele;100;Noun;
-frais;frisch;100;Adjective/Adverb;
-jeu;das Spiel;100;Noun;
-marché de Noël;der Weihnachtsmarkt;100;Noun;
-mer Baltique;die Ostsee;100;Noun;
-motivé;motiviert;100;Adjective/Adverb;
-penser (qqch. de qqch.);etw. von etw. halten;100;Verb;irregular
-réviser;wiederholen;100;Verb;regular
-société;die Gesellschaft;100;Noun;
-thème;das Thema;100;Noun;
-travailler (continuer à);weiterarbeiten;100;Verb;irregular
+Français;Allemand;Leçon;Catégorie;Régularité;Annotation
+allemand (langue);[das Deutsch];1;Noun;;
+apprendre;[lernen];1;Verb;regular;
+comprendre;[verstehen];1;Verb;irregular;
+connaître;[kennen];1;Verb;irregular;
+et;[und];1;Conjunction;;
+je;[ich];1;Personal pronoun;;
+oui;[ja];1;Modal particle;;
+peine;[die Mühe];1;Noun;;
+rien;[nichts];1;Adjective/Adverb;;
+sans;[ohne];1;Preposition;;+ acc.
+tu;[du];1;Personal pronoun;;
+beau (adj.);[schön];2;Adjective/Adverb;;
+ce;[das];2;Adjective/Adverb;;
+de (provenance);[aus];2;Preposition;;
+elle;[sie];2;Personal pronoun;;
+être;[sein];2;Verb;irregular;
+femme;[die Frau];2;Noun;;
+ici;[hier];2;Adjective/Adverb;;
+la (art. déf. f. sujet = nom.);[die];2;Article;;
+nouveau;[neu];2;Adjective/Adverb;;
+où (origine);[woher];2;Interrogative;;
+professeure;[die Lehrerin];2;Noun;;
+qui (p. int. nom.);[wer];2;Interrogative;;
+russe (langue);[das Russisch];2;Noun;;
+Saint-Pétersbourg;[Sankt Petersburg];2;Fixed expression;;
+venir;[kommen];2;Verb;regular;
+beaucoup;[viel];3;Adjective/Adverb;;
+dormir;[schlafen];3;Verb;irregular;
+fatigué;[müde];3;Adjective/Adverb;;
+mais;[aber];3;Conjunction;;
+ou;[oder];3;Conjunction;;
+paresseux;[faul];3;Adjective/Adverb;;
+peu;[wenig];3;Adjective/Adverb;;
+peu (trop ~);[zu wenig];3;Adjective/Adverb;;
+travailler;[arbeiten];3;Verb;regular;
+trop;[zu viel];3;Adjective/Adverb;;
+chambre;[das Zimmer];4;Noun;;
+chambre à coucher;[das Schlafzimmer];4;Noun;;
+combien;[wie viel];4;Interrogative;;
+coûter;[kosten];4;Verb;regular;
+cuisine;[die Küche];4;Noun;;
+euro;[der Euro];4;Noun;;
+il/elle (sujet neutre);[es];4;Personal pronoun;;
+jardin;[der Garten];4;Noun;;
+la (art. déf. neutre sujet = nom.);[das];4;Article;;
+le (art. déf. m. sujet = nom.);[der];4;Article;;
+le (art. déf. neutre sujet = nom.);[das];4;Article;;
+les (art. déf. pl. sujet = nom.);[die];4;Article;;
+maison;[das Haus];4;Noun;;
+problème;[das Problem];4;Noun;;
+appeler (s');[heißen];5;Verb;regular;
+bon (adj.);[gut];5;Adjective/Adverb;;
+comment;[wie];5;Interrogative;;
+dire;[sagen];5;Verb;regular;
+jour;[der Tag];5;Noun;;
+nous (p. pers. sujet = nom.);[wir];5;Personal pronoun;;
+nous (p. réciproque);[uns];5;Personal pronoun;;
+pas de;[keine];5;Article;;
+pouvoir (v.);[können];5;Verb;irregular;
+toujours;[immer];5;Adjective/Adverb;;
+tutoyer;[duzen];5;Verb;regular;
+vous (politesse – sujet);[Sie];5;Personal pronoun;;
+aller;[gehen];6;Verb;irregular;
+aller (en avion);[fliegen];6;Verb;irregular;
+aller (véhicule à roues);[fahren];6;Verb;irregular;
+aujourd'hui;[heute];6;Adjective/Adverb;;
+bien (adv.);[gut];6;Adjective/Adverb;;
+ça;[es];6;Personal pronoun;;
+champignon;[der Pilz];6;Noun;;
+chance;[das Glück];6;Noun;;
+chanceux;[der Glückspilz];6;Noun;;
+conduire;[fahren];6;Verb;irregular;
+congé;[der Urlaub];6;Noun;;
+en;[in];6;Preposition;;
+mettre à jour (données);[updaten];6;Verb;regular;
+où (vers);[wohin];6;Interrogative;;
+partir;"[fahren;losfahren;weggehen]";6;Verb;irregular;
+rouler (conduire);[fahren];6;Verb;irregular;
+toi (à) (datif);[dir];6;Personal pronoun;;
+vacances;"[die Ferien;der Urlaub]";6;Noun;;
+vacances (partir en);"[in die Ferien fahren;in Urlaub fahren]";6;Fixed expression;;
+veinard;[der Glückspilz];6;Noun;;
+vers / à (direction);[nach];6;Preposition;;
+voler;[fliegen];6;Verb;irregular;
+après (prép.);[nach];8;Preposition;;+ dat.
+avant (prép.);[vor];8;Preposition;;+ acc./dat.
+devant (prép.);[vor];8;Preposition;;
+exactement;[genau];8;Adjective/Adverb;;
+famille;[die Familie];8;Noun;;
+inversé;[umgekehrt];8;Adjective/Adverb;;
+mon / ma / mes;"[mein;meine;mein]";8;Possessive adjective;;
+nom;[der Name];8;Noun;;
+nom de famille;"[der Familienname;der Nachname]";8;Noun;;
+prénom;[der Vorname];8;Noun;;
+sous;[unter];8;Preposition;;+ dat./acc.
+sur;[auf];8;Preposition;;+ dat./acc.
+sous;[unter];8;Preposition;;+ dat./acc.
+sur;[auf];8;Preposition;;+ dat./acc.
+ton / ta / tes;"[dein;deine]";8;Possessive adjective;;
+voyager;[reisen];8;Verb;regular;
+vraiment;[wirklich];8;Adjective/Adverb;;
+aller (y ~);[los];9;Adjective/Adverb;;
+arriver;[kommen];9;Verb;regular;
+aussi;[auch];9;Modal particle;;
+avoir;[haben];9;Verb;irregular;
+avoir sur soi;[dabeihaben];9;Verb;irregular;
+déjà;[schon];9;Modal particle;;
+enfin;[endlich];9;Modal particle;;
+faire;[machen];9;Verb;regular;
+il (tournure impersonnelle);[es];9;Personal pronoun;;
+là;[da];9;Adjective/Adverb;;
+que;[was];9;Interrogative;;
+qu'est-ce que;[was];9;Interrogative;;
+quoi;[was];9;Interrogative;;
+tôt;[früh];9;Adjective/Adverb;;
+tout;[alles];9;Adjective/Adverb;;
+tout de suite;"[sofort;gleich]";9;Adjective/Adverb;;
+très;"[sehr;ganz]";9;Adjective/Adverb;;
+vous (tutoiement plusieurs personnes – sujet);[ihr];9;Personal pronoun;;
+à;[in];10;Preposition;;+ acc. ou dat.
+Constance (ville);[Konstanz];10;Fixed expression;;
+cuisinier;[der Koch];10;Noun;;
+entrer;[hereinkommen];10;Verb;irregular;
+fifre;[der Pfeiffer];10;Noun;;
+habiter;[wohnen];10;Verb;regular;
+indiscret;[indiskret];10;Adjective/Adverb;;
+meunier;[der Müller];10;Noun;;
+où (lieu);[wo];10;Interrogative;;
+pêcheur;[der Fischer];10;Noun;;
+place;[der Platz];10;Noun;;
+prendre;[nehmen];10;Verb;irregular;
+question;[die Frage];10;Noun;;
+Rhin;[der Rhein];10;Noun;;
+route;[die Straße];10;Noun;;
+rue;[die Straße];10;Noun;;
+sortir;"[hinausgehen;ausgehen]";10;Verb;irregular;"separation: hinaus/gehen;aus/gehen"
+sortir;"[hinausgehen;ausgehen]";10;Verb;irregular;
+une;[eine];10;Article;;
+vieux;[alt];10;Adjective/Adverb;;
+votre / vos (vouvoiement);[Ihr];10;Possessive adjective;;
+âge;[alt];11;Adjective/Adverb;;
+alors;[also];11;Modal particle;;
+commencer;[anfangen];11;Verb;irregular;
+elles;[sie];11;Personal pronoun;;
+frère;[der Bruder];11;Noun;;
+homme (personne);[der Mensch];11;Noun;;
+ils;[sie];11;Personal pronoun;;
+jeune;[jung];11;Adjective/Adverb;;
+maintenant;[jetzt];11;Adjective/Adverb;;
+non;[nein];11;Modal particle;;
+peu (un ~);"[etwas;ein bisschen]";11;Adjective/Adverb;;
+raison (avoir ~);[recht haben];11;Fixed expression;;
+rester;[bleiben];11;Verb;irregular;
+sept;[sieben];11;Number/Numeral;;
+six;[sechs];11;Number/Numeral;;
+sœur;[die Schwester];11;Noun;;
+souvent;[oft];11;Adjective/Adverb;;
+souvent;[oft];11;Adjective/Adverb;;
+tous / toutes;[alle];11;Adjective/Adverb;;
+zen;[cool];11;Adjective/Adverb;;
+bien;[ja];12;Modal particle;;
+bon (pas ~);[nicht gut];12;Fixed expression;;
+bon (très ~);[sehr gut];12;Fixed expression;;
+bon (être ~);[gut schmecken];12;Fixed expression;;
+cuisiner;[kochen];12;Verb;regular;
+donc;[denn];12;Conjunction;;
+fois (une ~);[einmal];12;Number/Numeral;;
+goût (avoir le ~);[schmecken];12;Verb;regular;
+goûter;[probieren];12;Verb;regular;
+il;[er];12;Personal pronoun;;
+manger;[essen];12;Verb;irregular;
+mari;[der Mann];12;Noun;;
+médecin;[der Arzt];12;Noun;;
+on;[man];12;Personal pronoun;;
+quel/le (excl.);[was für ein];12;Fixed expression;;inflection: was für ein/e
+repas;"[das Essen;die Mahlzeit]";12;Noun;;
+un;[ein];12;Article;;
+un;[ein];12;Article;;
+à;[zu];13;Preposition;;+ inf.
+au;"[zu dem;zum]";13;Preposition;;
+avec;[mit];13;Preposition;;+ dat.
+beurre;[die Butter];13;Noun;;
+boire;[trinken];13;Verb;regular;
+café (boisson);[der Kaffee];13;Noun;;
+charcuterie;[die Wurst];13;Noun;;
+fromage;[der Käse];13;Noun;;
+fruit;[die Frucht];13;Noun;;
+fruits;[das Obst];13;Noun;;
+lever (se ~);[aufstehen];13;Verb;irregular;
+matin;[der Morgen];13;Noun;;
+monde (tout le ~);[alle];13;Adjective/Adverb;;
+morceau;[das Stück];13;Noun;;
+ne… pas;[nicht];13;Adjective/Adverb;;
+œuf;[das Ei];13;Noun;;
+œuf à la coque;[das Frühstücksei];13;Noun;;
+oublier;[vergessen];13;Verb;irregular;
+pain;[das Brot];13;Noun;;
+petit pain;[das Brötchen];13;Noun;;
+petit-déjeuner;[das Frühstück];13;Noun;;
+petit-déjeuner (au ~);[zum Frühstück];13;Fixed expression;;
+thé;[der Tee];13;Noun;;
+voir;[sehen];13;Verb;irregular;
+apporter;[bringen];15;Verb;irregular;
+assiette;[der Teller];15;Noun;;
+cassé;[kaputt];15;Adjective/Adverb;;
+casser;[kaputt machen];15;Fixed expression;;
+clé;[der Schlüssel];15;Noun;;
+clé de la maison;[der Hausschlüssel];15;Noun;;
+débris;[die Scherben];15;Noun;;
+désordre;[die Unordnung];15;Noun;;
+fumier;[der Mist];15;Noun;;
+heureux;[glücklich];15;Adjective/Adverb;;
+juste (être ~);[stimmen];15;Verb;regular;
+laisser;[lassen];15;Verb;irregular;
+malchance;[das Unglück];15;Noun;;
+malheureux;[unglücklich];15;Adjective/Adverb;;
+miracle;[das Wunder];15;Noun;;
+nous (p. pers. acc.);[uns];15;Personal pronoun;;
+ordre;[die Ordnung];15;Noun;;
+papiers;[die Papiere];15;Noun;;
+papiers (voiture);[die Autopapiere];15;Noun;;
+pièce;[das Zimmer];15;Noun;;
+ranger;[aufräumen];15;Verb;irregular;separation: auf/räumen
+salon;[das Wohnzimmer];15;Noun;;
+serrure;[das Schloss];15;Noun;;
+table;[der Tisch];15;Noun;;
+toi (équivalent tonique);[du];15;Personal pronoun;;
+trouver;[finden];15;Verb;irregular;
+vacarme;[das Poltern];15;Noun;;
+vacarme (faire du);[poltern];15;Verb;regular;
+verre;[das Glas];15;Noun;;
+voiture;"[das Auto;der Wagen]";15;Noun;;
+à;[nach];16;Preposition;;
+bêtise;[der Quatsch];16;Noun;;
+certain;[sicher];16;Adjective/Adverb;;
+chemin;[der Weg];16;Noun;;
+demander;[fragen];16;Verb;regular;
+devoir;[müssen];16;Verb;irregular;
+droit (tout ~);[geradeaus];16;Adjective/Adverb;;
+droite;[rechts];16;Adjective/Adverb;;
+gauche;[links];16;Adjective/Adverb;;
+monsieur;[der Herr];16;Noun;;
+pourquoi;"[warum;wieso]";16;Interrogative;;
+quand même;[doch];16;Modal particle;;
+sûr;[sicher];16;Adjective/Adverb;;
+sûr;[sicher];16;Adjective/Adverb;;
+appeler (téléphoner);[anrufen];17;Verb;irregular;
+entendre;[hören];17;Verb;regular;
+être (numéro, adresse);[lauten];17;Verb;regular;
+la (p. pers. acc.);[es];17;Personal pronoun;;
+la (p. pers. f. acc.);[sie];17;Personal pronoun;;
+le (p. pers. acc.);[es];17;Personal pronoun;;
+le (p. pers. m. acc.);[ihn];17;Personal pronoun;;
+les (p. pers. pl. acc.);[sie];17;Personal pronoun;;
+mal;[schlecht];17;Adjective/Adverb;;
+malheureusement;[leider];17;Adjective/Adverb;;
+me (p. pers. acc.);[mich];17;Personal pronoun;;
+mieux;[besser];17;Adjective/Adverb;;
+numéro;[die Nummer];17;Noun;;
+numéro de portable;[die Handynummer];17;Noun;;
+numéro de téléphone;[die Telefonnummer];17;Noun;;
+parler;"[sprechen;reden]";17;Verb;irregular;
+portable (téléphone);[das Handy];17;Noun;;
+qui (p. int. acc.);[wen];17;Interrogative;;
+téléphone;[das Telefon];17;Noun;;
+téléphoner;[anrufen];17;Verb;irregular;
+vouloir;"[mögen;wollen]";17;Verb;irregular;
+vous (tutoiement pluriel – acc.);[euch];17;Personal pronoun;;
+vous (politesse – acc.);[Sie];17;Personal pronoun;;
+année;[die Jahr];18;Noun;;
+autant (de);[so viel];18;Adjective/Adverb;;
+autour;[um];18;Preposition;;+ acc.
+cerise;[die Kirsche];18;Noun;;
+contre;[gegen];18;Preposition;;
+donner;[geben];18;Verb;irregular;
+droit (avoir le ~);[dürfen];18;Verb;irregular;
+kilo;[das Kilo];18;Noun;;
+(à) moi (p. pers. dat.);[mir];18;Personal pronoun;;
+orange;[die Orange];18;Noun;;
+par;"[durch;von]";18;Preposition;;
+poire;[die Birne];18;Noun;;
+pomme;[der Apfel];18;Noun;;
+pour;[für];18;Preposition;;+ acc.
+résolution;[der Vorsatz];18;Noun;;
+sain;[gesund];18;Adjective/Adverb;;
+sainement;[gesund];18;Adjective/Adverb;;
+travers (à);[durch];18;Preposition;;
+zéro;[null];18;Number/Numeral;;
+à;[um];19;Preposition;;
+bonhomme;[das Männchen];19;Noun;;
+bonhomme;[das Männlein];19;Noun;;
+compter;[zählen];19;Verb;regular;
+demain;[morgen];19;Adjective/Adverb;;
+demi;[halb];19;Adjective/Adverb;;
+demi (heure);[halb];19;Adjective/Adverb;;
+demi-heure;[die halbe Stunde];19;Noun;;
+demoiselle;[das Fräulein];19;Noun;;
+donc;[doch];19;Modal particle;;
+essayer;[versuchen];19;Verb;regular;
+fille;[das Mädchen];19;Noun;;
+heure (60 minutes);[die Stunde];19;Noun;;
+heure(s);[Uhr];19;Fixed expression;;
+heure (quelle ~);[wie spät];19;Interrogative;;
+heure (quelle ~);[wie viel Uhr];19;Interrogative;;
+homme (monsieur);[der Mann];19;Noun;;
+il est (+ heure);[es ist];19;Fixed expression;;
+mouton;[das Schaf];19;Noun;;
+mouton (petit);[das Schäfchen];19;Noun;;
+nuit;[die Nacht];19;Noun;;
+soir;[der Abend];19;Noun;;
+tard;[spät];19;Adjective/Adverb;;
+à;"[zu dem;zum]";20;Preposition;;
+ami;[der Freund];20;Noun;;
+dans;[in];20;Preposition;;
+de (+ inf. subst.);"[zu dem;zum]";20;Preposition;;
+désolé (être);[leid tun];20;Fixed expression;;
+dimanche;[der Sonntag];20;Noun;;
+envie;[die Lust];20;Noun;;
+faire;[tun];20;Verb;irregular;
+inviter;[einladen];20;Verb;irregular;
+jeudi;[der Donnerstag];20;Noun;;
+lundi;[der Montag];20;Noun;;
+mardi;[der Dienstag];20;Noun;;
+mercredi;[der Mittwoch];20;Noun;;
+ne… plus (de);[keine… mehr];20;Modal particle;;
+parents;[die Eltern];20;Noun;;
+pour (+ inf. subst.);"[zu dem;zum]";20;Preposition;;
+prochain;[nächste];20;Adjective/Adverb;;
+professeur;[der Lehrer];20;Noun;;
+quand;"[wann;wenn;als]";20;Interrogative;;
+rencontrer;[treffen];20;Verb;irregular;
+samedi;[der Samstag];20;Noun;;
+semaine;[die Woche];20;Noun;;
+toi (à);[dir];20;Personal pronoun;;
+vendredi;[der Freitag];20;Noun;;
+après (heure);[nach];22;Preposition;;
+ascenseur;[der Aufzug];22;Noun;;
+attendre;[warten];22;Verb;regular;
+attendre qn;[warten auf];22;Verb;regular;
+autre;[andere];22;Adjective/Adverb;;
+besoin (avoir ~ de);[brauchen];22;Verb;regular;
+devoir;[sollen];22;Verb;irregular;
+ensuite;[danach];22;Adjective/Adverb;;
+entrée;[der Eingang];22;Noun;;
+environ;[ungefähr];22;Adjective/Adverb;;
+moins (heure);[vor];22;Preposition;;
+parfait;[perfekt];22;Adjective/Adverb;;
+passer prendre;[abholen];22;Verb;irregular;
+quart;[das Viertel];22;Noun;;
+sortie;[der Ausgang];22;Noun;;
+sortie;[der Ausgang];22;Noun;;
+un et demi;"[anderthalb;eineinhalb]";22;Number/Numeral;;
+anglais (langue);[das Englisch];23;Noun;;
+auto;[das Auto];23;Noun;;
+avant tout;[bevor];23;Conjunction;;
+décharger;[ausladen];23;Verb;irregular;
+drôle;[witzig];23;Adjective/Adverb;;
+écrit (être);[stehen];23;Verb;irregular;
+espagnol (langue);[das Spanisch];23;Noun;;
+français (langue);[das Französisch];23;Noun;;
+fumer;[rauchen];23;Verb;regular;
+ici (rapprochement);[hierher];23;Adjective/Adverb;;
+interdit;[verboten];23;Adjective/Adverb;;
+jusque;[bis];23;Preposition;;
+lire;[lesen];23;Verb;irregular;
+nager;[schwimmen];23;Verb;irregular;
+plein (voitures);[vollgeparkt];23;Adjective/Adverb;;
+plein (adj. qual.);[voll];23;Adjective/Adverb;;
+police;[die Polizei];23;Noun;;
+porter;[tragen];23;Verb;irregular;
+que (seulement);[nur];23;Modal particle;;
+savoir (v.);"[können;wissen]";23;Verb;irregular;
+seulement;[nur];23;Modal particle;;
+valise;[der Koffer];23;Noun;;
+vite;"[schnell;kurz]";23;Adjective/Adverb;;
+anniversaire;[der Geburtstag];24;Noun;;
+août;[der August];24;Noun;;
+avril;[der April];24;Noun;;
+certainement;[bestimmt];24;Adjective/Adverb;;
+chaud;[warm];24;Adjective/Adverb;;
+cher;[teuer];24;Adjective/Adverb;;
+comme ça;[so];24;Adjective/Adverb;;
+décembre;[der Dezember];24;Noun;;
+devenir;[werden];24;Verb;irregular;
+fait (au ~);[eigentlich];24;Modal particle;;
+féliciter;[gratulieren];24;Verb;regular;
+février;[der Februar];24;Noun;;
+froid;[kalt];24;Adjective/Adverb;;
+janvier;[der Januar];24;Noun;;
+juillet;[der Juli];24;Noun;;
+juin;[der Juni];24;Noun;;
+le (date);[am];24;Preposition;;(date)
+longtemps;[lange];24;Adjective/Adverb;;
+mai;[der Mai];24;Noun;;
+mars;[der März];24;Noun;;
+naissance;[die Geburt];24;Noun;;
+novembre;[der November];24;Noun;;
+octobre;[der Oktober];24;Noun;;
+plus (ne ~);[nicht mehr];24;Modal particle;;
+quelque chose;[etwas];24;Modal particle;;
+quelque chose comme ça;[so etwas];24;Modal particle;;
+septembre;[der September];24;Noun;;
+venir avec qqn;[mitkommen];24;Verb;irregular;
+absurdité;[der Unsinn];25;Noun;;
+aide;[die Hilfe];25;Noun;;
+allemand (adj.);[deutsch];25;Adjective/Adverb;;
+autoroute;[die Autobahn];25;Noun;;
+content (être ~);[sich freuen];25;Verb;irregular;
+feu;[das Feuer];25;Noun;;
+haut;[hoch];25;Adjective/Adverb;;
+kilomètre;[der Kilometer];25;Noun;;
+kilomètre par heure;[Stundenkilometer];25;Noun;;
+le (art. déf. neutre dat.);[dem];25;Article;;
+lentement;[langsam];25;Adjective/Adverb;;
+main;[die Hand];25;Noun;;
+panneau;[das Schild];25;Noun;;
+payer;[zahlen];25;Verb;regular;
+réjouir (se ~);[sich freuen];25;Verb;irregular;
+tenir;[halten];25;Verb;irregular;
+voie;[die Bahn];25;Noun;;
+à;[zu];26;Preposition;;
+aider;[helfen];26;Verb;irregular;
+avion;[der Flieger];26;Noun;;
+œil;[das Auge];26;Noun;;
+passeport;"[der Pass;der Reisepass]";26;Noun;;
+plus;[mehr];26;Adjective/Adverb;;
+que (+ cp. sup.);[als];26;Conjunction;;
+rater (vol, train, film…);[verpassen];26;Verb;regular;
+soudain;[plötzlich];26;Adjective/Adverb;;
+soudain;[plötzlich];26;Adjective/Adverb;;
+tout de même;[doch];26;Modal particle;;
+voyage;[die Reise];26;Noun;;
+vrai;[wahr];26;Adjective/Adverb;;
+bizarre;[komisch];27;Adjective/Adverb;;
+comme;[wie];27;Conjunction;;
+comme c'est…;[wie + adj. qual.];27;Fixed expression;;
+dernier;[letzte];27;Adjective/Adverb;;
+dommage;[schade];27;Modal particle;;
+eau;[das Wasser];27;Noun;;
+fin (n.);[das Ende];27;Noun;;
+fini (être);[zu Ende sein];27;Fixed expression;;
+magnifique;[herrlich];27;Adjective/Adverb;;
+moment;"[der Moment;die Zeit]";27;Noun;;
+penser à;[denken an];27;Verb;irregular;
+que (conj. sub.);[dass];27;Conjunction;;
+que c'est… (excl.);[wie + adj. qual.];27;Fixed expression;;
+rêve;[der Traum];27;Noun;;
+savourer;[genießen];27;Verb;irregular;
+si (tellement);[so];27;Adjective/Adverb;;
+simple;[einfach];27;Adjective/Adverb;;
+simplement;[einfach];27;Adjective/Adverb;;
+tellement;[so];27;Adjective/Adverb;;
+temps (durée);[die Zeit];27;Noun;;
+âge;[das Alter];29;Noun;;
+chercher;[suchen];29;Verb;regular;
+fille (vs fils);[die Tochter];29;Noun;;
+fils;[der Sohn];29;Noun;;
+grossir;[zunehmen];29;Verb;irregular;
+long;[lang];29;Adjective/Adverb;;
+madame;[Frau];29;Noun;;
+maigrir;[abnehmen];29;Verb;irregular;
+marier (se);[heiraten];29;Verb;regular;
+notre/nos;"[unser;unsere]";29;Possessive adjective;;
+occasion;[die Gelegenheit];29;Noun;;
+quel (adj. int.);[welch-];29;Interrogative;;
+robe;[das Kleid];29;Noun;;
+son;"[sein;ihr]";29;Possessive adjective;;
+vous (politesse – dat.);[Ihnen];29;Personal pronoun;;
+aimable;[freundlich];30;Adjective/Adverb;;
+aise (à l');[wohl];30;Adjective/Adverb;;
+après-demain;[übermorgen];30;Adjective/Adverb;;
+avoir l'air;[aussehen];30;Verb;irregular;
+bien;[wohl];30;Adjective/Adverb;;
+chaleureux;[herzlich];30;Adjective/Adverb;;
+colocation;[die Wohngemeinschaft];30;Noun;;
+communauté;[die Gemeinschaft];30;Noun;;
+cours (étude);[der Unterricht];30;Noun;;
+dame;[die Dame];30;Noun;;
+depuis;[seit];30;Preposition;;
+hier;[gestern];30;Adjective/Adverb;;
+honoré;[geehrt];30;Adjective/Adverb;;
+premier;[erste];30;Adjective/Adverb;;
+salutation;[der Gruß];30;Noun;;
+sympa;[nett];30;Adjective/Adverb;;
+sympathique;[sympathisch];30;Adjective/Adverb;;
+sympa;[nett];30;Adjective/Adverb;;
+sympathique;[sympathisch];30;Adjective/Adverb;;
+sympa;[nett];30;Adjective/Adverb;;
+sympathique;[sympathisch];30;Adjective/Adverb;;
+violon;[die Geige];30;Noun;;
+violon (cours de);[der Geigenunterricht];30;Noun;;
+votre / vos;"[eu;re]";30;Possessive adjective;;
+vous (tutoiement – dat.);[euch];30;Personal pronoun;;
+cour;[der Hof];31;Noun;;
+difficile;[schwer];31;Adjective/Adverb;;
+employer;[benutzen];31;Verb;regular;
+enfant;[das Kind];31;Noun;;
+exemple;[das Beispiel];31;Noun;;
+exemple (par ~);[zum Beispiel];31;Fixed expression;;
+gare;[der Bahnhof];31;Noun;;
+livre;[das Buch];31;Noun;;
+mère;[die Mutter];31;Noun;;
+père;[der Vater];31;Noun;;
+personne (individu);[die Person];31;Noun;;
+plusieurs;[mehrere];31;Adjective/Adverb;;
+regarder;[schauen];31;Verb;regular;
+seul;[allein];31;Adjective/Adverb;;
+si (condition);[wenn];31;Conjunction;;
+soit… soit…;[entweder… oder…];31;Conjunction;;
+stylo;[der Stift];31;Noun;;
+stylo;[der Stift];31;Noun;;
+train;"[die Bahn;der Zug]";31;Noun;;
+vouvoyer;[siezen];31;Verb;regular;
+communiqué;[der Bericht];32;Noun;;
+de;[von];32;Preposition;;
+de… à…;[von… bis];32;Preposition;;
+été;[der Sommer];32;Noun;;
+exagérer;[übertreiben];32;Verb;regular;
+fois;[das Mal];32;Noun;;
+fort (adj.);[stark];32;Adjective/Adverb;;
+humide (temps);[nass];32;Adjective/Adverb;;
+jusqu'à;"[bis;bis zu]";32;Preposition;;
+juste (au ~);[eigentlich];32;Modal particle;;
+météo (bulletin ~);[der Wetterbericht];32;Noun;;
+mouillé;[nass];32;Adjective/Adverb;;
+part (de la ~);[von];32;Preposition;;
+pluie;[der Regen];32;Noun;;
+pluie (chute de ~);[der Regenfall];32;Noun;;
+poisse;[das Pech];32;Noun;;
+poisse (avoir la ~);[Pech haben];32;Fixed expression;;
+temps (météo);[das Wetter];32;Noun;;
+acheter;[kaufen];33;Verb;regular;
+bière;[das Bier];33;Noun;;
+championnat;[die Meisterschaft];33;Noun;;
+championnat d'Europe;[die Europameisterschaft];33;Noun;;
+championnat du monde;[die Weltmeisterschaft];33;Noun;;
+commencer;[beginnen];33;Verb;irregular;
+dépêcher (se ~);[sich beeilen];33;Verb;irregular;
+durer;[dauern];33;Verb;regular;
+Europe;[Europa];33;Noun;;
+idée;[die Idee];33;Noun;;
+maman;"[die Mama;die Mami]";33;Noun;;
+minute;[die Minute];33;Noun;;
+monde;[die Welt];33;Noun;;
+papa;"[der Papa;der Papi]";33;Noun;;
+peur;[die Angst];33;Noun;;
+se (p. réciproque acc.);[sich];33;Personal pronoun;;
+bronzé;[braun];34;Adjective/Adverb;;
+bronzer;[braun werden];34;Verb;irregular;
+changer (travail, argent);[wechseln];34;Verb;regular;
+Corse;[Korsika];34;Noun;;
+gagner;[gewinnen];34;Verb;irregular;
+hôtel;[das Hotel];34;Noun;;
+job;[der Job];34;Noun;;
+loterie;[die Lotterie];34;Noun;;
+marron;[braun];34;Adjective/Adverb;;
+même;[sogar];34;Modal particle;;
+plage;[der Strand];34;Noun;;
+plage privée;[der Privatstrand];34;Noun;;
+privé;[privat];34;Adjective/Adverb;;
+réserver;"[buchen;reservieren]";34;Verb;regular;
+salaire;[das Gehalt];34;Noun;;
+soleil;[die Sonne];34;Noun;;
+bikini;[der Bikini];36;Noun;;
+chantilly;[die Sahne];36;Noun;;
+chocolat;[die Schokolade];36;Noun;;
+dessert;[der Nachtisch];36;Noun;;
+encore (une fois);[schon wieder];36;Modal particle;;
+gâteau;[der Kuchen];36;Noun;;
+gâteau au chocolat;[der Schokoladenkuchen];36;Noun;;
+gâteau aux fruits;[der Obstkuchen];36;Noun;;
+langues (livre de ~);[das Sprachbuch];36;Noun;;
+nouveau (de ~);[wieder];36;Adjective/Adverb;;
+quel genre de;[was für ein];36;Interrogative;;inflection: was für ein/e
+régime;[die Diät];36;Noun;;
+tarte;[die Torte];36;Noun;;
+volontiers;[gern];36;Adjective/Adverb;;
+amoureux (tomber ~ de);[sich verlieben in];37;Verb;irregular;
+au-dessus de;[über];37;Preposition;;
+autour de;[um];37;Preposition;;+ acc.
+chez;[zu];37;Preposition;;+ dat.
+chez (loc.);[bei];37;Preposition;;+ dat.
+cours (au ~ de);[auf];37;Preposition;;
+ensemble;[zusammen];37;Adjective/Adverb;;
+esquimau;[der Eskimo];37;Noun;;
+étranger (pays);[das Ausland];37;Noun;;
+expliquer;[erklären];37;Verb;regular;
+globe-trotteuse;[die Globetrotterin];37;Noun;;
+né (être ~);[geboren sein];37;Fixed expression;;
+nous (p. pers. dat.);[uns];37;Personal pronoun;;
+nuage;[die Wolke];37;Noun;;
+patrie;[die Heimat];37;Noun;;
+pays;[das Land];37;Noun;;
+recevoir;"[bekommen;erhalten]";37;Verb;irregular;
+sur (localisation);[an];37;Preposition;;+ dat./acc.
+sur (sujet);[über];37;Preposition;;+ acc.
+sur (localisation);[an];37;Preposition;;+ dat./acc.
+sur (sujet);[über];37;Preposition;;+ acc.
+aller (bien);[jm gut stehen];38;Fixed expression;;
+amie;[die Freundin];38;Noun;;
+bleu;[blau];38;Adjective/Adverb;;
+cool;[cool];38;Adjective/Adverb;;
+court;[kurz];38;Adjective/Adverb;;
+discuter;[streiten];38;Verb;irregular;
+goût;[der Geschmack];38;Noun;;
+jaune;[gelb];38;Adjective/Adverb;;
+me (p. pers. dat.);[mir];38;Personal pronoun;;
+mode (à la ~);[modisch];38;Adjective/Adverb;;
+penser;[meinen];38;Verb;regular;
+plaire;"[gefallen;Spaß machen]";38;Verb;irregular;
+pull;[der Pulli];38;Noun;;
+rouge (adj. qual.);[rot];38;Adjective/Adverb;;
+vieux jeu;[altmodisch];38;Adjective/Adverb;;
+achat;[der Kauf];39;Noun;;
+blanc;[das Weiß];39;Noun;;
+derrière;[hinten];39;Adjective/Adverb;;
+devant;[vorne];39;Adjective/Adverb;;
+enchères;[die Auktion];39;Noun;;
+fois (deux ~) enchères;[zum Zweiten];39;Fixed expression;;
+fois (une ~) enchères;[zum Ersten];39;Fixed expression;;
+là-bas;[dort];39;Adjective/Adverb;;
+libre;[frei];39;Adjective/Adverb;;
+lit;[das Bett];39;Noun;;
+noir;[das Schwarz];39;Noun;;
+proposer;"[bieten;vorschlagen]";39;Verb;irregular;separation: vor/schlagen
+revenir;"[zurückkommen;wiederkommen]";39;Verb;irregular;"separation: zurück/kommen;wieder/kommen"
+vendu;[verkauft];39;Adjective/Adverb;;
+après (prép.);[nach];40;Preposition;;
+bientôt;[bald];40;Modal particle;;
+combien (le ~) date;[der Wievielte];40;Noun;;
+école;[die Schule];40;Noun;;
+encore;[noch];40;Modal particle;;
+endroit;[der Ort];40;Noun;;
+État fédéral;[das Bundesland];40;Noun;;
+idée (n'avoir aucune ~);[keine Ahnung haben];40;Fixed expression;;
+meilleur(e) (le/la ~);[der, die, das beste];40;Adjective/Adverb;;
+passer (temps);[vergehen];40;Verb;irregular;
+pressentiment;[die Ahnung];40;Noun;;
+savoir (ne pas ~);[keine Ahnung haben];40;Fixed expression;;
+suivre;[folgen];40;Verb;regular;
+suivre;[folgen];40;Verb;regular;
+bon (être ~);[schmecken];41;Verb;regular;
+de (causal);[vor];41;Preposition;;
+faim;[der Hunger];41;Noun;;
+fermé (être);[zuhaben];41;Verb;irregular;
+hamburger;[der Burger];41;Noun;;
+indien;[indisch];41;Adjective/Adverb;;
+italien;[italienisch];41;Adjective/Adverb;;
+livraison;[der Lieferservice];41;Noun;;
+livrer;[liefern];41;Verb;regular;
+mois;[der Monat];41;Noun;;
+mourir;[sterben];41;Verb;irregular;
+mourir de faim;[vor Hunger sterben];41;Fixed expression;;
+ouvert (être ~);[aufhaben];41;Verb;irregular;
+pizza;[die Pizza];41;Noun;;
+pratique;[praktisch];41;Adjective/Adverb;;
+proposition;[der Vorschlag];41;Noun;;
+reconnaître;[zugeben];41;Verb;irregular;separation: zu/geben
+restauration rapide;[das Fast Food];41;Noun;;
+service;[der Service];41;Noun;;
+soif;[der Durst];41;Noun;;
+accueillir;[empfangen];43;Verb;irregular;
+après-midi;[der Nachmittag];43;Noun;;
+Berlinois;[der Berliner];43;Noun;;
+Berlin-Ouest;[Westberlin];43;Noun;;
+Berlin-Ouest (habitant);[der Westberliner];43;Noun;;
+chute;[der Fall];43;Noun;;
+chute du mur de Berlin;[der Mauerfall];43;Noun;;
+croire;[glauben];43;Verb;regular;
+embrasser;[sich umarmen];43;Verb;irregular;
+époque (à l');[damals];43;Adjective/Adverb;;
+fêter;[feiern];43;Verb;regular;
+gens;[die Menschen];43;Noun;;
+heureux (très);[überglücklich];43;Adjective/Adverb;;
+honte;[die Schande];43;Noun;;
+matinée;[der Vormittag];43;Noun;;
+midi;[der Mittag];43;Noun;;
+mousseux;[der Sekt];43;Noun;;
+mur (extérieur);[die Mauer];43;Noun;;
+ouest;[der Westen];43;Noun;;
+parti;[weg];43;Adjective/Adverb;;
+peuple;[das Volk];43;Noun;;
+soirée;[der Abend];43;Noun;;
+sud;[der Süden];43;Noun;;
+sud;[der Süden];43;Noun;;
+tombé (mur);[weg];43;Adjective/Adverb;;
+tous les;[alle];43;Adjective/Adverb;;
+avant;[früher];44;Adjective/Adverb;;
+avis;[die Meinung];44;Noun;;
+bon (plat);[lecker];44;Adjective/Adverb;;
+changer;[sich ändern];44;Verb;irregular;
+faire (pâtisserie);[backen];44;Verb;irregular;
+faute (culpabilité);[die Schuld];44;Noun;;
+feignant;[faul];44;Adjective/Adverb;;
+jeune (personne);[der Jugendliche];44;Noun;;
+jeunesse;[die Jugend];44;Noun;;
+offrir;[anbieten];44;Verb;irregular;
+ordinateur;[der Computer];44;Noun;;
+petite-fille;[die Enkelin];44;Noun;;
+qui (à ~) (p. int. dat.);[wem];44;Interrogative;;
+tout;[alles];44;Adjective/Adverb;;
+ce/cette/ces;[dieser];45;Adjective/Adverb;;inflection: dieser/diese/dieses
+changer;[sich verändern];45;Verb;irregular;
+danser;[tanzen];45;Verb;regular;
+démissionner;[kündigen];45;Verb;regular;
+fonder;[gründen];45;Verb;regular;
+grand;[groß];45;Adjective/Adverb;;
+il y a (préposition temps);[vor];45;Preposition;;
+japonais;[japanisch];45;Adjective/Adverb;;
+raconter;[erzählen];45;Verb;regular;
+ravissant;[hübsch];45;Adjective/Adverb;;
+Rome;[Rom];45;Noun;;
+tard (plus ~);[später];45;Adjective/Adverb;;
+tout aussi;"[so;genau so]";45;Adjective/Adverb;;
+vie;[das Leben];45;Noun;;
+altitude;[wie hoch];46;Interrogative;;
+argent;[das Geld];46;Noun;;
+chanter;[singen];46;Verb;irregular;
+combien de;[wie viel];46;Interrogative;;
+dépendre de;[ankommen auf];46;Verb;irregular;
+encore (une fois);[noch];46;Modal particle;;
+géographie;[die Erdkunde];46;Noun;;
+juste;[richtig];46;Adjective/Adverb;;
+longueur;[wie lang];46;Interrogative;;
+mètre;[der Meter];46;Noun;;
+Nil (le ~);[der Nil];46;Noun;;
+quiz;[das Quiz];46;Noun;;
+réponse;[die Antwort];46;Noun;;
+seconde;[die Sekunde];46;Noun;;
+série;[die Reihe];46;Noun;;
+sorte;[die Art];46;Noun;;
+supérieur;[höher];46;Adjective/Adverb;;
+sorte;[die Art];46;Noun;;
+supérieur;[höher];46;Adjective/Adverb;;
+tester;[testen];46;Verb;regular;
+tour (jeu, endroit);[die Runde];46;Noun;;
+autrement;[anders];47;Adjective/Adverb;;
+chef;[der Chef];47;Noun;;
+continuer;[weitergehen];47;Verb;irregular;
+écouter;[zuhören];47;Verb;irregular;
+éteindre;[ausmachen];47;Verb;irregular;
+lui (à elle);[ihr];47;Personal pronoun;;
+lui (à lui);[ihm];47;Personal pronoun;;
+ponctualité;[die Pünktlichkeit];47;Noun;;
+quart d'heure;[die Viertelstunde];47;Noun;;
+quelqu'un;[jemand];47;Adjective/Adverb;;
+quelqu'un d'autre;[jemand anders];47;Adjective/Adverb;;
+rendez-vous;[der Termin];47;Noun;;
+semblable;[ähnlich];47;Adjective/Adverb;;
+séparé;[getrennt];47;Adjective/Adverb;;
+belle (la plus ~);[die Schönste];48;Noun;;
+Blanche-Neige;[Schneewittchen];48;Noun;;
+celui-ci;[dieser];48;Adjective/Adverb;;
+conte;[das Märchen];48;Noun;;
+content;[zufrieden];48;Adjective/Adverb;;
+grandir;[wachsen];48;Verb;irregular;
+mamie;"[die Oma;die Omi]";48;Noun;;
+même(s) (en personne);[selbst];48;Adjective/Adverb;;
+miroir;[der Spiegel];48;Noun;;
+miroir (diminutif);[das Spieglein];48;Noun;;
+mur (intérieur);[die Wand];48;Noun;;
+papy;"[der Opa;der Opi]";48;Noun;;
+reine;[die Königin];48;Noun;;
+répondre;[antworten];48;Verb;regular;
+vérité;[die Wahrheit];48;Noun;;
+cause (à ~ de);[wegen];49;Preposition;;
+hauteur;[wie hoch];49;Interrogative;;
+pendant;[während];49;Conjunction;;
+afin de;[um ... zu];50;Conjunction;;
+bien (faire du ~);[gut tun];50;Fixed expression;;
+clapet;[die Klappe];50;Noun;;
+contact;[der Umgang];50;Noun;;
+débloquer;[spinnen];50;Verb;irregular;
+effet (en ~);[nämlich];50;Modal particle;;
+énerver;[nerven];50;Verb;regular;
+enseigner;[beibringen];50;Verb;irregular;
+être (adresse, tel);[lauten];50;Verb;regular;
+expression;[der Ausdruck];50;Noun;;
+fréquentations;[der Umgang];50;Noun;;
+intituler (s');[lauten];50;Verb;regular;
+jurer;"[fluchen;schwören]";50;Verb;irregular;
+langage familier;[die Umgangssprache];50;Noun;;
+langage parlé;[die Umgangssprache];50;Noun;;
+langue;[die Sprache];50;Noun;;
+leçon;[die Lektion];50;Noun;;
+mal faire;[weh tun];50;Fixed expression;;
+mot;[das Wort];50;Noun;;
+nerf;[der Nerv];50;Noun;;
+nez;[die Nase];50;Noun;;
+ni… ni…;[weder… noch…];50;Conjunction;;
+oui et non;[jein];50;Modal particle;;
+partie;[der Teil];50;Noun;;
+peine (faire de la ~);[leid tun];50;Verb;irregular;
+pester;[fluchen];50;Verb;regular;
+peu (un ~ de);[etwas];50;Adjective/Adverb;;
+pièce (élément);[das Teil];50;Noun;;
+pleuvoir;[regnen];50;Verb;regular;
+pour (+ inf.);[um … zu];50;Conjunction;;
+progrès;[der Fortschritt];50;Noun;;
+quel/le/s que soit/soient le/la/les;[egal in welch-];50;Fixed expression;;
+souffler;[pusten];50;Verb;regular;
+souffler;[pusten];50;Verb;regular;
+assurance;[die Versicherung];51;Noun;;
+autorisation;[die Genehmigung];51;Noun;;
+centre-ville;[die Innenstadt];51;Noun;;
+Constance (habitant);[der Konstanzer];51;Noun;;
+contrat;[der Vertrag];51;Noun;;
+contrat d'assurance vie;[der Lebensversicherungsvertrag];51;Noun;;
+début;[der Anfang];51;Noun;;
+discipline;[die Disziplin];51;Noun;;
+fiabilité;[die Zuverlässigkeit];51;Noun;;
+gens;[die Leute];51;Noun;;
+intéressant;[interessant];51;Adjective/Adverb;;
+interroger;[befragen];51;Verb;regular;
+marché;[der Markt];51;Noun;;
+Munich;[München];51;Noun;;
+obstination;[die Sturheit];51;Noun;;
+parole;[das Wort];51;Noun;;
+permis de séjour;[die Aufenthaltsgenehmigung];51;Noun;;
+place du marché;[der Marktplatz];51;Noun;;
+prononcer;[aussprechen];51;Verb;irregular;separation: aus/sprechen
+propreté;[die Sauberkeit];51;Noun;;
+séjour;[der Aufenthalt];51;Noun;;
+suisse (adj.);[schweizerisch];51;Adjective/Adverb;;
+Suisse (pays);[die Schweiz];51;Noun;;
+suisse (adj.);[schweizerisch];51;Adjective/Adverb;;
+Suisse (pays);[die Schweiz];51;Noun;;
+trouver (se);[sich befinden];51;Verb;irregular;
+typique(ment);[typisch];51;Adjective/Adverb;;
+vin;[der Wein];51;Noun;;
+arbre;[der Baum];52;Noun;;
+arrière-petite-fille;[die Urenkelin];52;Noun;;
+arrière-petit-fils;[der Urenkel];52;Noun;;
+arrière-petits-enfants;[das Urenkelkind];52;Noun;;
+asseoir (s');[sich setzen];52;Verb;irregular;
+assis (être);[sitzen];52;Verb;irregular;
+cerisier;[der Kirschbaum];52;Noun;;
+chaussette;[der Strumpf];52;Noun;;
+cœur;[das Herz];52;Noun;;
+côté (à ~ de);[neben];52;Preposition;;
+entre;[zwischen];52;Preposition;;
+être (droit/debout);[stehen];52;Verb;irregular;
+joie;[die Freude];52;Noun;;
+mettre (se ~) (droit/debout);[sich stellen];52;Verb;irregular;
+paire;[das Paar];52;Noun;;
+particulier;[besondere];52;Adjective/Adverb;;
+particulier (adv.);[besonders];52;Adjective/Adverb;;
+petit (n.);[der Kleine];52;Noun;;inflection: der/die/das Kleine
+petit-fils;[der Enkel];52;Noun;;
+petits-enfants;[das Enkelkind];52;Noun;;
+photo;"[das Foto;das Bild]";52;Noun;;
+posé (être ~) (droit / debout);[stehen];52;Verb;irregular;
+quelques;"[ein paar;einige]";52;Adjective/Adverb;;
+réuni (adv.);[beisammen];52;Adjective/Adverb;;
+trinquer;[anstoßen];52;Verb;irregular;
+accroché (être);[hängen];53;Verb;irregular;
+agréable;[angenehm];53;Adjective/Adverb;;
+aimer;[lieben];53;Verb;regular;
+bref;[kurzum];53;Adjective/Adverb;;
+briller;[scheinen];53;Verb;irregular;
+couleur;[die Farbe];53;Noun;;
+fait (au ~);[übrigens];53;Modal particle;;
+fleur;[die Blume];53;Noun;;
+fois (première ~);[zum ersten Mal];53;Fixed expression;;
+magnifique;[wunderschön];53;Adjective/Adverb;;
+mieux (le/de ~);[am besten];53;Adjective/Adverb;;
+paraître;[scheinen];53;Verb;irregular;
+personne (p. ind.);[niemand];53;Adjective/Adverb;;
+photographe;[der Fotograf];53;Noun;;
+poisson;[der Fisch];53;Noun;;
+presque;[fast];53;Adjective/Adverb;;
+sembler;[scheinen];53;Verb;irregular;
+souris;[die Maus];53;Noun;;
+souris;[die Maus];53;Noun;;
+vernissage;[die Vernissage];53;Noun;;
+aimer (+ v. inf.);[gern];54;Adjective/Adverb;;
+Allemagne;[Deutschland];54;Noun;;
+allemand (non-~);[der Nichtdeutsche];54;Noun;;
+Américain;[der Amerikaner];54;Noun;;
+attirer;[anlocken];54;Verb;irregular;
+bière (fête de la ~);[das Oktoberfest];54;Noun;;
+blonde (bière);[ein Helles];54;Noun;;
+brasserie;[das Brauhaus];54;Noun;;
+Britannique;[der Brite];54;Noun;;
+brune (bière);[ein Dunkles];54;Noun;;
+chaque;[jeder];54;Adjective/Adverb;;inflection: jeder/jede/jedes
+commander;[bestellen];54;Verb;regular;
+différent;[verschieden];54;Adjective/Adverb;;
+fête;[das Fest];54;Noun;;
+finir;[enden];54;Verb;regular;
+Français;[der Franzose];54;Noun;;
+Japonais;[der Japaner];54;Noun;;
+panaché;[der Radler];54;Noun;;
+prairie;[die Wiese];54;Noun;;
+préférer (+ v. inf.);[v. inf. + lieber];54;Fixed expression;;
+touriste;[der Tourist];54;Noun;;
+variété;[die Vielfalt];54;Noun;;
+à;[an];55;Preposition;;acc. ou dat.
+allongé (être);[liegen];55;Verb;irregular;
+appartenir à;[gehören];55;Verb;regular;
+bondé;[überfüllt];55;Adjective/Adverb;;
+bord (au ~ de);[an];55;Preposition;;
+bouché;[verstopft];55;Adjective/Adverb;;
+but;[das Ziel];55;Noun;;
+chérie;[der Liebling];55;Noun;;
+couché (être ~);[liegen];55;Verb;irregular;
+destination;[das Ziel];55;Noun;;
+directement;[direkt];55;Adjective/Adverb;;
+Internet;[das Internet];55;Noun;;
+louer (donner en location);[vermieten];55;Verb;regular;
+louer (prendre en location);[mieten];55;Verb;regular;
+maison (dir.);[nach Hause];55;Fixed expression;;
+maison (loc.);[zu Hause];55;Fixed expression;;
+maison de vacances;[das Ferienhaus];55;Noun;;
+objectif;[das Ziel];55;Noun;;
+ouvert;[offen];55;Adjective/Adverb;;
+partie (faire ~ de);[gehören zu];55;Verb;regular;
+pas encore;[noch nicht];55;Adjective/Adverb;;
+passer (vacances);[verbringen];55;Verb;irregular;
+porte;[die Tür];55;Noun;;
+posé (être ~) (à plat / à l'horizontale);[liegen];55;Verb;irregular;
+région;[die Gegend];55;Noun;;
+salle de bains;[das Bad];55;Noun;;
+sous-sol;[der Keller];55;Noun;;
+sous-sol;[der Keller];55;Noun;;
+télécharger;[herunterladen];55;Verb;irregular;
+télévision;[das Fernsehen];55;Noun;;
+voir (à);[sehenswert];55;Adjective/Adverb;;
+derrière;[hinter];56;Preposition;;
+appétit;[der Appetit];57;Noun;;
+après (adv.);[nachher];57;Adjective/Adverb;;
+boisson;[das Getränk];57;Noun;;
+bouche;[der Mund];57;Noun;;
+café (établissement);[das Kaffeehaus];57;Noun;;
+car;[denn];57;Conjunction;;
+chat;[die Katze];57;Noun;;
+chien;[der Hund];57;Noun;;
+connu;[bekannt];57;Adjective/Adverb;;
+cou;[der Hals];57;Noun;;
+courir;[laufen];57;Verb;irregular;
+désirer;[wünschen];57;Verb;regular;
+emmener;[ausführen];57;Verb;irregular;
+ensuite;[nachher];57;Adjective/Adverb;;
+escalope;[das Schnitzel];57;Noun;;
+fois (deux ~);[zweimal];57;Number/Numeral;;
+grenouille;[der Frosch];57;Noun;;
+loup;[der Wolf];57;Noun;;
+moins (du ~);[zumindest];57;Adjective/Adverb;;
+original;[original];57;Adjective/Adverb;;
+ours;[der Bär];57;Noun;;
+plaisir;[das Vergnügen];57;Noun;;
+pommes frites;[die Pommes Frites];57;Noun;;
+Sachertorte;[die Sachertorte];57;Noun;;
+serveur;[der Kellner];57;Noun;;
+servir;[bedienen];57;Verb;regular;
+souhait;[der Wunsch];57;Noun;;
+souhaiter;[wünschen];57;Verb;regular;
+souhait;[der Wunsch];57;Noun;;
+souhaiter;[wünschen];57;Verb;regular;
+tasse;[die Tasse];57;Noun;;
+traditionnel;[traditionell];57;Adjective/Adverb;;
+viennois;[Wiener];57;Adjective/Adverb;;
+vin rouge;[der Rotwein];57;Noun;;
+vivre;[leben];57;Verb;regular;
+aimer;[mögen];58;Verb;irregular;
+apparition;[die Erscheinung];58;Noun;;
+coiffure;[die Frisur];58;Noun;;
+dent;[der Zahn];58;Noun;;
+dos;[der Rücken];58;Noun;;
+dos (mal au ~);[die Rückenschmerzen];58;Noun;;
+douleur;[der Schmerz];58;Noun;;
+espérer;[hoffen];58;Verb;regular;
+fantastique;[fantastisch];58;Adjective/Adverb;;
+flatteur;[schmeichelhaft];58;Adjective/Adverb;;
+gris;[das Grau];58;Noun;;
+mal (avoir ~);[Schmerzen haben];58;Fixed expression;;
+manteau;[der Mantel];58;Noun;;
+même chose;[das Gleiche];58;Noun;;
+nécessaire;"[notwendig;nötig]";58;Adjective/Adverb;;
+oreille;[das Ohr];58;Noun;;
+parce que;[weil];58;Conjunction;;
+tête;[der Kopf];58;Noun;;
+ventre;[der Bauch];58;Noun;;
+bien sûr;[natürlich];59;Adjective/Adverb;;
+déborder;[überkochen];59;Verb;irregular;
+dépasser;[überholen];59;Verb;regular;
+doubler (véhicule);[überholen];59;Verb;regular;
+épeler;[buchstabieren];59;Verb;regular;
+étonner;[überraschen];59;Verb;regular;
+hasard;[der Zufall];59;Noun;;
+lettre (de l'alphabet);[der Buchstabe];59;Noun;;
+majuscule;[großes A, B…];59;Noun;;
+minuscule (a, b...);[kleines];59;Adjective/Adverb;;(a, b...)
+pensée (idée);[der Gedanke];59;Noun;;
+réfléchir;"[überlegen;nachdenken]";59;Verb;irregular;separation: nach/denken
+réservation;[die Reservierung];59;Noun;;
+réserver une table;[die Tischreservierung];59;Noun;;
+surprendre;[überraschen];59;Verb;regular;
+surprendre;[überraschen];59;Verb;regular;
+surprendre;[überraschen];59;Verb;regular;
+traduire;[übersetzen];59;Verb;regular;
+aéroport;[der Flughafen];60;Noun;;
+arrêter (s');[anhalten];60;Verb;irregular;
+bébé;[das Baby];60;Noun;;
+chéri;[der Schatz];60;Noun;;
+côté;[die Seite];60;Noun;;
+croisement;[die Kreuzung];60;Noun;;
+demander (chemin, heure);[fragen];60;Verb;regular;
+énervement;[die Aufregung];60;Noun;;
+examen;[das Examen];60;Noun;;
+félicitation;[die Glückwünsche];60;Noun;;
+feu tricolore;[die Ampel];60;Noun;;
+garçon;[der Junge];60;Noun;;
+heure (horaires);[die Uhrzeit];60;Noun;;
+hôpital;[das Krankenhaus];60;Noun;;
+malade (n.);[der Kranke];60;Noun;;
+marcher (vite);[laufen];60;Verb;irregular;
+perdre (se ~);[sich verlaufen];60;Verb;irregular;
+policier;[der Polizist];60;Noun;;
+port (bateau);[der Hafen];60;Noun;;
+soigner;[pflegen];60;Verb;regular;
+taxi;[das Taxi];60;Noun;;
+tourner (à droite / gauche);"[rechts abbiegen;links abbiegen]";60;Verb;irregular;
+trésor;[der Schatz];60;Noun;;
+tromper de chemin (se);[sich verlaufen];60;Verb;irregular;
+tromper de route (se);[sich verfahren];60;Verb;irregular;
+vol (avion);[der Flug];60;Noun;;
+amour;[die Liebe];61;Noun;;
+apparemment;[anscheinend];61;Adjective/Adverb;;
+architecte;[der Architekt];61;Noun;;
+bois;[das Holz];61;Noun;;
+casser;[knacken];61;Verb;regular;
+charmant;[charmant];61;Adjective/Adverb;;
+connaître (faire connaissance);[kennenlernen];61;Verb;irregular;
+craquer;[knacken];61;Verb;regular;
+fête;[die Fete];61;Noun;;
+jackpot;[der Jackpot];61;Noun;;
+noisette;[die Haselnuss];61;Noun;;
+noix;[die Walnuss];61;Noun;;
+panorama;[das Panorama];61;Noun;;
+pied;[der Fuß];61;Noun;;
+président;[der Präsident];61;Noun;;
+qui (à/de ~);[wessen];61;Interrogative;;
+rappeler (se remémorer);[sich erinnern an];61;Verb;irregular;sich an jn./etw. erinnern
+regard;[der Blick];61;Noun;;
+riche;[reich];61;Adjective/Adverb;;
+signe;[das Zeichen];61;Noun;;
+souvenir;[die Erinnerung];61;Noun;;
+souvenir (se ~);[sich erinnern];61;Verb;irregular;
+souvenir;[die Erinnerung];61;Noun;;
+souvenir (se ~);[sich erinnern];61;Verb;irregular;
+toit;[das Dach];61;Noun;;
+toit panoramique;[das Panoramadach];61;Noun;;
+vert;[grün];61;Adjective/Adverb;;
+aborder;[ansprechen];62;Verb;irregular;
+absolument;[gar];62;Adjective/Adverb;;
+ici (par ~);[her];62;Adjective/Adverb;;
+jamais;"[nie;niemals]";62;Adjective/Adverb;;
+marguerite;[die Margerite];62;Noun;;
+œillet;[die Nelke];62;Noun;;
+oser;[sich trauen];62;Verb;irregular;
+perce-neige;[das Schneeglöckchen];62;Noun;;
+pissenlit;[der Löwenzahn];62;Noun;;
+risquer;[wagen];62;Verb;regular;
+rose;[die Rose];62;Noun;;
+tulipe;[die Tulpe];62;Noun;;
+y;[hin];62;Adjective/Adverb;;
+automate;[der Automat];64;Noun;;
+blog;[das Blog];64;Noun;;
+canicule;[die Hitze];64;Noun;;
+chaleur;[die Hitze];64;Noun;;
+chaud (très ~);[heiß];64;Adjective/Adverb;;
+cola;[die Cola];64;Noun;;
+compréhensif;[verständnisvoll];64;Adjective/Adverb;;
+compréhension;[das Verständnis];64;Noun;;
+congé canicule;[Hitzefrei];64;Noun;;
+d'abord;[zuerst];64;Adjective/Adverb;;
+degré;[das Grad];64;Noun;;
+direction (entreprise);[das Management];64;Noun;;
+distributeur automatique;[der Bankautomat];64;Noun;;
+droit;[das Recht];64;Noun;;
+e-mail;[die E-Mail];64;Noun;;
+informations;[die Nachrichten];64;Noun;;
+instant (à l');"[eben;gerade]";64;Adjective/Adverb;;
+insupportable;[unerträglich];64;Adjective/Adverb;;
+personnellement;[persönlich];64;Adjective/Adverb;;
+sec;[trocken];64;Adjective/Adverb;;
+silence;[die Stille];64;Noun;;
+silencieux;[still];64;Adjective/Adverb;;
+supporter;[ertragen];64;Verb;irregular;
+système;[das System];64;Noun;;
+supporter;[ertragen];64;Verb;irregular;
+système;[das System];64;Noun;;
+système;[das System];64;Noun;;
+venir de;[eben];64;Fixed expression;;+ v. passé
+déraisonnable;[unvernünftig];65;Adjective/Adverb;;
+flots;[in Strömen];65;Fixed expression;;
+France;[Frankreich];65;Noun;;
+grec;[griechisch];65;Adjective/Adverb;;
+île;[die Insel];65;Noun;;
+impossible;[unmöglich];65;Adjective/Adverb;;
+Italie;[Italien];65;Noun;;
+maisonnette;[das Häuschen];65;Noun;;
+malheur;[das Unglück];65;Noun;;
+nature;[die Natur];65;Noun;;
+plage de sable;[der Sandstrand];65;Noun;;
+possible;[möglich];65;Adjective/Adverb;;
+préférer (superlatif);[am liebsten];65;Adjective/Adverb;;
+raisonnable;[vernünftig];65;Adjective/Adverb;;
+rarement;[selten];65;Adjective/Adverb;;
+réalité;[die Realität];65;Noun;;
+réfléchir à;[nachdenken];65;Verb;irregular;separation: nach/denken (über)
+sable;[der Sand];65;Noun;;
+saison;[die Jahreszeit];65;Noun;;
+seau;"[der Eimer;der Kübel]";65;Noun;;
+tempête;[der Sturm];65;Noun;;
+travail;[die Arbeit];65;Noun;;
+vivre (un événement);[erleben];65;Verb;regular;
+y (direction);[dahin];65;Adjective/Adverb;;
+achever;[fertig machen];66;Fixed expression;;
+ancien;[alt];66;Adjective/Adverb;;
+curiosité touristique;[die Sehenswürdigkeit];66;Noun;;
+descendre (lit, bus, train);"[aus dem Bett steigen;aus dem Bus steigen;aus dem Zug steigen]";66;Fixed expression;;
+dimanche (le ~ / tous les ~);[sonntags];66;Adjective/Adverb;;
+escalader;[auf einen Berg steigen];66;Fixed expression;;
+excursion;[der Ausflug];66;Noun;;
+fatigant;[anstrengend];66;Adjective/Adverb;;
+fermé;[geschlossen];66;Adjective/Adverb;;
+groupe;[die Gruppe];66;Noun;;
+groupe de voyage;[die Reisegruppe];66;Noun;;
+honnêtement;[ehrlich];66;Adjective/Adverb;;
+lac;[der See];66;Noun;;
+manifester (se ~);[sich melden];66;Verb;irregular;
+matin au soir;[von morgens bis abends];66;Fixed expression;;
+matin(s) (le/tous les ~);[morgens];66;Adjective/Adverb;;
+mer;"[die See;das Meer]";66;Noun;;
+mer du Nord;[die Nordsee];66;Noun;;
+montagne;[der Berg];66;Noun;;
+monter (augmenter);[steigen];66;Verb;irregular;
+monter (dans bus/train);"[in den Bus steigen;in den Zug steigen]";66;Fixed expression;;
+motiver;[motivieren];66;Verb;regular;
+parti (être ~);[unterwegs sein];66;Fixed expression;;
+plus (le ~);[am meisten];66;Adjective/Adverb;;
+prêt (fini, fait);"[fertig;bereit]";66;Adjective/Adverb;;
+prix (coût);[der Preis];66;Noun;;
+réseau (avoir du ~);[der Empfang];66;Noun;;
+route (être en ~);[unterwegs sein];66;Fixed expression;;
+sincère;[ehrlich];66;Adjective/Adverb;;
+sincèrement;[ehrlich];66;Adjective/Adverb;;
+sommet;[der Gipfel];66;Noun;;
+suivant;[folgende];66;Adjective/Adverb;;
+suivant;[folgende];66;Adjective/Adverb;;
+terrain;[das Gelände];66;Noun;;
+tuer (sens figuré);[fertig machen];66;Fixed expression;;
+à;[über];67;Preposition;;
+Bavière;[Bayern];67;Noun;;
+château;[das Schloss];67;Noun;;
+cousin;[der Cousin];67;Noun;;
+cousine;[die Cousine];67;Noun;;
+féerique;[märchenhaft];67;Adjective/Adverb;;
+gratuitement;[umsonst];67;Adjective/Adverb;;
+haut (en ~);[oben];67;Adjective/Adverb;;
+là (jusque-/d'ici ~) (temporel);[bis dahin];67;Adjective/Adverb;;
+liste;[die Liste];67;Noun;;
+neige;[der Schnee];67;Noun;;
+neiger;[schneien];67;Verb;regular;
+Noël;[Weihnachten];67;Noun;;
+Pâques;[Ostern];67;Noun;;
+Pentecôte;[Pfingsten];67;Noun;;
+pour (compl. de tps);[über];67;Preposition;;+ n. de fête, compl. de tps
+rocher;[der Felsen];67;Noun;;
+semaine (fin de ~);[das Wochenende];67;Noun;;
+ski;[der Ski];67;Noun;;
+skier;[Ski fahren];67;Fixed expression;;
+visiter;"[besichtigen;sich ansehen]";67;Verb;irregular;
+vouloir parler de;[meinen];67;Verb;irregular;
+assez;[genug];68;Adjective/Adverb;;
+bureau;[das Büro];68;Noun;;
+chef d'orchestre;[der Dirigent];68;Noun;;
+chercher (aller ~);[holen];68;Verb;regular;
+collaborateur;[der Mitarbeiter];68;Noun;;
+énerver (s');[sich aufregen];68;Verb;irregular;
+énerver (s' contre);[sich über jdn aufregen];68;Verb;irregular;
+ennuis;[der Ärger];68;Noun;;
+erreur;[der Fehler];68;Noun;;
+faute;[der Fehler];68;Noun;;
+humeur;[die Laune];68;Noun;;
+jambe;[das Bein];68;Noun;;
+luné (être ~);"[gut gelaunt sein;schlecht gelaunt sein]";68;Fixed expression;;
+passer (se);[passieren];68;Verb;regular;
+prix (lauréat);[der Preis];68;Noun;;
+se (p. réciproque dat.);[sich];68;Personal pronoun;;
+travailleur;[der Arbeiter];68;Noun;;
+violoniste;[der Geiger];68;Noun;;
+vite fait;[kurz];68;Adjective/Adverb;;
+auberge;[die Herberge];69;Noun;;
+auberge de jeunesse;[die Jugendherberge];69;Noun;;
+aucunement;[keineswegs];69;Adjective/Adverb;;
+campagne;[auf dem Land];69;Fixed expression;;
+camping;[das Camping];69;Noun;;
+camping (terrain);[der Campingplatz];69;Noun;;
+contredire;[widersprechen];69;Verb;irregular;
+déranger;[stören];69;Verb;regular;
+dîner;[das Abendessen];69;Noun;;
+endroit;[die Stelle];69;Noun;;
+épicerie;[das Lebensmittelgeschäft];69;Noun;;
+essence;[tanken];69;Verb;regular;
+excuser;[entschuldigen];69;Verb;regular;
+gîte;[die Herberge];69;Noun;;
+gueule;[das Maul];69;Noun;;
+heure (à cette ~);[um die Uhrzeit];69;Fixed expression;;
+horaires;[die Uhrzeit];69;Noun;;
+librairie;[die Buchhandlung];69;Noun;;
+magasin;[das Geschäft];69;Noun;;
+moyen;[das Mittel];69;Noun;;
+"ne… que (pas plus tôt/tard ; pas avant)";[erst];69;Modal particle;;
+plus (en ~);[außerdem];69;Adjective/Adverb;;
+préparer;[vorbereiten];69;Verb;irregular;separation: vor/bereiten
+raviole;[die Maultasche];69;Noun;;
+sac;"[die Tasche;der Sack]";69;Noun;;
+souper;[das Abendessen];69;Noun;;
+Stuttgart;[Stuttgart];69;Noun;;
+supermarché;[der Supermarkt];69;Noun;;
+souper;[das Abendessen];69;Noun;;
+Stuttgart;[Stuttgart];69;Noun;;
+supermarché;[der Supermarkt];69;Noun;;
+un;[eins];69;Number/Numeral;;
+voisin;[der Nachbar];69;Noun;;
+proche (adj. qual.);[nah];70;Adjective/Adverb;;
+acide;[sauer];71;Adjective/Adverb;;
+agir (s'~ de);[sich handeln um];71;Verb;irregular;
+aigre;[sauer];71;Adjective/Adverb;;
+contrat;[der Auftrag];71;Noun;;
+d'abord;[erstmal];71;Adjective/Adverb;;
+difficilement;[schwer];71;Adjective/Adverb;;
+écrire;[schreiben];71;Verb;irregular;
+estomac;[der Magen];71;Noun;;
+garder (place/table);[freihalten];71;Verb;irregular;
+important;[wichtig];71;Adjective/Adverb;;
+joindre;[erreichen];71;Verb;regular;
+partir (à ~ de);[ab];71;Preposition;;
+plat (mets);[das Gericht];71;Noun;;
+plat du jour;[das Tagesgericht];71;Noun;;
+rôti;[der Braten];71;Noun;;
+roue;[das Rad];71;Noun;;
+si (question indirecte);[ob];71;Conjunction;;
+spécialité;[die Spezialität];71;Noun;;
+spécialité;[die Spezialität];71;Noun;;
+traduction;[die Übersetzung];71;Noun;;
+vélo;"[das Fahrrad;das Rad]";71;Noun;;
+vide;[leer];71;Adjective/Adverb;;
+allumer;"[anmachen;anschalten]";72;Verb;irregular;
+billet;[der Schein];72;Noun;;
+billet de loterie;[der Lotterieschein];72;Noun;;
+carrière (faire ~);[Karriere machen];72;Fixed expression;;
+chance (jour de ~);[der Glückstag];72;Noun;;
+descendre (véhicule);[aussteigen];72;Verb;irregular;
+donc;[bloß];72;Modal particle;;
+finir son assiette;[aufessen];72;Verb;irregular;
+finir son verre;[austrinken];72;Verb;irregular;
+grasse matinée;[ausschlafen];72;Verb;irregular;
+habiller (qqn);[jdn anziehen];72;Verb;irregular;
+habiller (s');[sich anziehen];72;Verb;irregular;
+lecteur;[der Leser];72;Noun;;
+lève-tard;[der Spätaufsteher];72;Noun;;
+lève-tôt;[der Frühaufsteher];72;Noun;;
+loisirs;[das Hobby];72;Noun;;
+lumière;[das Licht];72;Noun;;
+mi-temps (à ~);[halbtags];72;Adjective/Adverb;;
+ouvrir;"[aufmachen;öffnen]";72;Verb;irregular;
+raccrocher (téléphone);[auflegen];72;Verb;irregular;separation: auf/legen
+réveil;[der Wecker];72;Noun;;
+rêver;[träumen];72;Verb;regular;
+sentir;"[spüren;riechen]";72;Verb;irregular;
+sortir (tirer);[herausziehen];72;Verb;irregular;separation: heraus/ziehen
+sortir (publier);[herausgeben];72;Verb;irregular;separation: heraus/geben
+sortir (tirer);[herausziehen];72;Verb;irregular;
+sortir (publier);[herausgeben];72;Verb;irregular;
+voix;[die Stimme];72;Noun;;
+auteur;[der Autor];73;Noun;;
+avantage;[der Vorteil];73;Noun;;
+beaucoup de choses;[vieles];73;Adjective/Adverb;;
+carte;[die Karte];73;Noun;;
+ce que;[was];73;Interrogative;;
+celui/celle/ceux;[derjenige];73;Adjective/Adverb;;inflection: derjenige/diejenige/dasjenige
+cependant;[allerdings];73;Adjective/Adverb;;
+certaines;[manche];73;Adjective/Adverb;;
+chose;[die Sache];73;Noun;;
+compréhensible;[verständlich];73;Adjective/Adverb;;
+conclusion;[der Schluss];73;Noun;;
+conversation;[das Gespräch];73;Noun;;
+conversation courante;[das Alltagsgespräch];73;Noun;;
+dictionnaire;[das Wörterbuch];73;Noun;;
+entrée (dictionnaire);[das Stichwort];73;Noun;;
+exprimer;[ausdrücken];73;Verb;irregular;
+formuler;[formulieren];73;Verb;regular;
+grave;[schlimm];73;Adjective/Adverb;;
+important (le plus);[Hauptsache];73;Fixed expression;;
+linguiste;[der Sprachwissenschaftler];73;Noun;;
+locuteur natif;[der Muttersprachler];73;Noun;;
+orthographier;[rechtschreiben];73;Verb;irregular;
+panique;[die Panik];73;Noun;;
+perdre;[verlieren];73;Verb;irregular;
+phrase;[der Satz];73;Noun;;
+principal (le ~) (l'essentiel);[Hauptsache];73;Fixed expression;;
+quotidien;[der Alltag];73;Noun;;
+renommé;[angesehen];73;Adjective/Adverb;;
+scientifique;[der Wissenschaftler];73;Noun;;
+signification;[die Bedeutung];73;Noun;;
+surtout;[vor allem];73;Fixed expression;;
+surtout;[vor allem];73;Fixed expression;;
+surtout;[vor allem];73;Fixed expression;;
+terme;[der Begriff];73;Noun;;
+version originale (en);[im Original];73;Fixed expression;;
+appuyer;[drücken];74;Verb;regular;
+argent (métal);[das Silber];74;Noun;;
+cadeau;[das Geschenk];74;Noun;;
+calculer;[berechnen];74;Verb;regular;
+calorie;[die Kalorie];74;Noun;;
+dépense;[der Verbrauch];74;Noun;;
+dépense calorique;[der Kalorienverbrauch];74;Noun;;
+dépenser;[ausgeben];74;Verb;irregular;
+design;[das Design];74;Noun;;
+diamant;[der Diamant];74;Noun;;
+fer;[das Eisen];74;Noun;;
+fin (adj.);[fein];74;Adjective/Adverb;;
+fonctionner;[bedienen];74;Verb;regular;
+frontière;[die Grenze];74;Noun;;
+idée (représentation/image);[die Vorstellung];74;Noun;;
+juste (adapté);[richtig];74;Adjective/Adverb;;
+mariage;[die Hochzeit];74;Noun;;
+modèle;[das Modell];74;Noun;;
+montre;[die Uhr];74;Noun;;
+noces d'argent;[die Silberhochzeit];74;Noun;;
+noces d'or;[die Goldhochzeit];74;Noun;;
+noces de diamant;[die Diamanthochzeit];74;Noun;;
+obtenir;[erhalten];74;Verb;irregular;
+occasion (événement);[der Anlass];74;Noun;;
+or;[das Gold];74;Noun;;
+précis;[genau];74;Adjective/Adverb;;
+regarder (avec attention/intérêt);[sich etw. ansehen];74;Verb;irregular;separation: an/sehen
+serrer;[drücken];74;Verb;regular;
+siège;[der Sitz];74;Noun;;
+siège (auto);[der Autositz];74;Noun;;
+suffire;[reichen];74;Verb;regular;
+suffire;[reichen];74;Verb;regular;
+taxe;[die Steuer];74;Noun;;
+touche (clavier);[die Taste];74;Noun;;
+après (adv.);[danach];75;Adjective/Adverb;;
+automne;[der Herbst];75;Noun;;
+avant (adv.);[davor];75;Adjective/Adverb;;
+bord (à ~);[an Bord];75;Fixed expression;;
+côté (à ~);[daneben];75;Adjective/Adverb;;
+dedans;[drinnen];75;Adjective/Adverb;;
+dehors;[draußen];75;Adjective/Adverb;;
+déménager;[umziehen];75;Verb;irregular;
+départ;[die Abreise];75;Noun;;
+derrière;[dahinter];75;Adjective/Adverb;;
+devant (adv.);[davor];75;Adjective/Adverb;;
+différence;[der Unterschied];75;Noun;;
+hiver;[der Winter];75;Noun;;
+passager;[der Passagier];75;Noun;;
+passé;[die Vergangenheit];75;Noun;;
+printemps;[der Frühling];75;Noun;;
+vêtements;[die Kleidung];75;Noun;;
+café au lait;[der Milchkaffee];76;Noun;;
+candidat;[der Kandidat];76;Noun;;
+candidate;[die Kandidatin];76;Noun;;
+chef;[der Leiter];76;Noun;;
+coquille;[die Schale];76;Noun;;
+directeur RH;[der Personalleiter];76;Noun;;
+énervé;[aufgeregt];76;Adjective/Adverb;;
+énerver;[ärgern];76;Verb;regular;
+entretien;[das Gespräch];76;Noun;;
+entretien d'embauche;[das Vorstellungsgespräch];76;Noun;;
+exercice;[die Aufgabe];76;Noun;;
+facile;[leicht];76;Adjective/Adverb;;
+facilement;[leicht];76;Adjective/Adverb;;
+impressionner;[beeindrucken];76;Verb;regular;
+jeter;[schmeißen];76;Verb;irregular;
+lait;[die Milch];76;Noun;;
+lancer;[werfen];76;Verb;irregular;
+léger;[leicht];76;Adjective/Adverb;;
+légèrement;[leicht];76;Adjective/Adverb;;
+marcher (bien/mal);"[gut laufen;schlecht laufen]";76;Verb;irregular;
+passer (bien/mal se ~);"[gut laufen;schlecht laufen]";76;Verb;irregular;
+présentation;[die Vorstellung];76;Noun;;
+saucisse;[die Wurst];76;Noun;;
+saucisse grillée;[die Bratwurst];76;Noun;;
+sauf (excepté / à part);[außer];76;Preposition;;+ dat.
+tâche;[die Aufgabe];76;Noun;;
+abréviation;[die Abkürzung];78;Noun;;
+actuel;[jetzig];78;Adjective/Adverb;;
+après que;[nachdem];78;Conjunction;;
+aujourd'hui (d'~);[heutig];78;Adjective/Adverb;;
+capitale;[die Hauptstadt];78;Noun;;
+construire;[bauen];78;Verb;regular;
+coucher (se ~);[untergehen];78;Verb;irregular;
+date;[das Datum];78;Noun;;
+divertissement;[der Spaß];78;Noun;;
+diviser;[teilen];78;Verb;regular;
+division;[die Teilung];78;Noun;;
+État;[der Staat];78;Noun;;
+guerre;[der Krieg];78;Noun;;
+histoire;[die Geschichte];78;Noun;;
+Lune;[der Mond];78;Noun;;
+officiel;[offiziell];78;Adjective/Adverb;;
+République démocratique allemande (RDA);[die Deutsche Demokratische Republik];78;Noun;;
+République fédérale d'Allemagne (RFA);[die Bundesrepublik Deutschland];78;Noun;;(ab. BRD)
+réunification;[die Wiedervereinigung];78;Noun;;
+savoir (n.);[das Wissen];78;Noun;;
+siècle;[das Jahrhundert];78;Noun;;
+unité;[die Einheit];78;Noun;;
+ville;[die Stadt];78;Noun;;
+bus;[der Bus];79;Noun;;
+communication;[die Kommunikation];79;Noun;;
+communication (moyen de ~);[das Kommunikationsmittel];79;Noun;;
+extra-terrestre;[der Außerirdische];79;Noun;;
+frontières (sans ~);[grenzenlos];79;Adjective/Adverb;;
+gars;[Jungs];79;Noun;;
+impression;[der Eindruck];79;Noun;;
+machin;[das Ding];79;Noun;;
+métro;[die U-Bahn];79;Noun;;
+métropolitain;[die Untergrundbahn];79;Noun;;
+mobile (adj.);[mobil];79;Adjective/Adverb;;
+observer;[beobachten];79;Verb;regular;
+offrir (permettre);[bieten];79;Verb;irregular;
+partout;[überall];79;Adjective/Adverb;;
+planète;[der Planet];79;Noun;;
+plutôt;[eher];79;Adjective/Adverb;;
+positif (n.);[das Positive];79;Noun;;
+singe;[der Affe];79;Noun;;
+technique;[die Technik];79;Noun;;
+terre;[die Erde];79;Noun;;
+terrestre;[irdisch];79;Adjective/Adverb;;
+tramway;[die Straßenbahn];79;Noun;;
+viande;[das Fleisch];79;Noun;;
+viande (sans);[fleischlos];79;Adjective/Adverb;;
+audacieux;[gewagt];80;Adjective/Adverb;;
+branche;[der Zweig];80;Noun;;
+candidature;[die Bewerbung];80;Noun;;
+carnaval;[der Fasching];80;Noun;;
+carrière;[die Karriere];80;Noun;;
+coin;[die Ecke];80;Noun;;
+commencer;[starten];80;Verb;regular;
+documents;[die Unterlagen];80;Noun;;
+dossier de candidature;[die Bewerbungsunterlagen];80;Noun;;
+étage;[der Stock];80;Noun;;
+filiale;[die Zweigstelle];80;Noun;;
+hésiter;[zögern];80;Verb;regular;
+mentalité;[die Mentalität];80;Noun;;
+poli;[höflich];80;Adjective/Adverb;;
+politesse;[die Höflichkeit];80;Noun;;
+ponctuel;[pünktlich];80;Adjective/Adverb;;
+précisément;[gerade];80;Adjective/Adverb;;
+prétentions salariales;[die Gehaltsvorstellungen];80;Noun;;
+profil;[das Profil];80;Noun;;
+prometteur;[vielversprechend];80;Adjective/Adverb;;
+retard;[die Verspätung];80;Noun;;
+retourner (se ~);[sich umdrehen];80;Verb;irregular;separation: um/drehen
+roi;[der König];80;Noun;;
+sans (+ inf.);[ohne zu];80;Preposition;;+ inf.
+sans que;[ohne dass];80;Conjunction;;
+situation;[die Situation];80;Noun;;
+succès;[der Erfolg];80;Noun;;
+succès;[der Erfolg];80;Noun;;
+tâche (travail);[die Arbeit];80;Noun;;
+vendeur;[der Verkäufer];80;Noun;;
+aussi bien… que;[sowohl… als auch];81;Conjunction;;
+céréales;[das Getreide];81;Noun;;
+composer;[komponieren];81;Verb;regular;
+compositeur;[der Komponist];81;Noun;;
+composition;[das Komponieren];81;Noun;;
+concert;[das Konzert];81;Noun;;
+conseil;[der Tipp];81;Noun;;
+cour princière;[der Fürstenhof];81;Noun;;
+cours de musique;[der Musikunterricht];81;Noun;;
+dettes;[die Schulden];81;Noun;;
+deviner;[erraten];81;Verb;irregular;
+enfant prodige;[das Wunderkind];81;Noun;;
+ensemble;[gemeinsam];81;Adjective/Adverb;;
+époque;[die Zeit];81;Noun;;
+flûte;[die Flöte];81;Noun;;
+Flûte enchantée;[die Zauberflöte];81;Noun;;
+gagner (argent);[verdienen];81;Verb;regular;
+gaspilleur;[verschwenderisch];81;Adjective/Adverb;;
+maison natale;[das Geburtshaus];81;Noun;;
+musique;[die Musik];81;Noun;;
+œuvre;[das Werk];81;Noun;;
+opéra;[die Oper];81;Noun;;
+parmi;[darunter];81;Adjective/Adverb;;
+pauvre;[arm];81;Adjective/Adverb;;
+pauvreté;[die Armut];81;Noun;;
+prince;[der Fürst];81;Noun;;
+profiter de;[nutzen];81;Verb;regular;
+ruelle;[die Gasse];81;Noun;;
+Salzbourg;[Salzburg];81;Noun;;
+tout (en tout);[insgesamt];81;Adjective/Adverb;;
+apprenti;[der Geselle];82;Noun;;
+biscuit;[das Plätzchen];82;Noun;;
+botte;[der Stiefel];82;Noun;;
+boulanger;[der Bäcker];82;Noun;;
+boulanger (apprenti);[der Bäckergeselle];82;Noun;;
+boulanger (maître);[der Bäckermeister];82;Noun;;
+boulangerie;[die Bäckerei];82;Noun;;
+chauffer;[erhitzen];82;Verb;regular;
+compte à rebours;[der Countdown];82;Noun;;
+contrôler;[überprüfen];82;Verb;regular;
+disputer (se ~);[streiten];82;Verb;irregular;
+four;[der Ofen];82;Noun;;
+four (de cuisine);[der Backofen];82;Noun;;
+friandises;[die Süßigkeiten];82;Noun;;
+lourd;[schwer];82;Adjective/Adverb;;
+maître (contremaître);[der Meister];82;Noun;;
+ne… (plus) que;[nur noch];82;Fixed expression;;
+note (scolaire);[die Note];82;Noun;;
+pâte;[der Teig];82;Noun;;
+pendant que;[während];82;Conjunction;;
+recommencer;[wieder losgehen];82;Verb;irregular;separation: los/gehen
+réjouir (se ~ de qqch. à venir);[sich freuen auf];82;Verb;irregular;
+réjouir (se ~ de qqch. qui a eu lieu);[sich freuen über];82;Verb;irregular;
+saint Nicolas;[der Nikolaus];82;Noun;;
+soulever;[heben];82;Verb;irregular;
+soulever;[heben];82;Verb;irregular;
+tour (être au tour de);"[dran kommen;dran sein]";82;Fixed expression;;
+à cause de;[durch];83;Preposition;;
+accompagner;[begleiten];83;Verb;regular;
+amende;[das Bußgeld];83;Noun;;
+changement;[der Wechsel];83;Noun;;
+entrer;[reinkommen];83;Verb;irregular;
+espérons que;[hoffentlich];83;Adjective/Adverb;;
+grâce à;[durch];83;Preposition;;
+inclus;[inbegriffen];83;Adjective/Adverb;;
+lequel (p. int.);[welch-];83;Interrogative;;
+mers du Sud;[die Südsee];83;Noun;;
+mieux (il y a ~);[es gibt Besseres];83;Fixed expression;;
+opération;[die Operation];83;Noun;;
+papier peint;[die Tapete];83;Noun;;
+pénitence;[die Buße];83;Noun;;
+pire (il y a ~);[es gibt Schlimmeres];83;Fixed expression;;
+point;[der Punkt];83;Noun;;
+prendre (attraper);[erwischen];83;Verb;regular;
+rouge (passer au ~);[über Rot fahren];83;Fixed expression;;
+sauver;[retten];83;Verb;regular;
+train (être en train de + inf.);[beim];83;Fixed expression;;
+urgence (d');[dringend];83;Adjective/Adverb;;
+visage;[das Gesicht];83;Noun;;
+afin que;[damit];85;Conjunction;;
+battre (au jeu);[schlagen];85;Verb;irregular;
+cape;[das Cape];85;Noun;;
+cape de pluie;[das Regencape];85;Noun;;
+dicton;[das Sprichwort];85;Noun;;
+exercice (physique);[die Bewegung];85;Noun;;
+fleuve;[der Fluss];85;Noun;;
+fort (bruyant);[laut];85;Adjective/Adverb;;
+frapper;[schlagen];85;Verb;irregular;
+giboulées de mars;[das Aprilwetter];85;Noun;;
+irrésistible;[unwiderstehlich];85;Adjective/Adverb;;
+lieu (au ~ de);[anstatt];85;Preposition;;
+lieu (au ~ que);[anstatt dass];85;Conjunction;;
+long (le ~ de);[entlang];85;Preposition;;
+nourriture;[das Essen];85;Noun;;
+nuire;[schaden];85;Verb;regular;
+particulièrement;[besonders];85;Adjective/Adverb;;
+partir (pouvoir);[loskommen];85;Verb;irregular;
+piste cyclable;[der Radweg];85;Noun;;
+pourquoi (dans quel but);[wozu];85;Interrogative;;
+voix (à haute);[laut];85;Adjective/Adverb;;
+bouteille;[die Flasche];86;Noun;;
+chanson;[das Lied];86;Noun;;
+cuillère;[der Löffel];86;Noun;;
+cuillère (petite);[der Teelöffel];86;Noun;;
+cure;[die Kur];86;Noun;;
+dessin;[das Bild];86;Noun;;
+détail;[die Kleinigkeit];86;Noun;;
+hôte (amphitryon);[der Gast];86;Noun;;
+hôte (invité);[der Gast];86;Noun;;
+hypocalorique;[kalorienarm];86;Adjective/Adverb;;
+inattendu;[unerwartet];86;Adjective/Adverb;;
+manomètre;[das Manometer];86;Noun;;
+manquer;[fehlen];86;Verb;regular;
+manquer (à qqn);[jdn vermissen];86;Verb;regular;
+oncle;[der Onkel];86;Noun;;
+passer (tendre);"[herüberreichen;überreichen]";86;Verb;regular;
+poivre;[der Pfeffer];86;Noun;;
+schnaps;[der Schnaps];86;Noun;;
+sel;[das Salz];86;Noun;;
+sentir (odeur);[riechen];86;Verb;irregular;
+sucre;[der Zucker];86;Noun;;
+sucre;[der Zucker];86;Noun;;
+tableau;[das Bild];86;Noun;;
+action;[die Tat];87;Noun;;
+arrivée;[die Ankunft];87;Noun;;
+atteindre;[erreichen];87;Verb;regular;
+attendre (s' à);[rechnen mit];87;Verb;regular;
+avoir lieu;[stattfinden];87;Verb;irregular;
+battre (se ~);[kämpfen];87;Verb;regular;
+battre (se ~ pour);[kämpfen];87;Verb;regular;(für)
+carnaval;[die Fasnacht];87;Noun;;
+carnaval;[die Fastnacht];87;Noun;;
+cas (en ~ de);[bei];87;Preposition;;
+centaine de milliers;[das Hunderttausend];87;Noun;;
+clamer;[rufen];87;Verb;irregular;
+Cologne;[Köln];87;Noun;;
+dangereux;[gefährlich];87;Adjective/Adverb;;
+dédommagement;[die Entschädigung];87;Noun;;
+défilé;[der Umzug];87;Noun;;
+Düsseldorf;[Düsseldorf];87;Noun;;
+élève (fille);[die Schülerin];87;Noun;;
+élève (garçon);[der Schüler];87;Noun;;
+environnement;[die Umwelt];87;Noun;;
+Europe du Nord;[Nordeuropa];87;Noun;;
+exiger;[verlangen];87;Verb;regular;
+fermer;[schließen];87;Verb;irregular;
+groupe (entreprise);[der Konzern];87;Noun;;
+mais (au contraire);[sondern];87;Conjunction;;
+Mayence;[Mainz];87;Noun;;
+mieux... mieux;"[je besser ... desto besser;je besser ... umso besser]";87;Fixed expression;;
+millier;[das Tausend];87;Noun;;
+moins… moins;"[je weniger … desto weniger;je weniger … umso weniger]";87;Fixed expression;;
+plus… plus…;"[je + cp. desto + cp.;je + cp. umso + cp.]";87;Fixed expression;;
+point culminant;[der Höhepunkt];87;Noun;;
+rhénan;[rheinisch];87;Adjective/Adverb;;
+solide;[fest];87;Adjective/Adverb;;
+train grandes lignes;[der Fernzug];87;Noun;;
+voyageur;[der Reisende];87;Noun;;
+adresse;[die Adresse];88;Noun;;
+allécher;[anlocken];88;Verb;irregular;
+arriver à qqun;[jdm vorkommen];88;Verb;irregular;
+attraper;[fangen];88;Verb;irregular;
+bec;[der Schnabel];88;Noun;;
+bois (forêt);[der Wald];88;Noun;;
+chant;[der Gesang];88;Noun;;
+corbeau;[der Rabe];88;Noun;;
+discours;[die Rede];88;Noun;;
+doute;[der Zweifel];88;Noun;;
+écouter qch;[hören];88;Verb;regular;
+écouter qqun;[auf jdn hören];88;Verb;regular;
+leçon (enseignement);[die Lehre];88;Noun;;
+maître;[der Meister];88;Noun;;
+odeur;[der Geruch];88;Noun;;
+peu (à ~ près);[etwa];88;Adjective/Adverb;;
+phénix;[der Phönix];88;Noun;;
+pleurer;[weinen];88;Verb;regular;
+plumage;[das Gefieder];88;Noun;;
+proie;[die Beute];88;Noun;;
+renard;[der Fuchs];88;Noun;;
+retenir qqch. (mémoire);[sich etwas merken];88;Verb;irregular;
+rire;[lachen];88;Verb;regular;
+saisir;[schnappen];88;Verb;regular;
+serment;[der Schwur];88;Noun;;
+sourire;[lächeln];88;Verb;regular;
+sourire;[lächeln];88;Verb;regular;
+valoir qqch.;[etw. + acc. wert sein];88;Fixed expression;;
+bien que;[obwohl];89;Conjunction;;
+boîte de nuit;[die Disko];89;Noun;;
+cinéma;[das Kino];89;Noun;;
+d'accord;[einverstanden];89;Adjective/Adverb;;
+États-Unis;[die Vereinigten Staaten];89;Noun;;
+football;[der Fußball];89;Noun;;
+jouer;[spielen];89;Verb;regular;
+loin;[weit];89;Adjective/Adverb;;
+lunettes;[die Brille];89;Noun;;
+malade (adj.);[krank];89;Adjective/Adverb;;
+parfois;[manchmal];89;Adjective/Adverb;;
+piscine;[das Schwimmbad];89;Noun;;
+pourquoi (c'est ~);[deshalb];89;Adjective/Adverb;;
+quitter;[verlassen];89;Verb;irregular;
+répéter;[wiederholen];89;Verb;regular;
+retour (de ~);[zurück];89;Adjective/Adverb;;
+retrouver;[wiederfinden];89;Verb;irregular;separation: wieder/finden
+revoir;[wiedersehen];89;Verb;irregular;separation: wieder/sehen
+sport;[der Sport];89;Noun;;
+sportif;[sportlich];89;Adjective/Adverb;;
+sport;[der Sport];89;Noun;;
+sportif;[sportlich];89;Adjective/Adverb;;
+tennis;[das Tennis];89;Noun;;
+théâtre;[das Theater];89;Noun;;
+travers (aller de);"[schief gehen;schief laufen]";89;Verb;irregular;
+adapté (à);[geeignet];90;Adjective/Adverb;;(für)
+appareil;[das Gerät];90;Noun;;
+celui qui;[wer];90;Interrogative;;
+cheveux;[das Haar];90;Noun;;
+demi-tour (faire ~);[umdrehen];90;Verb;irregular;
+doux;[süß];90;Adjective/Adverb;;
+effet (faire ~);[wirken];90;Verb;regular;
+énergie;[die Energie];90;Noun;;
+fin (adj.);[dünn];90;Adjective/Adverb;;
+force;[die Kraft];90;Noun;;
+forme (en ~);[fit];90;Adjective/Adverb;;
+garantir;[garantieren];90;Verb;regular;
+gras;[fettig];90;Adjective/Adverb;;
+jus;[der Saft];90;Noun;;
+jus de fruits;[der Obstsaft];90;Noun;;
+lavage;[das Waschen];90;Noun;;
+matelas;[die Matratze];90;Noun;;
+méthode;[die Methode];90;Noun;;
+pourtant;[trotzdem];90;Adjective/Adverb;;
+renoncer à;[verzichten auf];90;Verb;regular;
+satisfait;[zufrieden];90;Adjective/Adverb;;
+satisfait (de);[zufrieden];90;Adjective/Adverb;;(mit)
+sucré;[süß];90;Adjective/Adverb;;
+sucré;[süß];90;Adjective/Adverb;;
+tache;[der Fleck];90;Noun;;
+tendre;[zart];90;Adjective/Adverb;;
+tour de main (en un);[im Handumdrehen];90;Fixed expression;;
+transformer (édifice);[umbauen];90;Verb;irregular;
+vitamine;[das Vitamin];90;Noun;;
+allumer (s');[angehen];92;Verb;irregular;
+armoire;[der Schrank];92;Noun;;
+bon marché;[billig];92;Adjective/Adverb;;
+éteindre (s');[ausgehen];92;Verb;irregular;
+foutu;[futsch];92;Adjective/Adverb;;
+journal;[die Zeitung];92;Noun;;
+lave-linge;[die Waschmaschine];92;Noun;;
+laver;[waschen];92;Verb;irregular;
+laver (vaisselle);[spülen];92;Verb;regular;
+lave-vaisselle;[die Spülmaschine];92;Noun;;
+machine;[die Maschine];92;Noun;;
+merde;[die Scheiße];92;Noun;;
+mien(s)/mienne(s);"[meiner;meine;meins]";92;Possessive adjective;;
+n'importe;[irgend-];92;Adjective/Adverb;;
+n'importe quand;[irgendwann];92;Adjective/Adverb;;
+n'importe quel/le;[irgendeine];92;Adjective/Adverb;;inflection: irgendeine/r
+n'importe qui;[irgendwer];92;Adjective/Adverb;;
+quelconque (un/e ~);[irgendein];92;Adjective/Adverb;;inflection: irgendein/e
+rafraîchir;[kühlen];92;Verb;regular;
+réfrigérateur;[der Kühlschrank];92;Noun;;
+réparation;[die Reparatur];92;Noun;;
+tien(s)/tienne(s);"[deiner;deine;deins]";92;Possessive adjective;;
+chaussure;[der Schuh];93;Noun;;
+ciel;[der Himmel];93;Noun;;
+couteau;[das Messer];93;Noun;;
+créer;[erstellen];93;Verb;regular;
+étonné (être);[staunen];93;Verb;regular;
+fourchette;[die Gabel];93;Noun;;
+frères et sœurs;[die Geschwister];93;Noun;;
+gros;[dick];93;Adjective/Adverb;;
+interdiction;[das Verbot];93;Noun;;
+légumes;[das Gemüse];93;Noun;;
+lettre (courrier);[der Brief];93;Noun;;
+mettre la table;[den Tisch decken];93;Fixed expression;;
+non seulement… mais aussi;[nicht nur… sondern auch];93;Fixed expression;;
+poser (de côté);[weglegen];93;Verb;irregular;separation: weg/legen
+sonner;[klingeln];93;Verb;regular;
+sonner;[klingeln];93;Verb;regular;
+train (être en train de);[gerade];93;Adjective/Adverb;;
+valoir;[gelten];93;Verb;irregular;
+venir de + inf.;[gerade];93;Fixed expression;;+ v. au parfait
+visite (invités);[der Besuch];93;Noun;;
+visite (rendre);[besuchen];93;Verb;regular;
+arriver (événement);[passieren];94;Verb;regular;
+bête (adj.);[dumm];94;Adjective/Adverb;;
+comme (étant donné que);[da];94;Conjunction;;
+dès que;[sobald];94;Conjunction;;
+disputer (se ~ avec);[sich mit jdm streiten];94;Verb;irregular;
+échouer;[durchfallen];94;Verb;irregular;
+étudier;[studieren];94;Verb;regular;
+examen;[die Prüfung];94;Noun;;
+examen de conduite;[die Fahrprüfung];94;Noun;;
+examinateur;[der Prüfer];94;Noun;;
+fenêtre;[das Fenster];94;Noun;;
+gentil;[lieb];94;Adjective/Adverb;;
+heure de conduite;[die Fahrstunde];94;Noun;;
+inspecteur du permis;[der Fahrprüfer];94;Noun;;
+journal intime;[das Tagebuch];94;Noun;;
+lire (en entier);[durchlesen];94;Verb;irregular;
+méchant;[böse];94;Adjective/Adverb;;
+même(s) (le/la/les ~);"[derselbe;dieselbe;dasselbe;dieselben]";94;Adjective/Adverb;;
+montrer;[zeigen];94;Verb;regular;
+nerveux;[nervös];94;Adjective/Adverb;;
+pantalon;[die Hose];94;Noun;;
+plus de;[über];94;Preposition;;
+refléter (se ~);[sich widerspiegeln];94;Verb;irregular;separation: wider/spiegeln
+slip;[der Slip];94;Noun;;
+toilettes;"[das Klo;die Toilette]";94;Noun;;
+tomber;[fallen];94;Verb;irregular;
+arrêter;[aufhören];95;Verb;irregular;
+canapé;[das Sofa];95;Noun;;
+chaise;[der Stuhl];95;Noun;;
+correctement;[richtig];95;Adjective/Adverb;;
+docteur (médecin);[der Doktor];95;Noun;;
+docteur (titre);[Doktor];95;Noun;;
+entre-temps;[inzwischen];95;Adjective/Adverb;;
+fauteuil;[der Sessel];95;Noun;;
+grammaire;[die Grammatik];95;Noun;;
+lampe;[die Lampe];95;Noun;;
+lire (à haute voix);[vorlesen];95;Verb;irregular;
+placer;[aufstellen];95;Verb;irregular;
+projecteur;[der Projektor];95;Noun;;
+récompense;[die Belohnung];95;Noun;;
+récréation;[die Pause];95;Noun;;
+sol;[der Boden];95;Noun;;
+toilettes (aller aux);[auf die Toilette gehen];95;Fixed expression;;
+à;[bei];96;Preposition;;
+absolument;[überhaupt];96;Adjective/Adverb;;
+autonome;[selbständig];96;Adjective/Adverb;;
+café (établissement);[das Café];96;Noun;;
+circulation;[der Verkehr];96;Noun;;
+compte (se mettre à son ~);[sich selbständig machen];96;Verb;irregular;
+démission;[die Kündigung];96;Noun;;
+dépendre de;[abhängen von];96;Verb;irregular;
+en train de;[beim];96;Preposition;;
+journée;[sich den Tag frei nehmen];96;Verb;irregular;
+licenciement;[die Kündigung];96;Noun;;
+licencier;[kündigen];96;Verb;regular;
+marcher (fonctionner);[klappen];96;Verb;regular;
+négatif;[negativ];96;Adjective/Adverb;;
+poste (bureau de ~ ou poste);[die Post];96;Noun;;
+prudent;[vorsichtig];96;Adjective/Adverb;;
+soigneusement;[sorgfältig];96;Adjective/Adverb;;
+solution;[die Lösung];96;Noun;;
+triste;[traurig];96;Adjective/Adverb;;
+volonté;[der Wille];96;Noun;;
+vouloir dire (par là);[damit meinen];96;Fixed expression;;
+académie;[die Akademie];97;Noun;;
+Académie des beaux-arts;[die Kunstakademie];97;Noun;;
+amusant;[Spaß machen];97;Fixed expression;;
+amuser;[Spaß machen];97;Fixed expression;;
+art;[die Kunst];97;Noun;;
+colocataire;[die Mitbewohnerin];97;Noun;;
+étudiant;[der Student];97;Noun;;
+gestion;[die Verwaltung];97;Noun;;
+habitante;[die Bewohnerin];97;Noun;;
+page web;[die Internetseite];97;Noun;;
+présenter;[vorstellen];97;Verb;irregular;separation: vor/stellen
+saluer (bienvenue);[begrüßen];97;Verb;regular;
+saluer (bonjour);[grüßen];97;Verb;regular;
+spectacle;[die Vorstellung];97;Noun;;
+spectacle;[die Vorstellung];97;Noun;;
+surfer;[surfen];97;Verb;regular;
+assidûment;[fleißig];99;Adjective/Adverb;;
+avant-dernier;[vorletzte];99;Adjective/Adverb;;
+bien sûr;[selbstverständlich];99;Adjective/Adverb;;
+chambre d'hôtel;[das Hotelzimmer];99;Noun;;
+collègue;[der Kollege];99;Noun;;
+connaissances;[die Kenntnisse];99;Noun;;
+courses (faire les ~);[einkaufen gehen];99;Verb;irregular;
+dentiste;[der Zahnarzt];99;Noun;;
+export;[der Export];99;Noun;;
+faux;[falsch];99;Adjective/Adverb;;
+finir (pour);[zum Schluss];99;Fixed expression;;
+garage;[die Werkstatt];99;Noun;;
+inviter à boire;"[auf ein Bier einladen;auf einen Kaffee einladen]";99;Verb;irregular;
+rendez-vous (avoir ~ avec qqn);[mit jdm verabredet sein];99;Fixed expression;;
+réussir;[schaffen];99;Verb;irregular;
+rouillé;[eingerostet];99;Adjective/Adverb;;
+texte;[der Text];99;Noun;;
+traduire (en…);[auf übersetzen];99;Verb;irregular;
+air;[die Luft];100;Noun;;
+air marin;[die Meeresluft];100;Noun;;
+ambiance;[die Stimmung];100;Noun;;
+approfondir;[vertiefen];100;Verb;regular;
+Autriche;[Österreich];100;Noun;;
+congé (prendre ~);[Abschied nehmen];100;Fixed expression;;
+culture;[die Kultur];100;Noun;;
+difficile;[schwierig];100;Adjective/Adverb;;
+difficile (le plus);[das Schwierigste];100;Noun;;
+diversité;[die Vielfalt];100;Noun;;
+enchanteur;[stimmungsvoll];100;Adjective/Adverb;;
+festival;[die Festspiele];100;Noun;;
+frais;[frisch];100;Adjective/Adverb;;
+jeu;[das Spiel];100;Noun;;
+marché de Noël;[der Weihnachtsmarkt];100;Noun;;
+mer Baltique;[die Ostsee];100;Noun;;
+motivé;[motiviert];100;Adjective/Adverb;;
+penser (qqch. de qqch.);[etw. von etw. halten];100;Verb;irregular;
+réviser;[wiederholen];100;Verb;regular;
+société;[die Gesellschaft];100;Noun;;
+thème;[das Thema];100;Noun;;
+travailler (continuer à);[weiterarbeiten];100;Verb;irregular;

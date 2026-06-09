@@ -32,6 +32,7 @@ type Word struct {
 	AssimilNumber int       `db:"assimil_number"`
 	Category      string    `db:"category"`
 	IsRegular     *bool     `db:"is_regular"` // nil for non-verbs
+	Annotation    *string   `db:"annotation"`
 	CreatedAt     time.Time `db:"created_at"`
 }
 
@@ -56,6 +57,7 @@ type CardWithWord struct {
 	AssimilNumber int
 	Category      string
 	IsRegular     *bool
+	Annotation    *string
 	AudioFile     *string
 }
 

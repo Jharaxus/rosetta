@@ -23,9 +23,9 @@ const defaultConjSeedFile = "/app/resources/Deutch_verbs_and_conjugations.csv"
 // conjRow is one parsed CSV record ready for bulk insertion.
 type conjRow struct {
 	wordID pgtype.UUID
-	tense  string   // verb_tense enum value (e.g. "praesens_indikativ")
-	person string   // verb_person enum value (e.g. "p1_sg")
-	forms  []string // one or more alternate conjugated forms
+	tense  string // verb_tense enum value (e.g. "praesens_indikativ")
+	person string // verb_person enum value (e.g. "p1_sg")
+	forms  string // [form1;form2;...] — stored directly as TEXT in the DB
 }
 
 // personIntToEnum maps the CSV person column (1–6) to the DB enum string.
@@ -187,14 +187,9 @@ func parseConjugationsCSV(path string, wordIDMap map[string]pgtype.UUID) ([]conj
 			continue
 		}
 
-		// Split comma-separated alternate forms
-		var forms []string
-		for _, f := range strings.Split(conjugation, ", ") {
-			if s := strings.TrimSpace(f); s != "" {
-				forms = append(forms, s)
-			}
-		}
-		if len(forms) == 0 {
+		// conjugation is already in [form1;form2;...] format
+		forms := conjugation
+		if forms == "" {
 			continue
 		}
 

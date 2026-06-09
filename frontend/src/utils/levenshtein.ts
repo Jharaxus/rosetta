@@ -92,6 +92,24 @@ export function computeAccuracy(input: string, correct: string): number {
 //   [0.75, 0.9) → Hard (2)
 //   [0.9, 1.0)  → Good (3)
 //   1.0         → Easy (4)
+export function parseAlternatives(german: string): string[] {
+  return german.slice(1, -1).split(';')
+}
+
+export function bestDiff(input: string, german: string): { diff: StringDiff; matched: string } {
+  const alts = parseAlternatives(german)
+  let best = diffStrings(input, alts[0])
+  let matched = alts[0]
+  for (let i = 1; i < alts.length; i++) {
+    const d = diffStrings(input, alts[i])
+    if (d.distance < best.distance) {
+      best = d
+      matched = alts[i]
+    }
+  }
+  return { diff: best, matched }
+}
+
 export function accuracyToRating(accuracy: number): Rating {
   if (accuracy >= 1) return 4
   if (accuracy >= 0.9) return 3

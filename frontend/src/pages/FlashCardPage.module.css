@@ -156,6 +156,14 @@
   margin: 0;
 }
 
+.annotation {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: var(--color-dim);
+  font-style: italic;
+  margin: 2px 0 0;
+}
+
 .french {
   font-family: var(--font-display);
   font-size: 40px;

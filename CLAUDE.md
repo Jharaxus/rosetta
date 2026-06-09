@@ -204,6 +204,60 @@ Tables (see `backend/migrations/`):
 
 Migration files use timestamp-based naming: `20260503000001_<name>.sql`. The `migrate` init container runs before the backend starts in Docker Compose.
 
+## Vocabulary lexicon format (`resources/Deutch.csv`)
+
+### Column structure
+
+The CSV uses `;` as the delimiter and has 6 columns:
+
+```
+Français;Allemand;Leçon;Catégorie;Régularité;Annotation
+```
+
+### `Allemand` column — always `[alt1;alt2;...]`
+
+Every German value is wrapped in brackets, even single words:
+
+| Raw source | `Allemand` value | `Annotation` value |
+|---|---|---|
+| Single word | `[lernen]` | — |
+| Multiple accepted translations | `[fahren;losfahren;weggehen]` | — |
+| Case marker `ohne (+ acc.)` | `[ohne]` | `+ acc.` |
+| Contraction `zu dem (= zum)` | `[zu dem;zum]` | — |
+| Optional word `(genau) so` | `[so;genau so]` | — |
+| Optional suffix `nie(mals)` | `[nie;niemals]` | — |
+| Separable verb `auf/räumen` | `[aufräumen]` | `separation: auf/räumen` |
+| Inflection paradigm `jeder/jede/jedes` | `[jeder]` | `inflection: jeder/jede/jedes` |
+| Space-slash alternatives `rechts / links abbiegen` | `[rechts abbiegen;links abbiegen]` | — |
+
+**Rules:**
+- Fields containing `;` must be CSV-quoted (Python's `csv.writer` with `QUOTE_MINIMAL` handles this automatically).
+- The `Annotation` column is free plain text, `NULL` when absent. It is **never** wrapped in `[...]`. The prefixes `separation:` and `inflection:` are used for cat-5 entries only; case markers and other notes are stored as-is.
+- The `canonicalGerman()` function in `backend/internal/seed/seed_audio.go` strips `[...]` and returns the first `;`-delimited alternative — used for TTS generation and audio filename hashing.
+- The frontend's `parseAlternatives(german)` in `frontend/src/utils/levenshtein.ts` does the same parsing at runtime for distance computation and display.
+
+### Adding or editing entries
+
+When adding a new word:
+1. Write the `Allemand` value in `[alt1;alt2;...]` format — always bracketed, even for a single word.
+2. Put case markers, separable-verb notation, or inflection paradigms in the `Annotation` column (plain text, no brackets).
+3. Run the validator to check all rows conform:
+   ```bash
+   python3 -c "
+   import csv, sys
+   errors = []
+   with open('resources/Deutch.csv') as f:
+       r = csv.reader(f, delimiter=';')
+       next(r)
+       for i, row in enumerate(r, 2):
+           if len(row) != 6: errors.append(f'L{i}: wrong field count {len(row)}')
+           elif not (row[1].startswith('[') and row[1].endswith(']')): errors.append(f'L{i}: not bracketed: {row[1]}')
+           elif '[' in row[5]: errors.append(f'L{i}: annotation has brackets: {row[5]}')
+   print(errors or 'OK')
+   "
+   ```
+4. Re-run `make filter-verbs && make conjugate-verbs` if any Verb entries changed, then `make seed-conjugations`.
+
 ## Conjugation pipeline
 
 ### Overview
@@ -252,8 +306,24 @@ Tests must pass before any change to `fetch_conjugations.py` is valid. Fixture J
 | `CONJ_SEED_FILE` | `/app/resources/Deutch_verbs_and_conjugations.csv` | Path to conjugation CSV |
 | `FORCE_RESEED_CONJ` | `"false"` | Set to `"true"` to truncate and reload |
 
+### Conjugation CSV format
+
+`resources/Deutch_verbs_and_conjugations.csv` — 4 columns, `;` delimiter:
+
+```
+verb;tense;person;conjugation
+[lernen];praesens_indikativ;1;[lerne]
+[fahren;losfahren;weggehen];praesens_indikativ;1;"[fahre;fahre;gehe weg]"
+```
+
+- `verb` — the exact `Allemand` value from `Deutch.csv`, including `[...]` brackets. Multi-alternative verbs appear as one row with the merged forms from all alternatives.
+- `conjugation` — always `[form1;form2;...]`. For a multi-alternative verb, forms from each individual alternative are concatenated in order. Single-form entries: `[fuhr]`.
+- Fields containing `;` (multi-form conjugations) are CSV-quoted.
+
+**Multi-alternative merging:** for a verb like `[sprechen;reden]`, `fetch_conjugations.py` fetches Wiktionary for each alternative separately, then merges `(tense, person)` form lists. The ich-Präsens row becomes `[spreche;rede]`.
+
 ### Schema
 
 - `verb_tense` — PostgreSQL enum with 15 values (tense × mood: e.g. `praesens_indikativ`, `futur_1_konjunktiv_2`)
 - `verb_person` — PostgreSQL enum: `p1_sg` (ich) through `p3_pl` (sie)
-- `conjugations (word_id, tense, person, forms TEXT[])` — PK on the first three columns; trigger prevents inserting non-Verb word IDs
+- `conjugations (word_id, tense, person, forms TEXT)` — `forms` is stored as `[form1;form2;...]` plain text; PK on the first three columns; trigger prevents inserting non-Verb word IDs

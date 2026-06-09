@@ -26,6 +26,7 @@ type row struct {
 	assimilNumber int
 	category      string
 	isRegular     *bool
+	annotation    *string
 }
 
 // Seed loads vocabulary data from the CSV pointed to by the SEED_FILE env var
@@ -82,7 +83,7 @@ func parseCSV(path string) ([]row, error) {
 
 	r := csv.NewReader(f)
 	r.Comma = ';'
-	r.FieldsPerRecord = 5
+	r.FieldsPerRecord = 6
 	r.LazyQuotes = true
 
 	// skip header
@@ -129,12 +130,18 @@ func parseCSV(path string) ([]row, error) {
 			isRegular = &b
 		}
 
+		var annotation *string
+		if ann := strings.TrimSpace(rec[5]); ann != "" {
+			annotation = &ann
+		}
+
 		rows = append(rows, row{
 			french:        key.french,
 			german:        key.german,
 			assimilNumber: assimil,
 			category:      strings.TrimSpace(rec[3]),
 			isRegular:     isRegular,
+			annotation:    annotation,
 		})
 	}
 
@@ -142,7 +149,7 @@ func parseCSV(path string) ([]row, error) {
 }
 
 func bulkInsert(ctx context.Context, pool *pgxpool.Pool, rows []row) error {
-	cols := []string{"french", "german", "assimil_number", "category", "is_regular"}
+	cols := []string{"french", "german", "assimil_number", "category", "is_regular", "annotation"}
 
 	_, err := pool.CopyFrom(
 		ctx,
@@ -150,7 +157,7 @@ func bulkInsert(ctx context.Context, pool *pgxpool.Pool, rows []row) error {
 		cols,
 		pgx.CopyFromSlice(len(rows), func(i int) ([]any, error) {
 			r := rows[i]
-			return []any{r.french, r.german, r.assimilNumber, r.category, r.isRegular}, nil
+			return []any{r.french, r.german, r.assimilNumber, r.category, r.isRegular, r.annotation}, nil
 		}),
 	)
 	return err
